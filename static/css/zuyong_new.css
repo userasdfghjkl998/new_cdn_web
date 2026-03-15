@@ -1,0 +1,142 @@
+﻿.zuoyong-new-advant {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/bg.jpg);
+    background-color: #4993ff;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 0;
+    border: none;
+}
+
+/* 左侧内容 */
+.zuoyong-new-advant .banner-foot-title {
+    width: 260px;
+    min-width: 260px;
+    height: 100%;
+    background: none;
+    position: static;
+}
+
+.zuoyong-new-advant .advantage {
+    padding: 0 0 0 32px;
+    justify-content: unset;
+}
+
+.zuoyong-new-advant .advantage::after {
+    display: none;
+}
+
+/* 右侧内容 */
+.zuoyong-new-advant .banner-foot-box {
+    width: 80%;
+    height: 100%;
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc4cf #F5F5F5;
+}
+
+.zuoyong-new-advant .banner-foot-link {
+    height: 100%;
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+.zuoyong-new-advant .banner-foot-item {
+    width: 370px;
+    min-width: 370px;
+    height: 135px;
+    border: 0;
+    background-size: 100% 100%;
+    padding: 18px 22px;
+    margin-right: 15px;
+    background-position: right bottom;
+}
+
+.zuoyong-new-advant .banner-foot-item:hover {
+    transition: all .3s;
+}
+
+.zuoyong-new-advant .banner-foot-item::before {
+    display: none;
+}
+
+.zuoyong-new-advant .banner-one {
+    background-image: url(../image/01.jpg);
+}
+
+.zuoyong-new-advant .banner-two {
+    background-image: url(../image/02.jpg);
+}
+
+.zuoyong-new-advant .banner-three {
+    background-image: url(../image/03.jpg);
+}
+
+.zuoyong-new-advant .banner-four {
+    background-image: url(../image/04.jpg);
+}
+
+.zuoyong-new-advant .banner-foot-item h4 {
+    margin-bottom: 8px;
+}
+
+.zuoyong-new-advant .banner-foot-item p {
+    color: #626266;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.zuoyong-new-advant .banner-foot-item a {
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.zuoyong-new-advant .banner-foot-item a::after {
+    content: '';
+    margin-top: 1px;
+    width: 7px;
+    height: 11px;
+    margin-left: 6px;
+    background-size: 100% 100%;
+    transition: all .3s;
+    background-image: url(../image/jt.svg);
+}
+
+.zuoyong-new-advant .banner-foot-item:hover a::after {
+    margin-left: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .zuoyong-new-advant.sm-hidden {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .section-zuyong1 {
+        background-color: #fff;
+    }
+    .section-zuyong3 {
+        background-color: #f5f7fa;
+    }
+    .section-zuyong4 {
+        background-size: 100% 100%;
+        background-image: url(../image/section4.jpg);
+    }
+}
+
+@media screen and (min-width: 2082px) {
+    .zuoyong-new-advant .banner-foot-box {
+        padding-right: 260px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+}
