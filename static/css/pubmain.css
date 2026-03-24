@@ -1,7 +1,7 @@
 ﻿
 @font-face {
     font-family: zhezhi;
-    src: url('https://www.duotu.com/static/fonts/zhezhi.TTF');
+    src: url('https://www.feiduncdn.com/static/fonts/zhezhi.TTF');
 }
 html {-webkit-tap-highlight-color: transparent;}
 
@@ -13,19 +13,19 @@ html {-webkit-tap-highlight-color: transparent;}
 .icon-24{width: 24px;height: 24px;}
 .icon-64{width: 64px;height: 64px;}
 .icon-92{width: 92px;height: 92px;}
-.icon01{background-image: url(https://www.duotu.com/static/images/icon01-1.png);}
-.icon02{background-image: url(https://www.duotu.com/static/images/icon01-2.png);}
-.icon03{background-image: url(https://www.duotu.com/static/images/icon01-3.png);}
-.icon04{background-image: url(https://www.duotu.com/static/images/icon01-4.png);}
-.icon05{background-image: url(https://www.duotu.com/static/images/icon01-5.png);}
-.icon06{background-image: url(https://www.duotu.com/static/images/icon02-1.png);}
-.icon07{background-image: url(https://www.duotu.com/static/images/icon02-2.png);}
-.icon08{background-image: url(https://www.duotu.com/static/images/icon02-3.png);}
-.icon09{background-image: url(https://www.duotu.com/static/images/icon02-4.png);}
-.icon10{background-image: url(https://www.duotu.com/static/images/sw-icon01.png);}
-.icon11{background-image: url(https://www.duotu.com/static/images/sw-icon02.png);}
-.icon12{background-image: url(https://www.duotu.com/static/images/sw-icon03.png);}
-.icon13{background-image: url(https://www.duotu.com/static/images/icon-square.png);position: absolute;top: -2px;left: 0;}
+.icon01{background-image: url(https://www.feiduncdn.com/static/images/icon01-1.png);}
+.icon02{background-image: url(https://www.feiduncdn.com/static/images/icon01-2.png);}
+.icon03{background-image: url(https://www.feiduncdn.com/static/images/icon01-3.png);}
+.icon04{background-image: url(https://www.feiduncdn.com/static/images/icon01-4.png);}
+.icon05{background-image: url(https://www.feiduncdn.com/static/images/icon01-5.png);}
+.icon06{background-image: url(https://www.feiduncdn.com/static/images/icon02-1.png);}
+.icon07{background-image: url(https://www.feiduncdn.com/static/images/icon02-2.png);}
+.icon08{background-image: url(https://www.feiduncdn.com/static/images/icon02-3.png);}
+.icon09{background-image: url(https://www.feiduncdn.com/static/images/icon02-4.png);}
+.icon10{background-image: url(https://www.feiduncdn.com/static/images/sw-icon01.png);}
+.icon11{background-image: url(https://www.feiduncdn.com/static/images/sw-icon02.png);}
+.icon12{background-image: url(https://www.feiduncdn.com/static/images/sw-icon03.png);}
+.icon13{background-image: url(https://www.feiduncdn.com/static/images/icon-square.png);position: absolute;top: -2px;left: 0;}
 
 .tips{color:#fff;padding:10px 20px;background-color: rgba(0,0,0,0.7);position: fixed;top:50%;left: 50%;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);border-radius: 4px;z-index: 1100}
 
@@ -64,7 +64,7 @@ html {-webkit-tap-highlight-color: transparent;}
     /* background-color: rgba(255, 255, 255, .45); */
     margin-top: -48px;    padding: 8px 0;box-sizing: border-box;
     /* backdrop-filter: blur(3px); */
-    background-image: url(https://www.duotu.com/images/new_kkidc/waf/youshi-bg.png);
+    background-image: url(https://www.feiduncdn.com/images/new_kkidc/waf/youshi-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -80,19 +80,19 @@ html {-webkit-tap-highlight-color: transparent;}
     height: 66px;
     width: 192px;
     position: absolute;
-    background-image: url(https://www.duotu.com/images/new_kkidc/waf/blue-hader.png);
+    background-image: url(https://www.feiduncdn.com/images/new_kkidc/waf/blue-hader.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     top: -26px;
     left: 0;
 }
 .honor-title-z{position: relative;z-index: 1;color: #0357ce;font-size: 17px;font-weight: bold;margin-left: 26px;top: -5px;}
-.honor-icon {display: inline-block;width: 20px;height: 21px;background-image: url(https://www.duotu.com/static/images/honor-icon.png);background-size: cover; vertical-align: bottom;margin-right: 10px;}
-.honor-icon-1 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.duotu.com/static/images/icon-h-1.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
-.honor-icon-2 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.duotu.com/static/images/icon-h-2.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
-.honor-icon-3 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.duotu.com/static/images/icon-h-3.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
-.honor-icon-4 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.duotu.com/static/images/icon-h-4.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
-.honor-icon-5 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.duotu.com/static/images/icon-h-5.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
+.honor-icon {display: inline-block;width: 20px;height: 21px;background-image: url(https://www.feiduncdn.com/static/images/honor-icon.png);background-size: cover; vertical-align: bottom;margin-right: 10px;}
+.honor-icon-1 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.feiduncdn.com/static/images/icon-h-1.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
+.honor-icon-2 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.feiduncdn.com/static/images/icon-h-2.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
+.honor-icon-3 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.feiduncdn.com/static/images/icon-h-3.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
+.honor-icon-4 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.feiduncdn.com/static/images/icon-h-4.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
+.honor-icon-5 {display: inline-block;width: 26px;height: 26px;background-image: url(https://www.feiduncdn.com/static/images/icon-h-5.png);background-size: cover; vertical-align: middle;margin-right: 13px;}
 .bg-gray{background-color: #f5f7fa;}
 .bg-white{background-color: #fff;}
 .banner .swiper-slide video {
@@ -125,8 +125,8 @@ video:focus{
 } */
 
 /* 客户案例banner-foot */
-.cu-banner-foot {height: 200px;background-image: url(https://www.duotu.com/static/images/service_nav_bg.png);}
-.cu-banner-foot-title {width: 286px;height: 178px;top: -16px; padding-top: 47px;padding-left: 30px; background-image: url(https://www.duotu.com/static/images/service_banner_foot.png);}
+.cu-banner-foot {height: 200px;background-image: url(https://www.feiduncdn.com/static/images/service_nav_bg.png);}
+.cu-banner-foot-title {width: 286px;height: 178px;top: -16px; padding-top: 47px;padding-left: 30px; background-image: url(https://www.feiduncdn.com/static/images/service_banner_foot.png);}
 .cu-banner-foot-title h3 {color: #1254e9;font-size: 28px;}
 .cu-banner-right {float: right;line-height: 1;overflow: hidden;width: calc(100% - 330px);padding: 27px 0;}
 .cu-banner-right li {display: table-cell;text-align: center;vertical-align: middle;white-space: nowrap;}
@@ -139,7 +139,7 @@ video:focus{
 .playVideo {cursor: pointer;position: relative;}
 .playVideo .play-icon {display: none;position: absolute;border: none;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
 .playVideo:hover .play-icon {display: block;}
-.cu-container {background: url(https://www.duotu.com/static/images/customer_bg.jpg);}
+.cu-container {background: url(https://www.feiduncdn.com/static/images/customer_bg.jpg);}
 .cu-content {padding-top: 35px;padding-bottom: 64px;}
 .cu-main-left {width: 254px;border-right: 1px solid #eeeef1;background-color: #fff;box-shadow: 0 16px 16px rgba(55,69,103,.02),0 8px 8px rgba(235,240,252,.02);}
 .cu-main-left ul li {position: relative;height: 58px;line-height: 58px;text-align: center;font-size: 16px;color: #666666;cursor: pointer;}
@@ -247,9 +247,9 @@ video:focus{
 
 .block02{background-color: #fff;padding:20px;box-sizing: border-box;border-radius: 20px;box-shadow:2px 2px 16px rgba(14,36,96,0.3);min-width: 230px}
 .block02 .col-title{width: 145px;height: 145px;border-radius: 100px;background-size: 100% 100%;text-align: center;line-height: 145px;margin:10px auto;color:#fff;}
-.section02 .col-lg-4:nth-child(1) .col-title{background-image: url(https://www.duotu.com/static/images/img01.png)}
-.section02 .col-lg-4:nth-child(2) .col-title{background-image: url(https://www.duotu.com/static/images/img02.png)}
-.section02 .col-lg-4:nth-child(3) .col-title{background-image: url(https://www.duotu.com/static/images/img03_new.png)}
+.section02 .col-lg-4:nth-child(1) .col-title{background-image: url(https://www.feiduncdn.com/static/images/img01.png)}
+.section02 .col-lg-4:nth-child(2) .col-title{background-image: url(https://www.feiduncdn.com/static/images/img02.png)}
+.section02 .col-lg-4:nth-child(3) .col-title{background-image: url(https://www.feiduncdn.com/static/images/img03_new.png)}
 .block02 .col-title h3{text-shadow: 0 1px 8px rgba(0,0,0,0.7);}
 
 .news-list li{line-height: 50px;position: relative;border-bottom: 1px dashed #8294af;}
@@ -275,7 +275,7 @@ video:focus{
 
 /* part03 */
 .section03 .section-title{margin-bottom: 100px}
-.block03{width: 496px;height: 460px;background-image: url(https://www.duotu.com/static/images/part03-bg.png);background-repeat: no-repeat;margin:0 auto;position: relative;padding-bottom: 27px;}
+.block03{width: 496px;height: 460px;background-image: url(https://www.feiduncdn.com/static/images/part03-bg.png);background-repeat: no-repeat;margin:0 auto;position: relative;padding-bottom: 27px;}
 .block-item-person{width: 100%;height: 100%;position: relative}
 .p01-1{fill: #FFCEBD;}
 .p01-2{fill: #5A379E;}
@@ -330,7 +330,7 @@ video:focus{
 .rotate5{-webkit-animation-name: rotate5;animation-name: rotate5;-webkit-animation-iteration-count: infinite;animation-iteration-count: infinite}
 .rotate10{-webkit-animation-name: rotate10;animation-name: rotate10;-webkit-animation-iteration-count: infinite;animation-iteration-count: infinite}
 
-.block-item-line{width: 100%;height: 100%;background-image: url(https://www.duotu.com/static/images/part03-line.png);background-repeat: no-repeat;position: absolute;top:0;left: 0;}
+.block-item-line{width: 100%;height: 100%;background-image: url(https://www.feiduncdn.com/static/images/part03-line.png);background-repeat: no-repeat;position: absolute;top:0;left: 0;}
 .block-item-tab {display: none}
 .block-item-hover .dot{cursor: pointer;position: absolute}
 .block-item-hover .dot i:nth-child(1){display: block;width: 20px;height: 20px;opacity:0;background-color: #60bfed;border-radius: 50px;position: absolute;top:50%;left: 50%;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);-webkit-animation: scaleOut 3s 1s ease-in infinite;animation: scaleOut 3s 1s ease-in infinite;}
@@ -532,7 +532,7 @@ video:focus{
 
 /* part04 */
 .section04 .w1120{position: relative}
-.datacenter{height: 488px;background: url(https://www.duotu.com/static/images/sec04-line01.png) center no-repeat;position: relative;width: 1132px;margin:95px auto -120px auto}
+.datacenter{height: 488px;background: url(https://www.feiduncdn.com/static/images/sec04-line01.png) center no-repeat;position: relative;width: 1132px;margin:95px auto -120px auto}
 .dataPath>path{-webkit-filter: none;filter: none; fill: none;stroke-width: 3px;stroke:url(#bg);}
 #dcMachine{position: absolute;top:134px;left: 47%;-webkit-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%)}
 .c01{-webkit-animation: changeColor 4s infinite;animation: changeColor 4s infinite}
@@ -631,15 +631,15 @@ video:focus{
 .prize-title:after{content:'';width: 20px;height: 1px;background-color: #fff;position: absolute;left: 50%;bottom: 0;margin-left: -10px;}
 .prizes-slides{padding: 0 80px;margin-bottom: -80px}
 .prizes-slides .swiper-container{padding: 0 0 300px}
-.prizes-slides .swiper-slide{width: 20%;padding-bottom: 36px;background-image: url(https://www.duotu.com/static/images/prize/cone.png);background-position: bottom center;background-repeat: no-repeat;background-size: 100%;opacity: .6;position: relative;-webkit-transition: all .3s;transition: all .3s;text-align: center;-webkit-transform-origin: top center;-ms-transform-origin: top center;transform-origin: top center;cursor: pointer}
+.prizes-slides .swiper-slide{width: 20%;padding-bottom: 36px;background-image: url(https://www.feiduncdn.com/static/images/prize/cone.png);background-position: bottom center;background-repeat: no-repeat;background-size: 100%;opacity: .6;position: relative;-webkit-transition: all .3s;transition: all .3s;text-align: center;-webkit-transform-origin: top center;-ms-transform-origin: top center;transform-origin: top center;cursor: pointer}
 .prizes-slides .swiper-slide .prize-title{display: none}
 .prizes-slides .swiper-slide-active{-webkit-transform: scale(1.5) translate(0, 20px);-ms-transform: scale(1.5) translate(0, 20px);transform: scale(1.5) translate(0, 20px);opacity: 1}
 .prizes-slides .swiper-slide-active .prize-title{display: block}
 .prizes-slides .swiper-slide-prev{-webkit-transform: scale(1.1) translate(-30px, 55px);-ms-transform: scale(1.1) translate(-30px, 55px);transform: scale(1.1) translate(-30px, 55px);}
 .prizes-slides .swiper-slide-next{-webkit-transform: scale(1.1) translate(30px, 55px);-ms-transform: scale(1.1) translate(30px, 55px);transform: scale(1.1) translate(30px, 55px);}
 .prizes-slides .swiper-button{width: 50px;height: 50px;background-size: 100% 100%;outline: none;top: 30%}
-.prizes-slides .swiper-button-prev{background-image: url(https://www.duotu.com/static/images/prize/arr-left.png)}
-.prizes-slides .swiper-button-next{background-image: url(https://www.duotu.com/static/images/prize/arr-right.png)}
+.prizes-slides .swiper-button-prev{background-image: url(https://www.feiduncdn.com/static/images/prize/arr-left.png)}
+.prizes-slides .swiper-button-next{background-image: url(https://www.feiduncdn.com/static/images/prize/arr-right.png)}
 .icon-icon_wenhao{font-size: 16px;color: #d8d9dc;}
 
 @media screen and (max-width: 1023px){
@@ -648,7 +648,7 @@ video:focus{
         height: 48px;
         width: 127.5px;
         position: absolute;
-        background-image: url(https://www.duotu.com/images/new_kkidc/waf/m-blue-hader.png);
+        background-image: url(https://www.feiduncdn.com/images/new_kkidc/waf/m-blue-hader.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         top: -16px;
@@ -669,7 +669,7 @@ video:focus{
     .honor-box {
         height: 44px;
         padding: 8px 0;
-        background-image: url(https://www.duotu.com/images/new_kkidc/waf/m-youshi-bg.png);
+        background-image: url(https://www.feiduncdn.com/images/new_kkidc/waf/m-youshi-bg.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -794,7 +794,7 @@ video:focus{
 
 
 /*  section13 */
-.section13{background: url('https://www.duotu.com/static/images/about-bg.png') no-repeat;background-size: cover;padding: 170px 0;}
+.section13{background: url('https://www.feiduncdn.com/static/images/about-bg.png') no-repeat;background-size: cover;padding: 170px 0;}
 .section13 .intro-content{font-size: 14px;color: #32363f;margin: 0;padding: 0;}
 .section13 .video-wrap{background-color: #1f2026;background-image: -webkit-linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,0));background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,0));}
 .section13 .video-wrap, .section13 .section-content .video-poster{width: 100%;margin: 0;box-sizing: border-box;}
@@ -863,7 +863,7 @@ video:focus{
 .sec-dot li>div{width: 80px;height: 80px;border-radius: 80px;background: -webkit-linear-gradient(to left, #4196fe,#7c7ee5 );background: -webkit-linear-gradient(right, #4196fe,#7c7ee5 );background: linear-gradient(to left, #4196fe,#7c7ee5 );filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#4196fe,endcolorstr=#7c7ee5,gradientType=1);color:#fff;text-align: center;box-sizing: border-box;box-shadow: 2px 2px 5px rgba(70,148,251,0.5);padding-top: 1px;-webkit-animation: rock 3s infinite;animation: rock 3s infinite}
 .sec-dot li .zuyong-ic{margin-top: 15px;}
 .sec-dot li:nth-child(4) .zuyong-ic{margin-top:24px}
-.zuyong-ic{display: block;background-image: url(https://www.duotu.com/static/images/icon.png);background-repeat: no-repeat;width: 30px;height: 30px;margin:0 auto}
+.zuyong-ic{display: block;background-image: url(https://www.feiduncdn.com/static/images/icon.png);background-repeat: no-repeat;width: 30px;height: 30px;margin:0 auto}
 .ic02{background-position: -30px 0}
 .ic03{background-position: -60px 0}
 .ic04{background-position: -90px 0}
@@ -939,7 +939,7 @@ video:focus{
 .compared-box .table-td:nth-child(1){width: 15%;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;text-align: center;}
 .compared-box .table-td:nth-child(2){width: 50%;padding-left: 70px;padding-right: 70px;}
 .compared-box .table-td:nth-child(3){width: 35%;padding-left: 70px;padding-right: 70px;}
-.compared-box .recommend::after{content: '';position: absolute;right: -5px;top: -5px;width: 94px;height: 75px;background-image: url(https://www.duotu.com/static/images/tuijian.png);}
+.compared-box .recommend::after{content: '';position: absolute;right: -5px;top: -5px;width: 94px;height: 75px;background-image: url(https://www.feiduncdn.com/static/images/tuijian.png);}
 .compared-box .col-highlight{position: relative;padding: 0;}
 .compared-box .col-highlight div{position: absolute;top: -20px;left: -1px;right: -1px;height: 80px;line-height: 80px;color: #fff;background-image: -webkit-linear-gradient( 90deg, rgb(124,126,229) 0%, rgb(65,150,254) 100%);background-image: -moz-linear-gradient( 90deg, rgb(124,126,229) 0%, rgb(65,150,254) 100%);background-image: -ms-linear-gradient( 90deg, rgb(124,126,229) 0%, rgb(65,150,254) 100%);background-image: linear-gradient( 90deg, rgb(124,126,229) 0%, rgb(65,150,254) 100%);}
 .compared-box .table-th:nth-child(2), .compared-box .table-td:nth-child(2){position: relative;background-color: #f6f8fe;z-index: 2;}
@@ -1015,12 +1015,12 @@ video:focus{
     animation: waveUp 5s linear infinite;
     z-index: 1;
 }
-.animate-bg .items-02:before{background: url(https://www.duotu.com/static/images/img10.png);}
-.animate-bg .items-03:before{background: url(https://www.duotu.com/static/images/img11.png);-webkit-animation-delay: 1s;animation-delay: 1s;}
-.animate-bg .items-04:before{background: url(https://www.duotu.com/static/images/img12.png);-webkit-animation-delay: 2s;animation-delay: 2s}
-.animate-bg .items-05:before{background: url(https://www.duotu.com/static/images/img13.png);-webkit-animation-delay: 3s;animation-delay: 3s}
-.animate-bg .items-06:before{background: url(https://www.duotu.com/static/images/img14.png);height:128px;-webkit-animation-delay: 4s;animation-delay: 4s}
-.animate-bg .items-02:after,.animate-bg .items-03:after,.animate-bg .items-04:after,.animate-bg .items-05:after,.animate-bg .items-06:after{content:'';background-image: url(https://www.duotu.com/static/images/img15.png);width:76px;height:48px;display: block;position: absolute;bottom: -147px;left: 8px;z-index: 0;
+.animate-bg .items-02:before{background: url(https://www.feiduncdn.com/static/images/img10.png);}
+.animate-bg .items-03:before{background: url(https://www.feiduncdn.com/static/images/img11.png);-webkit-animation-delay: 1s;animation-delay: 1s;}
+.animate-bg .items-04:before{background: url(https://www.feiduncdn.com/static/images/img12.png);-webkit-animation-delay: 2s;animation-delay: 2s}
+.animate-bg .items-05:before{background: url(https://www.feiduncdn.com/static/images/img13.png);-webkit-animation-delay: 3s;animation-delay: 3s}
+.animate-bg .items-06:before{background: url(https://www.feiduncdn.com/static/images/img14.png);height:128px;-webkit-animation-delay: 4s;animation-delay: 4s}
+.animate-bg .items-02:after,.animate-bg .items-03:after,.animate-bg .items-04:after,.animate-bg .items-05:after,.animate-bg .items-06:after{content:'';background-image: url(https://www.feiduncdn.com/static/images/img15.png);width:76px;height:48px;display: block;position: absolute;bottom: -147px;left: 8px;z-index: 0;
     -webkit-animation:shadowZoom 5s linear infinite;
     animation:shadowZoom 5s linear infinite;
 }
@@ -1191,7 +1191,7 @@ video:focus{
 
 .intro-content{margin: 50px 0 70px 0;text-indent: 2em;font-size: 14px;color:#6d6f74;line-height: 25px;padding-bottom: 50px;}
 .intro-item{position:absolute;bottom: -147px;width: 100%}
-.intro-item li{display: inline-block;background-image: url(https://www.duotu.com/static/images/bg01.png);width: 218px;height:118px;margin-right: 80px;vertical-align: top;}
+.intro-item li{display: inline-block;background-image: url(https://www.feiduncdn.com/static/images/bg01.png);width: 218px;height:118px;margin-right: 80px;vertical-align: top;}
 .intro-item li:last-child{margin-right: 0}
 
 .video-wrap{position: relative;padding: 15px;margin: 0 0 10px 25px;font-size: 0;line-height: 0;background-color: #fff;box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);text-indent: 0;cursor: pointer;}
@@ -1337,7 +1337,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 
 .content-item table{/* width: 100% !important; */margin-left: auto;margin-right: auto;}
 
-.partyBuilding .container-wrapper{background-image: url(https://www.duotu.com/static/images/partyBuildingBg.jpg);background-size: 100% 100%;background-repeat: no-repeat}
+.partyBuilding .container-wrapper{background-image: url(https://www.feiduncdn.com/static/images/partyBuildingBg.jpg);background-size: 100% 100%;background-repeat: no-repeat}
 .partyBuilding .skip-item li.on a,.partyBuilding .skip-item li a:hover{color:#d72d2b;}
 .partyBuilding .left-nav .nav-top,.partyBuilding .right-top h1:before,.partyBuilding .pageItem li.active a,.partyBuilding .blue-line,.partyBuilding .pageItem a:hover{background-color: #d72d2b;}
 .partyBuilding .left-nav li:hover a,.partyBuilding .left-nav li.active a,.partyBuilding .content-item li:hover .item-info a,.partyBuilding .content-item li:hover .item-info span{color:#d72d2b;}
@@ -1383,7 +1383,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
     }
 }
 
-.canvas-animate{position: relative;z-index: 10;height: 155px;background-image: url(https://www.duotu.com/static/images/bg03.jpg)}
+.canvas-animate{position: relative;z-index: 10;height: 155px;background-image: url(https://www.feiduncdn.com/static/images/bg03.jpg)}
 .canvas-animate canvas{width:100%;height:155px;}
 
 .join-info{position: absolute;top:0;width: 600px;;left: 50%;margin-left: -300px}
@@ -1427,7 +1427,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 .recruit-popup{display: none;position: fixed;top: 0;left: 0;background-color: rgba(0, 0, 0, 0.6);width: 100%;height: 100%;text-align: center;z-index: 999;}
 .wechat-box{position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);background-color: #2080de;color: #fff;padding: 40px;}
 .wechat-box .close{position: absolute;top: 15px;right: 15px;}
-.wechat-box .recruit-qrcode{width:240px;max-width: 100%;box-sizing: border-box;padding: 10px;background: url('https://www.duotu.com/static/images/qrcode-border.png') no-repeat center center;font-size: 0;margin: 20px auto;background-size: 100%;}
+.wechat-box .recruit-qrcode{width:240px;max-width: 100%;box-sizing: border-box;padding: 10px;background: url('https://www.feiduncdn.com/static/images/qrcode-border.png') no-repeat center center;font-size: 0;margin: 20px auto;background-size: 100%;}
 .wechat-box .recruit-qrcode img{width: 220px;}
 
 /*联系我们*/
@@ -1472,7 +1472,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 
 .card{background-color: #fff;padding: 40px 50px;box-shadow: 0 5px 10px rgba(42,75,148,0.08);margin-bottom: 20px;}
 .card-head{font-weight: bold;font-size: 18px;color:#32394a;margin-bottom: 20px}
-.card-head:before{content:'';display: inline-block;width: 22px;height: 14px;background-image: url(https://www.duotu.com/static/images/card-head-title.png);margin-right: 10px;}
+.card-head:before{content:'';display: inline-block;width: 22px;height: 14px;background-image: url(https://www.feiduncdn.com/static/images/card-head-title.png);margin-right: 10px;}
 .card-title i{position: relative;top: 5px;margin: 0 5px 0 12px;}
 .card-title h3{font-size:14px;font-weight: bold;position: relative;margin: 0 15px 18px;}
 .card-title h3::before{ content: ""; position: absolute; width: 4px; height: 14px; background-color: #2981ff; top: 2px; left: -15px; }
@@ -1573,7 +1573,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 .info-foot a{width:80px;border-radius: 20px;margin:0 5px;line-height: 30px;border: 1px solid #eaebef}
 .info-foot a.copy{position: absolute;top:-40px;right: 0}
 
-.icon-self{background-image: url(https://www.duotu.com/static/images/icon.png);display: inline-block}
+.icon-self{background-image: url(https://www.feiduncdn.com/static/images/icon.png);display: inline-block}
 .icon14{width:16px;height:16px;background-position: 0 -31px;top:3px;position: relative}
 .icon16{width:20px;height:20px;background-position: -34px -31px}
 .icon17{width:26px;height:26px;background-position: -55px -31px}
@@ -1590,8 +1590,8 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 .select-skin .select-title i:after{content:'';display:block;width:0;left:0;border-style:solid;border-width:5px;border-color:#a1a8b9 transparent transparent transparent;}
 .select-list{border:1px solid #eaebef;border-top:0;position: absolute;top:60px;width: 100%;box-sizing: border-box;background-color: #fff;z-index: 9}
 .select-list dd{line-height: 45px;padding:0 15px;cursor: pointer}
-.select-list dd.Windows{background-image: url(https://www.duotu.com/static/images/window.png);background-repeat: no-repeat;background-position: 25px center;padding-left: 65px}
-.select-list dd.Linux{background-image: url(https://www.duotu.com/static/images/linux.png);background-repeat: no-repeat;background-position: 25px center;padding-left: 65px}
+.select-list dd.Windows{background-image: url(https://www.feiduncdn.com/static/images/window.png);background-repeat: no-repeat;background-position: 25px center;padding-left: 65px}
+.select-list dd.Linux{background-image: url(https://www.feiduncdn.com/static/images/linux.png);background-repeat: no-repeat;background-position: 25px center;padding-left: 65px}
 .select-list dd:hover{background-color: #dbe9fe;}
 
 .dragger{display:inline-block;margin:10px 6px;position: relative;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;width: auto;border-radius: 6px;}
@@ -1704,7 +1704,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 
 @media screen and (max-width: 1560px) {
     .partyBuilding .container-wrapper{
-        background-image: url(https://www.duotu.com/static/images/m-partyBuildingBg.jpg);
+        background-image: url(https://www.feiduncdn.com/static/images/m-partyBuildingBg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 15%;
@@ -1840,7 +1840,7 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
     display: none;
 }
 .dragger li .scale-box .img_show {
-    background-image: url(https://www.duotu.com/images/new_kkidc/cloud_ecs/pc_youhui.png);
+    background-image: url(https://www.feiduncdn.com/images/new_kkidc/cloud_ecs/pc_youhui.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 36px;
@@ -1902,12 +1902,12 @@ div.envir{background-color: #f6f7fb;padding:80px 0;font-size: 0}
 .right-content-fl{float: left; padding: 0; width: -webkit-calc(100% - 310px); width: calc(100% - 310px); }
 .container-pc{padding: 20px 0 80px 0;}
 .nav-top-display{display: none;}
-.left-nav .nav-top-img-display{color: #fff; height: 115px; font-size: 14px; margin-top: 50px; background-image: url(https://www.duotu.com/static/images/news-bg-right.jpg); background-repeat: no-repeat; position: relative;}
+.left-nav .nav-top-img-display{color: #fff; height: 115px; font-size: 14px; margin-top: 50px; background-image: url(https://www.feiduncdn.com/static/images/news-bg-right.jpg); background-repeat: no-repeat; position: relative;}
 .right-top-pcdisplay{display: none;}
 .right-top-back{width: 60px; height: 35px; border: 1px solid #eaeaea; cursor: pointer; position: absolute; bottom: 15px;}
 .right-top-back i{position: absolute; top: 52%; left: 6px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);}
 .right-top-back span{position: absolute; top: 50%; left: 22px; color: #666666; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);}
-.nav-right-content{position: relative; width: 89px; height: 34px; cursor: pointer; background: url("https://www.duotu.com/images/bottom/qqcontent_03.jpg");}
+.nav-right-content{position: relative; width: 89px; height: 34px; cursor: pointer; background: url("https://www.feiduncdn.com/images/bottom/qqcontent_03.jpg");}
 .nav-right-content i{position: absolute; top: 50%; left: 8px; font-size: 20px; color: #ffffff; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);}
 .nav-right-content span{color: #ffffff; font-size: 14px; margin-left: 30px; line-height: 36px;}
 .right-top-pc span{color: #666666;}

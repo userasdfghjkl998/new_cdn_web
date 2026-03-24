@@ -32,10 +32,10 @@
 								<a href="gfsdk.html" target="_blank">高防SDK盾</a>
 							</dd>
 							<dd>
-								<a href="scdn.html">高防SCDN</a>
+								<a href="cdn.html">高防SCDN</a>
 							</dd>
 							<dd>
-								<a href="hk_server.html">香港高防服务器</a>
+								<a href="server.html">香港高防服务器</a>
 							</dd>
 						</dl>
 						<dl>
@@ -55,7 +55,7 @@
 						<dl>
 							<dt data-toggle>香港高防服务器</dt>
 														<dd>
-								<a href='hk_server.html'>香港高防服务器</a>
+								<a href='server.html'>香港高防服务器</a>
 							</dd>
 														<dd>
 								<a href='hk_server2.html'>香港大带宽服务器</a>
@@ -97,7 +97,7 @@
 						</li>
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a zixun_btn" href="javascript:;">公司地址：多途網絡科技有限公司</a></div>
+							<div class=""><a class="tel-a zixun_btn" href="javascript:;">公司地址：飞盾網絡科技有限公司</a></div>
  
 						</li>
 					</ul>
@@ -111,14 +111,14 @@
 						<dt data-toggle class="" style="color: #fff;">友情链接</dt>
 						<div class="friends-links">
 							 
-							<dd><a href='index.html' target="_blank">多途网络</a></dd>
+							<dd><a href='index.html' target="_blank">飞盾CDN</a></dd>
 													</div>
 					</dl>
 				</div>
 			</div>
 			<div class="bottom-filing">
 				<div class="copyright">
-		Copyright © 20022-2026 多途网络版权所有<br>
+		Copyright © 20022-2026 飞盾CDN版权所有<br>
 				 
 				</div>
 			</div>

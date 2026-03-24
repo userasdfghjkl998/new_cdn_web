@@ -1,10 +1,11 @@
 (function () {
   // 导航配置
   var navItems = [
-    { title: '首页2',   href: 'index.html',          label: '首页' },
-    { title: 'CDN',    href: 'gfsdk.html',           label: '高防SDK盾' },
-    { title: '服务器', href: 'scdn.html',            label: '高防SCDN' },
-    { title: '云总代', href: 'hk_server.html',       label: '香港高防服务器' },
+    { title: '首页',   href: 'index.html',          label: '首页' },
+    { title: 'CDN加速',    href: 'cdn.html',           label: 'CDN加速' },
+    { title: '服务器', href: 'server.html',            label: '服务器' },
+    { title: '云账号', href: 'server.html',       label: '云账号' },
+    { title: '聊天系统', href: 'chat.html',          label: '聊天系统' },
     { title: '帮助文档', href: 'help.html',          label: '帮助文档' },
     { title: '联系我们', href: 'lianxiwomen986.html', label: '联系我们' }
   ];
@@ -37,9 +38,9 @@
     topEl.innerHTML = ''
       + '<h1 style="line-height: 0;">'
       + '<a class="logo fl" bi_name="logo" href="' + logoHref + '" style="font-size:0">'
-      + '多途SDK盾 高防服务器租用,云堤清洗,安全领域专业提供商'
-      + '<img class="pc-show" src="static/picture/dt-logo-slogan.png" alt="多途SDK盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
-      + '<img class="m-show" src="static/picture/new-dt-logo.png" alt="多途SDK盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
+      + '飞盾 高防服务器租用,云堤清洗,安全领域专业提供商'
+      + '<img class="pc-show" src="static/picture/feidun_logo.png" alt="飞盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
+      + '<img class="m-show" src="static/picture/new-dt-logo.png" alt="飞盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
       + '</a>'
       + '</h1>'
       + '<!-- 导航链接和展开项 - 新 -->'
