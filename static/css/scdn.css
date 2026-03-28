@@ -10,22 +10,22 @@
 .section-a2 .product-body{ width: 100%; }
 .product-list{ margin: 0; font-size: 0;display: flex; flex-wrap: wrap;justify-content: center; }
 .product-list>li{ display: flex;height: auto; width: 20%; background-color: #fafbfc; padding: 0; -moz-box-sizing: border-box; box-sizing: border-box; vertical-align: top; position: relative;border: 1px solid #ebedf0; }
-.product-item{ position: relative;width: 100%;}
+/* .product-item{ position: relative;width: 100%;} */
 
 .product-item-data{position: relative;z-index: 1;    display: flex; flex-direction: column; height: 100%;}
 .tag{ width: 70px; height: 70px; position: absolute; right: 0px; top: 0px; z-index: 2; overflow: hidden; -webkit-font-smoothing: auto; backface-visibility:hidden; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -ms-backface-visibility:hidden;}
 .tag span{background: #eb3326; width: 104px; height: 28px; color: #fff; right: -27px; top: 12px; font-size: 14px; line-height: 28px; text-align: center; position: absolute; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
 /* .product-title{ border-bottom: 1px solid #f2f4f7; } */
 .product-title h2{ font-size: 22px; line-height: 1;color: #1c1d1f; margin: 4px 0 20px; }
-.product-price{ font-size: 14px; color: #999; }
+/* .product-price{ font-size: 14px; color: #999; } */
 .product-price .price{ font-size: 30px; font-weight: bold; color: #f33e3e; }
 .product-price .price.dinzhi{font-size: 22px;}
 .price-box .price-item{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 14px; height: 32px; }
 .price-box .price-item .typesof{ color: #626266; }
 .details{ color: #626266; }
-.ask-btn{width: 100%;    display: flex;
+/* .ask-btn{width: 100%;    display: flex;
     align-items: baseline;
-    justify-content: center;}
+    justify-content: center;} */
 .ask-btn a{ display: block; width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: 14px;border: 1px solid #2981ff; color: #2981ff; background-color: #fff; transition: all .3s ease-in-out;margin-top: 11px;box-sizing: border-box; }
 .product-list>li:hover .product-item::before { opacity: 1; }
 .product-list>li:hover .ask-btn a { color: #fff;background-color: #2981ff; }

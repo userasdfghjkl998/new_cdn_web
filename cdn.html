@@ -31,8 +31,7 @@
     <script src="static/js/jquery.cookie.js"></script>
     <script src="static/js/layui.js"></script>
 
-    <!--秒杀页面css-->
-    <script src="static/js/libpag.min.js"></script>
+    
 
 <script type="text/javascript" src="static/js/ey_global.js"></script>
 </head>
@@ -64,59 +63,13 @@
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
-    <script>
-        (async function () {
-            // 实例化 PAG
-            const PAG = await window.libpag.PAGInit();
-            // 获取 PAG 素材数据
-            const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-            // 加载 PAG 素材为 PAGFile 对象
-            const pagFile = await PAG.PAGFile.load(buffer);
-            // 将画布尺寸设置为 PAGFile的尺寸
-            const canvas = document.getElementById('bmp');
-            canvas.width = pagFile.width();
-            canvas.height = pagFile.height();
-            if ($(window).width() < 1024) {
-                canvas.style.display = 'none'
-            }
-            // 实例化 PAGView 对象
-            const pagView = await PAG.PAGView.init(pagFile, canvas);
-            // 播放 PAGView
-            pagView.setRepeatCount(0);
-            await pagView.play();
-        })()
-
-        $(document).ready(function () {
-            // 判断banner PC/移动版
-            $('#banner .swiper-slide video.pc-date').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
-            $('#banner .swiper-slide video.pc-data').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
-        })
-
-        if (window.innerWidth < 1024) {
-            // 处理导航栏父节点点击不跳转
-            $('#menu-item ul li').each(function () {
-                if ($(this).data('value') == 'jump_children') {
-                    $(this).find('.jump_children_parent').attr('href', 'javascript:;')
-                }
-            })
-            // 处理首页搜索栏
-            $('.search-icon').addClass('pc-show');
-        }
-    </script>
     <script src="static/js/vue.min.js"></script>
     <script src="static/js/layer.js"></script>
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/pad1.css" media="screen and (max-width:1024px)">
     <link rel="stylesheet" href="static/css/mobile1.css" media="screen and (max-width:1023px)">
     <link rel="stylesheet" href="static/css/scdn.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <div id="vue-app" class="scdn-index">
         <div id="banner" class="banner h434 banner-single">
             <ul class="swiper-wrapper">
@@ -307,321 +260,735 @@
                 </div>
             </div>
         </div>
-        <div class="section section-a2" id="section-a2">
-            <div class="m w1400">
-                <div class="section-header">
-                    <h3>套餐价格</h3>
+
+        <div class="section section01 section-a2"  id="section-a2">
+            <div class="section-title">
+            <h2 class="wow">套餐价格</h2>
+            <!-- <p>为您提供全方面可靠、安全且稳定的一站式产品服务</p> -->
+            </div>
+            <div class="section-box">
+            <div class="section-block wow fadeIn">
+                <div class="tab-show">
+                <div class="tab-menu w1400">
+                    <div class="active tab-menu-item" data-item="1">
+                    <span class="menu-item">
+                        <span class="pc-show hover-item-icon" style="background-image: url(static/image/recommend.png);"></span>
+                        共享套餐
+                    </span>
+                    </div>
+                    <div class="tab-menu-item" data-item="2">
+                    <span class="menu-item">
+                        <span class="pc-show hover-item-icon" style="background-image: url(static/image/count.png);"></span>
+                        独立套餐
+                    </span>
+                    </div>
+                    <div class="tab-menu-item" data-item="3">
+                    <span class="menu-item">
+                        <span class="pc-show hover-item-icon" style="background-image: url(static/image/network.png);"></span>
+                        云防套餐
+                    </span>
+                    </div>
                 </div>
-                <div class="product-body">
-                    <ul class="product-list m-product-list">
-                        <li class="product-set">
-                            <div class="product-item">
-                                <div class="product-item-data">
-                                    <div class="product-data">
-                                        <div class="product-title">
-                                            <h2>个人版</h2>
-                                        </div>
-                                        <div class="price-box">
-                                            
-                                            <p class="price-item">
-                                                <span class="typesof">防护域名数</span>
-                                                <span class="details">5个</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">通配符证书</span>
-                                                <span class="details">无限</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">WebSocket</span>
-                                                <span class="details">支持</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">DDOS保底峰值</span>
-                                                <span class="details">50GB</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">CC防护峰值</span>
-                                                <span class="details">30000QPS</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="product-advantage-data">
-                                        <div class="product-advantage-li">
-                                            <p class="having-advantages  p-1">IP黑白名单</p>
-                                            <p class="having-advantages  p-1">屏蔽请求</p>
-                                            <p class="having-advantages  p-1">频率控制</p>
-                                            <p class="having-advantages  p-1">Web基础防护</p>
-                                            <p class="no-advantage p-1">网页防篡改</p>
-                                            <p class="no-advantage p-1">网站反爬虫</p>
-                                            <p class="no-advantage p-1">人机验证</p>
-                                            <p>..........</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="price-num">
-                                                <span class="price">299</span>
-                                                $/月
-                                                <!-- <span class="discount">
-                                            3.3折
-                                        </span> -->
-                                            </div>
-                                            <!-- <div class="original-price">
-                                        原价：299$/月
-                                    </div> -->
-                                            <div class="ask-btn">
-                                                <a href="login.html">立即开通</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-set">
-                            <div class="tag">
-                                <span>高性价比</span>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item-data">
-                                    <div class="product-data">
-                                        <div class="product-title">
-                                            <h2>基础版</h2>
-                                        </div>
-                                        <div class="price-box">
-                                            <p class="price-item">
-                                                <span class="typesof">防护域名数</span>
-                                                <span class="details">20个</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">通配符证书</span>
-                                                <span class="details">无限</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">WebSocket</span>
-                                                <span class="details">支持</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">DDOS保底峰值</span>
-                                                <span class="details">100GB</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">CC防护峰值</span>
-                                                <span class="details">50000QPS</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="product-advantage-data">
-                                        <div class="product-advantage-li">
-                                            <p class="having-advantages  p-1">IP黑白名单</p>
-                                            <p class="having-advantages  p-1">屏蔽请求</p>
-                                            <p class="having-advantages  p-1">频率控制</p>
-                                            <p class="having-advantages  p-1">Web基础防护</p>
-                                            <p class="having-advantages  p-1">网页防篡改</p>
-                                            <p class="having-advantages  p-1">网站反爬虫</p>
-                                            <p class="no-advantage p-1">人机验证</p>
-                                            <p>..........</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="price-num">
-                                                <span class="price">499</span>
-                                                $/月
-                                                <!-- <span class="discount">
-                                            3.3折
-                                        </span> -->
-                                            </div>
-                                            <!-- <div class="original-price">
-                                        原价：299$/月
-                                    </div> -->
-                                            <div class="ask-btn">
-                                                <a href="login.html">立即开通</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-set">
-                            <div class="tag">
-                                <span>企业首选</span>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item-data">
-                                    <div class="product-data">
-                                        <div class="product-title">
-                                            <h2>企业版</h2>
-                                        </div>
-                                        <div class="price-box">
-                                            <p class="price-item">
-                                                <span class="typesof">防护域名数</span>
-                                                <span class="details">50个</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">通配符证书</span>
-                                                <span class="details">无限</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">WebSocket</span>
-                                                <span class="details">支持</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">DDOS保底峰值</span>
-                                                <span class="details">300GB</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">CC防护峰值</span>
-                                                <span class="details">100000QPS</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="product-advantage-data">
-                                        <div class="product-advantage-li">
-                                            <p class="having-advantages  p-1">IP黑白名单</p>
-                                            <p class="having-advantages  p-1">屏蔽请求</p>
-                                            <p class="having-advantages  p-1">频率控制</p>
-                                            <p class="having-advantages  p-1">Web基础防护</p>
-                                            <p class="having-advantages  p-1">网页防篡改</p>
-                                            <p class="having-advantages  p-1">网站反爬虫</p>
-                                            <p class="having-advantages  p-1">人机验证</p>
-                                            <p>..........</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="price-num">
-                                                <span class="price">1999</span>
-                                                $/月
-                                                <!-- <span class="discount">
-                                            3.3折
-                                        </span> -->
-                                            </div>
-                                            <!-- <div class="original-price">
-                                        原价：299$/月
-                                    </div> -->
-                                            <div class="ask-btn">
-                                                <a href="login.html">立即开通</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-set">
-                            <div class="product-item">
-                                <div class="product-item-data">
-                                    <div class="product-data">
-                                        <div class="product-title">
-                                            <h2>专业版</h2>
-                                        </div>
-                                        <div class="price-box">
-                                            <p class="price-item">
-                                                <span class="typesof">防护域名数</span>
-                                                <span class="details">100个</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">通配符证书</span>
-                                                <span class="details">无限</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">WebSocket</span>
-                                                <span class="details">支持</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">DDOS保底峰值</span>
-                                                <span class="details">500GB</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">CC防护峰值</span>
-                                                <span class="details">200000QPS</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="product-advantage-data">
-                                        <div class="product-advantage-li">
-                                            <p class="having-advantages  p-1">IP黑白名单</p>
-                                            <p class="having-advantages  p-1">屏蔽请求</p>
-                                            <p class="having-advantages  p-1">频率控制</p>
-                                            <p class="having-advantages  p-1">Web基础防护</p>
-                                            <p class="having-advantages  p-1">网页防篡改</p>
-                                            <p class="having-advantages  p-1">网站反爬虫</p>
-                                            <p class="having-advantages  p-1">人机验证</p>
-                                            <p>..........</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="price-num">
-                                                <span class="price">4999</span>
-                                                $/月
-                                                <!-- <span class="discount">
-                                            3.3折
-                                        </span> -->
-                                            </div>
-                                            <!-- <div class="original-price">
-                                        原价：299$/月
-                                    </div> -->
-                                            <div class="ask-btn">
-                                                <a href="login.html">立即开通</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-set">
-                            <div class="product-item">
-                                <div class="product-item-data">
-                                    <div class="product-data">
-                                        <div class="product-title">
-                                            <h2>定制版</h2>
-                                        </div>
-                                        <div class="price-box">
-                                            <p class="price-item">
-                                                <span class="typesof">防护域名数</span>
-                                                <span class="details">200个</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">通配符证书</span>
-                                                <span class="details">无限</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">WebSocket</span>
-                                                <span class="details">支持</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">DDOS保底峰值</span>
-                                                <span class="details">可定制</span>
-                                            </p>
-                                            <p class="price-item">
-                                                <span class="typesof">CC防护峰值</span>
-                                                <span class="details">可定制</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="product-advantage-data">
-                                        <div class="product-advantage-li">
-                                            <p class="having-advantages  p-1">IP黑白名单</p>
-                                            <p class="having-advantages  p-1">屏蔽请求</p>
-                                            <p class="having-advantages  p-1">频率控制</p>
-                                            <p class="having-advantages  p-1">Web基础防护</p>
-                                            <p class="having-advantages  p-1">网页防篡改</p>
-                                            <p class="having-advantages  p-1">网站反爬虫</p>
-                                            <p class="having-advantages  p-1">人机验证</p>
-                                            <p>..........</p>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="price-num">
-                                                <span class="price dinzhi">定制报价</span>
-                                                <!-- <span class="discount">
-                                            3.3折
-                                        </span> -->
-                                            </div>
-                                            <!-- <div class="original-price">
-                                        原价：299$/月
-                                    </div> -->
-                                            <div class="ask-btn">
-                                                <a href="login.html">立即开通</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
+                <div class="tab-content-box">
+                <div class="tab-content w1400">
+                    <div class="active wow fadeIn" data-item="1">
+                    <div class="content-data">
+
+
+                        <div class="data-bottom">
+                        <ul class="product-list pc-show">
+
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">共享体验<span class="on-trial">体验</span>
+                                </p>
+                                <p class="product-introduce p-1">直连/优化/国际，任选其一（测试24小时）</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>3个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>3个</span></p>
+                                    <p> <span class="th">共享宽带：</span><span>10/30/50Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>直连/优化/国际</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price">特惠价格</span>
+                                    <span class="price-icon">$</span>
+                                    <span class="price">10</span>
+                                    <span class="term">/天</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">共享直连<span class="on-trial">热销</span>
+                                </p>
+                                <p class="product-introduce p-1">直连大陆电信CN2高速通道</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>300个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>10个</span></p>
+                                    <p> <span class="th">共享宽带：</span><span>10Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>大陆直连</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price">特惠价格</span>
+                                    <span class="price-icon">$</span>
+                                    <span class="price">199</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">共享优化 
+                                    <!-- <span class="on-trial">大陆优化</span> -->
+                                </p>
+                                <p class="product-introduce p-1">针对大陆多运营商优化 </p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>300个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>10个</span></p>
+                                    <p> <span class="th">共享宽带：</span><span>30Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>大陆优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price">特惠价格</span>
+                                    <span class="price-icon">$</span>
+                                    <span class="price">199</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">共享国际
+                                    <!-- <span class="on-trial">国际</span> -->
+                                </p>
+                                <p class="product-introduce p-1">全球国际BGP多线接入</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>300个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>10个</span></p>
+                                    <p> <span class="th">共享宽带：</span><span>50Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>国际加速</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price">特惠价格</span>
+                                    <span class="price-icon">$</span>
+                                    <span class="price">199</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+
+                        </ul>
+                        <div class="show-more m-show">
+                            <span class="show-text">
+                            展开查看更多
+                            </span>
+                            <i class="iconfont">&#xe60c;</i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="" data-item="2">
+                    <div class="content-data">
+                        <div class="data-bottom">
+                        <ul class="product-list pc-show">
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">
+                                    独立直连
+                                    <!-- <span class="on-trial"></span> -->
+                                </p>
+                                <p class="product-introduce p-1">适合金融业务、跨境电商、实时通信</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>1000个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>1000个</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>10Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>大陆直连</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">399</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">独立优化<span class="on-trial">热销</span></p>
+                                <p class="product-introduce p-1">全球国际BGP多线接入</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>1000个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>1000个</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>30Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>大陆优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">399</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">独立国际
+                                    <!-- <span class="on-trial">热销</span> -->
+                                </p>
+                                <p class="product-introduce p-1">适合游戏、跨国企业、国际电商</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>1000个</span></p>
+                                    <p> <span class="th">防御端口：</span><span>1000个</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>50Mbps</span></p>
+                                    <p> <span class="th">网络：</span><span>国际加速</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">399</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">独立定制
+                                    <!-- <span class="on-trial">独立定制</span> -->
+                                </p>
+                                <p class="product-introduce p-1">大陆免备案、大陆移动穿墙、境外高防</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>定制</span></p>
+                                    <p> <span class="th">防御端口：</span><span>定制</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>定制</span></p>
+                                    <p> <span class="th">网络：</span><span>直连/优化/国际</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">DDOS防护值：</span><span>定制</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">定制</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="" data-item="3">
+                    <div class="content-data">
+                        <div class="data-bottom">
+                        <ul class="product-list pc-show">
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">谷歌云 
+                                    <!-- <span class="on-trial">香港服务器</span> -->
+                                </p>
+                                <p class="product-introduce p-1">区域优化、可选区域，提供区域防护能力</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>10000个</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>流量计算</span></p>
+                                    <p> <span class="th">网络：</span><span>区域优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点 + 回源节点</span></p>
+                                    <p> <span class="th">测试域名：</span><span>google.feiduncdn.com</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">按量</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">亚马逊<span class="on-trial">热销</span></p>
+                                <p class="product-introduce p-1">全球优化、智能路由Anycast，提供高级防护体系</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>10000个</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>流量计算</span></p>
+                                    <p> <span class="th">网络：</span><span>区域优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点 + 回源节点</span></p>
+                                    <p> <span class="th">测试域名：</span><span>aws.feiduncdn.com</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">按量</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">定制谷歌云 
+                                    <!-- <span class="on-trial">香港服务器</span> -->
+                                </p>
+                                <p class="product-introduce p-1">区域优化、可选区域，提供区域防护能力</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>定制</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>流量计算</span></p>
+                                    <p> <span class="th">网络：</span><span>区域优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点 + 回源节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">按量</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">定制亚马逊
+                                    <!-- <span class="on-trial">香港服务器</span> -->
+                                </p>
+                                <p class="product-introduce p-1">全球优化、智能路由Anycast，提供高级防护体系</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">域名：</span><span>定制</span></p>
+                                    <p> <span class="th">独立宽带：</span><span>流量计算</span></p>
+                                    <p> <span class="th">网络：</span><span>全球优化</span></p>
+                                    <p> <span class="th">SSL：</span><span>支持</span></p>
+                                    <p> <span class="th">Websocket：</span><span>支持</span></p>
+                                    <p> <span class="th">CC防御：</span><span>支持</span></p>
+                                    <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
+                                    <p> <span class="th">节点类型：</span><span>边缘节点 + 回源节点</span></p>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">按量</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="https://t.me/nodem_bot?start=start" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="" data-item="4">
+                    <div class="content-data">
+                        <div class="data-bottom">
+                        <ul class="product-list pc-show">
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">基础版<span class="on-trial">高防SDK盾</span></p>
+                                <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">防护目标数：</span><span>3个 </span></p>
+
+                                    <p> <span class="th">带宽峰值：</span><span>20M </span></p>
+
+                                    <p> <span class="th">日活：</span><span>2000 </span></p>
+
+                                    <p> <span class="th">DDoS防御：</span><span>无上限 </span></p>
+
+                                    <p> <span class="th">CC攻击防御：</span><span>免疫 </span></p>
+
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">了解更多</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">入门版<span class="on-trial">高防SDK盾</span></p>
+                                <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">防护目标数：</span><span>10个 </span></p>
+
+                                    <p> <span class="th">带宽峰值：</span><span>50M </span></p>
+
+                                    <p> <span class="th">日活：</span><span>8000 </span></p>
+
+                                    <p> <span class="th">DDoS防御：</span><span>无限防御 </span></p>
+
+                                    <p> <span class="th">CC攻击防御：</span><span>无限防御 </span></p>
+
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">1999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">了解更多</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">高级版<span class="on-trial">高防SDK盾</span></p>
+                                <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">防护目标数：</span><span>5个 </span></p>
+
+                                    <p> <span class="th">带宽峰值：</span><span>50M </span></p>
+
+                                    <p> <span class="th">日活：</span><span>20000 </span></p>
+
+                                    <p> <span class="th">DDoS防御：</span><span>无上限 </span></p>
+
+                                    <p> <span class="th">CC攻击防御：</span><span>免疫 </span></p>
+
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">4999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">了解更多</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <a href="javascript:;" class="zixun_btn" rel="nofollow">
+                                <p class="product-name">尊享版<span class="on-trial">高防SDK盾</span></p>
+                                <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                <div class="product-tag">
+                                    <p> <span class="th">防护目标数：</span><span>10个 </span></p>
+
+                                    <p> <span class="th">带宽峰值：</span><span>100M </span></p>
+
+                                    <p> <span class="th">日活：</span><span>40000 </span></p>
+
+                                    <p> <span class="th">DDoS防御：</span><span>无上限 </span></p>
+
+                                    <p> <span class="th">CC攻击防御：</span><span>免疫 </span></p>
+
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">8999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">了解更多</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+
+                        </ul>
+                        <ul class="m-product-list m-show">
+                            <li class="product-set">
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">基础版</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：3个</span>
+                                    <span>带宽峰值：20M</span>
+                                    <span>日活：2000</span>
+                                    <span>DDoS防御：无上限</span>
+                                    <span>CC攻击防御：免疫</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">入门版</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：10个</span>
+                                    <span>带宽峰值：50M</span>
+                                    <span>日活：8000</span>
+                                    <span>DDoS防御：无限防御</span>
+                                    <span>CC攻击防御：无限防御</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">1999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+
+                            </li>
+
+                            <li class="product-set">
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">高级版</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：5个</span>
+                                    <span>带宽峰值：50M</span>
+                                    <span>日活：20000</span>
+                                    <span>DDoS防御：无上限</span>
+                                    <span>CC攻击防御：免疫</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">4999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">尊享版</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：10个</span>
+                                    <span>带宽峰值：100M</span>
+                                    <span>日活：40000</span>
+                                    <span>DDoS防御：无上限</span>
+                                    <span>CC攻击防御：免疫</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">8999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-set">
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">至尊版</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：20个</span>
+                                    <span>带宽峰值：100M</span>
+                                    <span>日活：99999</span>
+                                    <span>DDoS防御：无上限</span>
+                                    <span>CC攻击防御：免疫</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">15999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="tag">高防SDK盾</div>
+                                <a href="javascript:;" class="zixun_btn">
+                                <div class="m-product-left">
+                                    <p class="product-name">至尊商务</p>
+                                    <p class="product-introduce p-1">为您提供优质且高性价比的网络安全防护</p>
+                                    <div class="product-tag">
+                                    <span>防护目标数：50个</span>
+                                    <span>带宽峰值：500M</span>
+                                    <span>日活：999999</span>
+                                    <span>DDoS防御：无上限</span>
+                                    <span>CC攻击防御：免疫</span>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="product-price">
+                                <div class="price-box">
+                                    <span class="price-icon">$</span>
+                                    <span class="price">19999</span>
+                                    <span class="term">/月</span>
+                                </div>
+                                <div class="ask-btn">
+                                    <a href="javascript:;" class="zixun_btn">立即咨询</a>
+                                </div>
+                                </div>
+                            </div>
+                            </li>
+
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
             </div>
         </div>
         <!-- <div class="section section-a3" id="section-a3">
@@ -1041,249 +1408,6 @@
 <script src="static/js/jwmeyy.js"></script>
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
-<script>
-    // 除了首页显示友情链接 其它页面不显示
-    location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
-    // 图片预览
-    $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
-        $(this).css('color', '#2981ff');
-        var img_url = $(this).data('pop-qrcode');
-        var txt = $(this).text();
-        var html = '<div class="mask" onclick="hidePop(this)"><div class="pop-honour-img"><img class="pop-img" style="width:216px;height:216px;box-sizing:border-box;padding: 16px;background: #fff;" src="' + img_url + '"/><p style="text-align:center;color:#fff;font-size:13px;margin-top:10px;">' + txt + '</p></div></div>'
-        $('body').append(html)
-    });
-    // 关闭预览
-    function hidePop(obj) {
-        $(obj).remove();
-        $('[data-pop-qrcode]').css('color', '#cecece')
-    }
-
-    function IsPC() {
-        var userAgentInfo = navigator.userAgent;
-        var Agents = ["Android", "iPhone",
-            "SymbianOS", "Windows Phone",
-            "iPad", "iPod"];
-        var flag = true;
-        for (var v = 0; v < Agents.length; v++) {
-            if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                flag = false;
-                break;
-            }
-        }
-        return flag;
-    }
-
-    var flag = IsPC(); //true为PC端，false为手机端
-    //ajax获取qq
-    // $('#ajax_qq_item').hover(function () {
-    $.ajax({
-        url: "/index/ajax_qq.html",
-        datatype: "json",
-        type: "post",
-        data: {
-        },
-        success: function (res) {
-            res = JSON.parse(res);
-            var string = '';
-            // 售前销售
-            $.each(res[0], function (i, v) {
-                i++;
-                if (v.isline == 1) {
-                    var online = '#4990f7'
-                } else {
-                    var online = '#bababc'
-                }
-                string +=
-                    '<li>\n' +
-                    '    <a href=' + v.url + ' target="_blank" data-agl-cvt="32"' +
-                    '        onclick="clickQQ(' + v.qq + ',' + v.xsid + ',' + '\'' + v.name + '\'' + ',' + v.admin_team + ',' + i + ');" rel="external nofollow">\n' +
-                    '        <i class="iconfont icon-wechat"></i>' +
-                    '        <i class="iconfont icon-qq" style="color:' + online + ';"></i>' +
-                    '        <span class="p-1">' + v.name + '</span>' +
-                    '    </a>\n' +
-                    '    <div class="kf-wx">\n' +
-                    '        <div class="kf-wx-info">' +
-                    '            <b class="p-1" title="添加' + v.name + '微信">添加' + v.name + '微信</b>' +
-                    '        </div>' +
-                    '        <div class="kf-wx-qrcode">' +
-                    '            <img src="' + v.root_path + '"/>' +
-                    '            <div class="wechat_text">' + res[1] + '</div>' +
-                    '        </div>' +
-                    '    </div>' +
-                    '</li>'
-                // console.log(string);
-            })
-            string += '';
-            $('#ajax_qq').html(string);
-            $('#ajax_qq_kf').html(string);
-
-            // 财务续费/备案专员
-            var string2 = '';
-            var string2_cw = '';
-            $.each(res[2], function (i, v) {
-                // 需求调整，改为常亮
-                var online_color = '#4990f7'
-                var online = 'online'
-                // 原逻辑保留
-                // if (v.isline == 1) {
-                //     var online = 'online'
-                //     var online_color = '#4990f7'
-                // } else {
-                //     var online = 'offline'
-                //     var online_color = '#bababc'
-                // }
-                string2 +=
-                    '<li>\n' +
-                    '   <a href="' + v.url + '" target="_blank" rel="external nofollow">\n' +
-                    '      <i class=' + online + '></i>\n' +
-                    '      <span>' + v.name + '</span>\n' +
-                    '   </a>\n' +
-                    '</li>';
-                string2_cw +=
-                    '<li>\n' +
-                    '   <a href="' + v.url + '" target="_blank" rel="external nofollow">\n' +
-                    '      <i class="iconfont icon-qq" style="color:' + online_color + ';"></i>\n' +
-                    '      <span class="p-1">' + v.name + '</span>\n' +
-                    '   </a>\n' +
-                    '</li>';
-            })
-            string2 += '';
-            $('#ajax_qq_cw').html(string2)
-            $('.ajax_qq_cw_div').html(string2_cw)
-
-            // 售后
-            var string3 = '';
-            $.each(res[3], function (i, v) {
-                // 需求调整，改为常亮
-                var online_color = '#4990f7'
-                // 原逻辑保留
-                // if (v.isline == 1) {
-                //     var online_color = '#4990f7'
-                // } else {
-                //     var online_color = '#bababc'
-                // }
-                string3 +=
-                    '<li>\n' +
-                    '   <a href="' + v.url + '" target="_blank" rel="external nofollow">\n' +
-                    '      <i class="iconfont icon-qq" style="color:' + online_color + ';"></i>\n' +
-                    '      <span class="p-1">' + v.name + '</span>\n' +
-                    '   </a>\n' +
-                    '</li>';
-            })
-            $('.ajax_qq_sh_div').html(string3)
-
-            // 售后
-            var string4 = '';
-            $.each(res[4], function (i, v) {
-                // 需求调整，改为常亮
-                var online_color = '#4990f7'
-                // 原逻辑保留
-                // if (v.isline == 1) {
-                //     var online_color = '#4990f7'
-                // } else {
-                //     var online_color = '#bababc'
-                // }
-                string4 +=
-                    '<li>\n' +
-                    '   <a href="' + v.url + '" target="_blank" rel="external nofollow">\n' +
-                    '      <i class="iconfont icon-qq" style="color:' + online_color + ';"></i>\n' +
-                    '      <span class="p-1">' + v.name + '</span>\n' +
-                    '   </a>\n' +
-                    '</li>';
-            })
-            $('.ajax_qq_xc_div').html(string4)
-        }
-    })
-    // })
-
-
-    $(window).scroll(function () {
-        if ($(document).scrollTop() < 600) {
-            $('#toTop').fadeOut()
-        } else {
-            $('#toTop').fadeIn()
-        }
-    })
-
-    $('#toTop').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        })
-    })
-    // 企业宣传片效果
-    function XuanChuanSvgAnimate() {
-        var animateIndex = 1;
-        setInterval(function () {
-            if (animateIndex > 8) {
-                animateIndex = 1;
-                $(".fix-wrap>ul .xuanchuan-wrap path").slice(1).attr("class", "cls-xuanchuan")
-                return;
-            }
-            $(".fix-wrap>ul .xuanchuan-wrap path").eq(animateIndex).attr("class", "cls-xuanchuan show")
-            animateIndex++;
-        }, 200);
-    }
-    XuanChuanSvgAnimate();
-
-    function random(n, m) {
-        var random = Math.floor(Math.random() * (m - n + 1) + n);
-        return random;
-    }
-
-    function IsPC() {
-        var userAgentInfo = navigator.userAgent;
-        var Agents = ["Android", "iPhone",
-            "SymbianOS", "Windows Phone",
-            "iPad", "iPod"];
-        var flag = true;
-        for (var v = 0; v < Agents.length; v++) {
-            if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                flag = false;
-                break;
-            }
-        }
-        return flag;
-    }
-
-
-
-    $(function () {
-        var strCookie = document.cookie.replace(/(?:(?:^|.*;\s*)cloud_first_click_url\s*\=\s*([^;]*).*$)|^.*$/, '$1');
-        if (strCookie) {
-            $("a[href*='kuaikuaicloud']").each(function (i) {
-                var href = $(this).attr("href");
-                $(this).attr("href", href + '?first_visit_url=' + strCookie);
-            });
-        }
-    })
-
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() < 40 && $('banner').length) {
-            $('.header').css('background-color', 'transparent')
-        }
-    })
-    // $(window).ready(function(){
-    //     location.pathname.indexOf('monthly/index.html') > -1 && $('.monthly-icon').fadeOut()
-    // })
-
-
-    if ($(window).width() >= 1024) {
-        $(".monthly-evaluate").hover(function () {
-            $(".float-config-star").show()
-        })
-    }
-    if ('' !== '') {
-        $(".login-btn-box").hide()
-        $('.star-box').show()
-        $('.m-evaluate-submit').show()
-    } else {
-        $('.star-box').hide()
-        $('.m-evaluate-submit').hide()
-        $(".login-btn-box").show()
-    }
-
-
-</script>
 <!---->
 <!--&lt;!&ndash; WPA start &ndash;&gt;-->
 <!--<script id="qd288570879852be1bfb89b042086bc1bf47c868e832" src="https://wp.qiye.qq.com/qidian/2885708798/52be1bfb89b042086bc1bf47c868e832" charset="utf-8" async defer></script>-->
@@ -1338,6 +1462,7 @@
 </script>
 
 <script>
+    
     // 判断是否为手机端
     var ____is_mobile = ''
     ____is_mobile = ____is_mobile !== false

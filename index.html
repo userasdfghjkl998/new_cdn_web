@@ -65,55 +65,6 @@
     <div class="nav" id="menu-item"></div>
   </div>
   <div id="page_top"></div>
-  <script>
-    (async function () {
-      const canvas = document.getElementById('bmp');
-      if (canvas) {
-        // 实例化 PAG
-        const PAG = await window.libpag.PAGInit();
-        // 获取 PAG 素材数据
-        const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-        // 加载 PAG 素材为 PAGFile 对象
-        const pagFile = await PAG.PAGFile.load(buffer);
-        // 将画布尺寸设置为 PAGFile的尺寸
-        canvas.width = pagFile.width();
-        canvas.height = pagFile.height();
-        if ($(window).width() < 1024) {
-          canvas.style.display = 'none'
-        }
-        // 实例化 PAGView 对象
-        const pagView = await PAG.PAGView.init(pagFile, canvas);
-        // 播放 PAGView
-        pagView.setRepeatCount(0);
-        await pagView.play();
-      }
-    })()
-
-    $(document).ready(function () {
-      // 判断banner PC/移动版
-      $('#banner .swiper-slide video.pc-date').each(function () {
-        if (window.innerWidth < 1024) {
-          $(this).attr('src', '');
-        }
-      })
-      $('#banner .swiper-slide video.pc-data').each(function () {
-        if (window.innerWidth < 1024) {
-          $(this).attr('src', '');
-        }
-      })
-    })
-
-    if (window.innerWidth < 1024) {
-      // 处理导航栏父节点点击不跳转
-      $('#menu-item ul li').each(function () {
-        if ($(this).data('value') == 'jump_children') {
-          $(this).find('.jump_children_parent').attr('href', 'javascript:;')
-        }
-      })
-      // 处理首页搜索栏
-      $('.search-icon').addClass('pc-show');
-    }
-  </script>
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/mobile1.css" media="screen and (max-width:1023px)">
   <style>
@@ -290,8 +241,7 @@
                             <p> <span class="th">CC防御：</span><span>支持</span></p>
                             <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
                             <p> <span class="th">节点类型：</span><span>边缘节点+回源节点</span></p>
-                            <p> <span class="th">测试域名：</span><span>google.feiduncdn.com</span>
-                            </p>
+                            <p> <span class="th">测试域名：</span><span>google.feiduncdn.com</span></p>
                           </div>
                         </a>
                         <div class="product-price">
@@ -322,8 +272,7 @@
                             <p> <span class="th">CC防御：</span><span>支持</span></p>
                             <p> <span class="th">DDOS防御：</span><span>官方支持</span></p>
                             <p> <span class="th">节点类型：</span><span>边缘节点+回源节点</span></p>
-                            <p> <span class="th">测试域名：</span><span>aws.feiduncdn.com</span>
-                            </p>
+                            <p> <span class="th">测试域名：</span><span>aws.feiduncdn.com</span></p>
                           </div>
                         </a>
                         <div class="product-price">
