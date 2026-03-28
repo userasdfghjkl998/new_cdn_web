@@ -89,11 +89,11 @@
 					
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a" href="https://t.me/duotu7x24">销售客服TG：:@duotu7x24</a></div>
+							<div class=""><a class="tel-a" href="https://t.me/nodem_bot?start=start">销售客服TG：:@nodem_bot?start=start</a></div>
 						</li>
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a" href="https://t.me/duotu7">销售客服TG：:@duotu7</a></div>
+							<div class=""><a class="tel-a" href="https://t.me/feiduncdn">销售客服TG：:@feiduncdn</a></div>
 						</li>
 						<li>
 							<i></i>
