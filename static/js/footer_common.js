@@ -83,13 +83,13 @@
 						</li>
 						<li>
 							<i></i>
-							<div class=""> <a class="tel-a" href="mailto:duotu888@gmail.com">电子邮箱：duotu888@gmail.com</a></div>
+							<div class=""> <a class="tel-a" href="mailto:feiduncdn@outlook.com">电子邮箱：feiduncdn@outlook.com</a></div>
  
 						</li>
 					
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a" href="https://t.me/nodem_bot?start=start">销售客服TG：:@nodem_bot?start=start</a></div>
+							<div class=""><a class="tel-a" href="https://t.me/nodem_bot?start=start">销售客服TG：@nodem_bot?start=start</a></div>
 						</li>
 						<li>
 							<i></i>

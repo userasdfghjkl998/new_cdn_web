@@ -4,7 +4,7 @@
     { title: '首页',   href: 'index.html',          label: '首页' },
     { title: 'CDN加速',    href: 'cdn.html',           label: 'CDN加速' },
     { title: '服务器', href: 'server.html',            label: '服务器' },
-    { title: '云账号', href: 'server.html',       label: '云账号' },
+    { title: '云账号', href: 'cloud.html',       label: '云账号' },
     { title: '聊天系统', href: 'chat.html',          label: '聊天系统' },
     { title: '帮助文档', href: 'help.html',          label: '帮助文档' },
     { title: '联系我们', href: 'lianxiwomen986.html', label: '联系我们' }
