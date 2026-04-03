@@ -29,9 +29,6 @@
 						<dl>
 							<dt data-toggle>产品服务</dt>
 							<dd>
-								<a href="gfsdk.html" target="_blank">高防SDK盾</a>
-							</dd>
-							<dd>
 								<a href="cdn.html">高防SCDN</a>
 							</dd>
 							<dd>
@@ -40,13 +37,10 @@
 						</dl>
 						<dl>
 							<dt data-toggle>帮助文档</dt>
-														<dd>
-								<a href='sdk.html'>SDK盾接入文档</a>
-							</dd>
-														<dd>
+							<dd>
 								<a href='sdkarticle.html'>CDN加速接入文档 </a>
 							</dd>
-														<dd>
+							<dd>
 								<a href='news.html'>CDN行业新闻</a>
 							</dd>
 							
@@ -64,13 +58,10 @@
 						<dl>
 							<dt data-toggle>登录注册</dt>
 							<dd>
-								<a href="login.html" target="_blank">用户登录</a>
+								<a href="https://user.feiduncdn.com/dashboard/login" target="_blank">用户登录</a>
 							</dd>
 							<dd>
-								<a href="login.html" target="_blank">用户注册</a>
-							</dd>
-							<dd>
-								<a href="login.html" target="_blank">控制台</a>
+								<a href="https://user.feiduncdn.com/dashboard/register" target="_blank">用户注册</a>
 							</dd>
 						</dl>
 					</div>
@@ -79,21 +70,21 @@
 					<ul>
 						<li class="custom">
 							<i></i>
-							<div><a class="tel-a" href="tel:">客服电话：</a></div>
+							<div>联系客服：</div>
 						</li>
 						<li>
 							<i></i>
-							<div class=""> <a class="tel-a" href="mailto:feiduncdn@outlook.com">电子邮箱：feiduncdn@outlook.com</a></div>
+							<div class=""> <a class="tel-a" href="mailto:feiduncdn@outlook.com"  target="_blank">电子邮箱：feiduncdn@outlook.com</a></div>
  
 						</li>
 					
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a" href="https://t.me/nodem_bot?start=start">销售客服TG：@nodem_bot?start=start</a></div>
+							<div class=""><a class="tel-a" href="https://t.me/nodem_bot?start=start" target="_blank">销售客服TG①</a></div>
 						</li>
 						<li>
 							<i></i>
-							<div class=""><a class="tel-a" href="https://t.me/feiduncdn">销售客服TG：:@feiduncdn</a></div>
+							<div class=""><a class="tel-a" href="https://t.me/feiduncdn"  target="_blank">销售客服TG②</a></div>
 						</li>
 						<li>
 							<i></i>

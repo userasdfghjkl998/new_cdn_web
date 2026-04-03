@@ -53,8 +53,9 @@
       + '<ul id="ajax_token">'
       + '<li id="ajax_token_new" style="display: none"></li>'
       + '<li class="ajax_token_login"><a class="mobile-hide" href="https://user.feiduncdn.com/dashboard/login" target="_blank">登录</a></li>'
-      + '<li class="li-register-pc ajax_token_login" id="inviteRoute"><a class="btn btn-register mobile-hide" href="https://user.feiduncdn.com/dashboard/register" target="_blank">立即注册</a></li>'
-      + '<li class="li-mobile"><a class="link-person iconfont" href="login.html">&#xe679;</a></li>'
+      + '<li class="ajax_token_login"><a class="mobile-hide" href="https://user.feiduncdn.com/dashboard/register" target="_blank">注册</a></li>'
+      + '<li class="li-register-pc ajax_token_login" id="inviteRoute"><a class="btn btn-register mobile-hide" href="https://user.feiduncdn.com/dashboard/register" target="_blank">免费试用</a></li>'
+      + '<li class="li-mobile"><a class="link-person iconfont"  target="_blank" href="https://user.feiduncdn.com/dashboard/register">&#xe679;</a></li>'
       + '<li class="li-mobile"><a href="javascript:;" id="menu-btn"><i></i><i></i><i></i></a></li>'
       + '</ul>'
       + '</div>';
