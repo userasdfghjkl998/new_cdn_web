@@ -40,7 +40,7 @@
       + '<a class="logo fl" bi_name="logo" href="' + logoHref + '" style="font-size:0">'
       + '飞盾 高防服务器租用,云堤清洗,安全领域专业提供商'
       + '<img class="pc-show" src="static/picture/feidun_logo.png" alt="飞盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
-      + '<img class="m-show" src="static/picture/new-dt-logo.png" alt="飞盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
+      + '<img class="m-show" src="static/picture/new-fd-logo.png" alt="飞盾 高防服务器租用,云堤清洗,安全领域专业提供商">'
       + '</a>'
       + '</h1>'
       + '<!-- 导航链接和展开项 - 新 -->'
