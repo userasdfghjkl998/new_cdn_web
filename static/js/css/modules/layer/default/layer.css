@@ -1,0 +1,17 @@
+/* Minimal fallback to prevent 404 for layer skin */
+.layui-layer {
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.layui-layer-title {
+  padding: 0 16px;
+  height: 42px;
+  line-height: 42px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.layui-layer-content {
+  padding: 16px;
+}

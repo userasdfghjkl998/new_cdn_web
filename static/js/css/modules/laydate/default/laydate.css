@@ -1,0 +1,15 @@
+/* Minimal fallback to prevent 404 for laydate skin */
+.layui-laydate {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+
+.layui-laydate-header {
+  border-bottom: 1px solid #eee;
+}
+
+.layui-laydate-content td.layui-this {
+  background-color: #1e9fff;
+  color: #fff;
+}

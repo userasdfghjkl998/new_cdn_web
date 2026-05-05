@@ -1,0 +1,89 @@
+/**
+ * 服务器页、云账号页等单页横幅：移动端显示视频 + 文案不叠在装饰图上
+ * 横幅 #banner 请加 class="page-hero-banner"，video 使用 class="page-hero-video"（勿用 .pc-data）
+ */
+@media screen and (max-width: 1023px) {
+  #banner.page-hero-banner.banner-single,
+  #banner.page-hero-banner.banner.h434 {
+    height: auto;
+    min-height: 300px;
+  }
+
+  #banner.page-hero-banner .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #banner.page-hero-banner .swiper-slide video.page-hero-video {
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    width: 100%;
+    height: auto !important;
+    max-height: 46vh;
+    min-height: 168px;
+    object-fit: cover;
+    flex: 0 0 auto;
+    mix-blend-mode: normal;
+    z-index: 1;
+  }
+
+  #banner.page-hero-banner .swiper-slide > a {
+    z-index: 2;
+  }
+
+  #banner.page-hero-banner .banner-ani {
+    position: relative !important;
+    width: 100% !important;
+    flex: 0 0 auto;
+    background-image: none !important;
+    background-color: #f4f6fa;
+    align-items: center;
+    padding: 12px 12px 16px;
+    box-sizing: border-box;
+  }
+
+  #banner.page-hero-banner .banner-info {
+    position: relative !important;
+    top: auto !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 12px 12px 14px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(244, 246, 250, 0.98));
+    border-radius: 8px;
+  }
+
+  #banner.page-hero-banner .banner-info h2,
+  #banner.page-hero-banner .banner-header h2 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 0 0 8px;
+  }
+
+  #banner.page-hero-banner .banner-info > p {
+    max-height: none;
+    overflow: visible;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+
+  #banner.page-hero-banner .banner-info .n-btn-default {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #banner.page-hero-banner .banner-info > a.n-btn-default,
+  #banner.page-hero-banner .price-banner-box a.n-btn-default {
+    display: inline-block !important;
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>飞盾CDN：CDN加速媒体存储资源概述_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="CDN加速飞盾CDNCDN加速，是基于飞盾CDN云遍布全球的网络节点提供的内容分发加速服务。通过将网站、视频和应用等文件内容分发至用户附近的节点，解决因跨运营商访问、跨地域">
+	<title>CDN加速媒体存储资源概述_飞盾CDN</title>
+	<meta name="keywords" content="媒体加速,CDN缓存,回源优化,对象存储,飞盾CDN">
+	<meta name="description" content="媒体与对象存储经 CDN 分发的缓存键、Range、CORS 与成本要点。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="CDN加速媒体存储资源概述_飞盾CDN">
+	<meta property="og:description" content="媒体与对象存储经 CDN 分发的缓存键、Range、CORS 与成本要点。">
+	<meta property="og:url" content="https://feiduncdn.com/194.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="CDN加速媒体存储资源概述_飞盾CDN">
+	<meta name="twitter:description" content="媒体与对象存储经 CDN 分发的缓存键、Range、CORS 与成本要点。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"CDN加速媒体存储资源概述","description":"媒体与对象存储经 CDN 分发的缓存键、Range、CORS 与成本要点。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/194.html"},"url":"https://feiduncdn.com/194.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/194.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                     <div class="m">
                         <ul class="sm-around menu-tab">
 							                            <li class="bz on" data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdkarticle.html">
-                        <span>CDN加速接入文档  &gt;</span>
-                    </a>
-                    <span class="tag-title">飞盾CDN：CDN加速媒体存储资源概述</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">CDN加速媒体存储资源概述</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>飞盾CDN：CDN加速媒体存储资源概述</h1>
-                        <span class="data-time">本内容发表于：2025-04-02 11:44:16</span>
+                        <h1>CDN加速媒体存储资源概述</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<h1 id="section-47492e429167e9d1" style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 16px 0px; padding: 0px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); line-height: 1.5 !important; font-size: 20px !important;"><strong style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 0px; padding: 0px;">CDN加速</strong></h1><p style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin-top: 8px; margin-bottom: 8px; padding: 0px; font-size: 14px; line-height: 24px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">飞盾CDNCDN加速，是基于飞盾CDN云遍布全球的网络节点提供的内容分发加速服务。通过将网站、视频和应用等文件内容分发至用户附近的节点，解决因跨运营商访问、跨地域访问、服务器带宽及性能瓶颈带来的访问延迟问题，使用户可以快速和安全地获取所需内容。</p><h1 id="section-978dd952a59070fe" style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 24px 0px 16px; padding: 0px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); line-height: 1.5 !important; font-size: 20px !important;"><strong style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 0px; padding: 0px;">媒体存储</strong></h1><p style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin-top: 8px; margin-bottom: 8px; padding: 0px; font-size: 14px; line-height: 24px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; font-size: 14px; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">飞盾CDN</span>云媒体存储是<span style="color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; font-size: 14px; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">飞盾CDN</span>云为客户提供的云存储产品，采用分布式存储技术构建，满足海量视频、图片及其它非结构化数据存取、处理及弹性扩展要求；支持块、文件及对象等标准协议接口，对于门户网站、视频网站等，通过对象存储提供的网站托管功能，将整个网站托管在对象存储中，可直接向用户提供网站访问服务，帮助用户节省资本投入及人工维护成本。同时，通过对象存储的高并发支持能力，帮助用户更好地解决网站频繁访问时的页面崩溃问题。</p><h1 id="section-744a1f25efb89a01" style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 24px 0px 16px; padding: 0px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); line-height: 1.5 !important; font-size: 20px !important;"><strong style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 0px; padding: 0px;">加速分发实践</strong></h1><p style="-webkit-tap-highlight-color: transparent; box-sizing: border-box; margin-top: 8px; margin-bottom: 8px; padding: 0px; font-size: 14px; line-height: 24px; color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; font-size: 14px; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">飞盾CDN</span>云CDN可为媒体存储上存储的静态资源（包括静态脚本、图片、音频、视频等文件）进行全国加速分发。利用<span style="color: rgb(37, 43, 58); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif; font-size: 14px; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">飞盾CDN</span>云CDN全国加速节点和全国负载均衡调度的能力，可以将热点资源提前下发至边缘节点，当终端用户发出资源访问/下载请求的时候，可就近获取所需要的资源。降低了源站压力，减少了传输延迟，显著提升用户体验。</p><p><img src="static/picture/1-250402114532915.png" title="" alt="image.png"></p>					</div>
+                    <div class="content-item-detail" deep="5"><p>媒体与对象存储结合 CDN 时，核心是<strong>降低回源带宽、缩短首帧/首包，并保证大文件完整性</strong>。</p><p class="art-h"><strong>一、缓存与键设计</strong></p><p>对带<strong>签名参数</strong>的 URL 需明确哪些 Query 参与缓存键；避免「一用户一签导致零命中」。可对公共资源使用<strong>较长 TTL + 版本号路径</strong>。</p><p class="art-h"><strong>二、Range 与分片</strong></p><p>支持 <strong>Range</strong> 回源与分段缓存，利于拖拽播放与断点续传；需校验源站对 Range 的实现一致性。</p><p class="art-h"><strong>三、跨域与 CORS</strong></p><p>浏览器播放与 Web 前端拉流需正确配置 <strong>CORS</strong> 与缓存头，避免「能播但不能缓存」或相反。</p><p class="art-h"><strong>四、成本</strong></p><p>同时看<strong>CDN 出网、回源出网与存储读请求</strong>三类账单，优化热点目录与生命周期策略。具体计费以飞盾规则为准。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -509,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -555,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -683,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

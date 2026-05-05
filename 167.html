@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>什么是DDOS攻击？_飞盾CDN</title>
-	<meta name="keywords" content="操作系统,网络优化">
-	<meta name="description" content="DDoS高防”通常指的是针对DDoS（分布式拒绝服务）攻击的高等级防护服务。这类服务利用多种技术手段和资源来检测、识别和抵御DDoS攻击，确保网络和应用的安全与">
-    <link rel="stylesheet" href="static/css/animate.css">
+	<title>什么是DDoS攻击_飞盾CDN</title>
+	<meta name="keywords" content="DDoS攻击,网络安全,高防,流量攻击,飞盾CDN">
+	<meta name="description" content="介绍 DDoS 概念、流量型/协议型/应用层攻击差异，以及清洗、高防 CDN 与源站协同的企业防护思路。">
+  
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="什么是DDoS攻击_飞盾CDN">
+	<meta property="og:description" content="介绍 DDoS 概念、流量型/协议型/应用层攻击差异，以及清洗、高防 CDN 与源站协同的企业防护思路。">
+	<meta property="og:url" content="https://feiduncdn.com/167.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="什么是DDoS攻击_飞盾CDN">
+	<meta name="twitter:description" content="介绍 DDoS 概念、流量型/协议型/应用层攻击差异，以及清洗、高防 CDN 与源站协同的企业防护思路。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"什么是DDoS攻击","description":"介绍 DDoS 常见类型及与高防 CDN、清洗协同的防护思路。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/167.html"},"url":"https://feiduncdn.com/167.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/167.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -40,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -85,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -99,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -180,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -195,8 +213,8 @@
                 <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
                     <div class="m">
                         <ul class="sm-around menu-tab">
-							                            <li class="bz " data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+							                            <li class="bz on" data-nav="a1">
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -208,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdk.html">
-                        <span>技术文档 &gt;</span>
-                    </a>
-                    <span class="tag-title">什么是DDOS攻击？</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">什么是DDoS攻击</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>什么是DDOS攻击？</h1>
-                        <span class="data-time">本内容发表于：2025-02-17 21:57:07</span>
+                        <h1>什么是DDoS攻击</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p class="color-grey-900 font-lg-bold mb-25" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; color: rgb(61, 86, 95); font-family: var(--primary-font); font-weight: 700; line-height: 24px;"><span style="font-size: 20px;">DDoS高防”通常指的是针对DDoS（分布式拒绝服务）攻击的高等级防护服务。这类服务利用多种技术手段和资源来检测、识别和抵御DDoS攻击，确保网络和应用的安全与可用性！</span></p><div class="ck-content font-md color-grey-500" style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; color: rgb(61, 86, 95); font-family: var(--primary-font) !important; line-height: 24px !important;"><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><img src="static/picture/1-25021H1593T48.png" alt="AACC255FASDF23RC" loading="lazy" style="box-sizing: border-box; vertical-align: baseline; border: 0px; margin: 0px; padding: 0px; max-width: 100%; transition: 0.3s;"></p><h3 class="page_speed_773530922" style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 44px; font-size: 32px; border: 0px; padding: 0px; vertical-align: baseline; color: var(--primary-color); font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;">什么是DDOS攻击？</span></h3><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-size: 20px;">DDOS是Distributed Denial of Service的缩写，分布式拒绝服务，解发DDOS攻击的过程是这样，有人在互联网上控制了大量的电脑，在某一时刻对某服务器发起大量的访问请求，比如对网站进行访问，瞬间网站无法响应真实用户的访问了，服务器响应不过来了，即使有响应，也会变得异常缓慢，如果经常遇到的这样的情况，访问你网站的访客就会放弃，去访问其它的网站，这样就达到了发起攻击的这个人的目的。&nbsp;&nbsp;</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;">还有其它很多层面的攻击模式，有的自己弄个DDOS工具软件模拟很多电脑发起大规模访问请求,或者有其它的诉求，比如破解远程登录密码，登录后释放勒索病毒，给被攻击者造成巨大损失。</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><br style="box-sizing: border-box;"><img src="static/picture/1-25021H15944261.png" alt="1687449777819" width="1000" height="573" loading="lazy" class="image_resized page_speed_911812256" style="box-sizing: border-box; vertical-align: baseline; border: 0px; margin: 0px; padding: 0px; max-width: 100%; transition: 0.3s; width: 805.851px;"></p><h3 class="page_speed_773530922" style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 44px; font-size: 32px; border: 0px; padding: 0px; vertical-align: baseline; color: var(--primary-color); font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;">DDOS攻击的原理</span></h3><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">与其他网络攻击不同，DDoS 攻击不会利用网络资源的漏洞来入侵计算机系统。相反，它们使用标准的网络连接协议，如超文本传输协议（HTTP）和传输控制协议（TCP），向端点、应用程序或其他资源发送超出其处理能力的流量。网络服务器、路由器或其他网络基础设施在任何时间只能处理有限数量的请求和维持有限数量的连接。通过占用资源的可用带宽，DDoS 攻击会阻止这些资源响应合法的连接求和数据包。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">概括地说，</span><span class="page_speed_593661376" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 102, 0); transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; padding: 0px; vertical-align: baseline;">DDoS 攻击分为三个阶段</span><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">：<br></span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">第 1 阶段：选择目标</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">DDoS 攻击目标的选择源于攻击者的动机，而攻击者的动机可能多种多样。黑客利用 DDoS 攻击向组织勒索钱财，要求支付赎金才能结束攻击。另一些黑客则利用 DDoS 从事激进活动，攻击他们不认同的组织和机构。或者，不法分子利用 DDoS 攻击竞争企业，以使对方产生巨大经济损失流失客户。同时，一些国家在网络战中也常使用 DDoS 战术。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">最常见的 DDoS 攻击目标包括：</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">在线零售商：DDoS 攻击会导致零售商的数字商店瘫痪，使客户在一段时间内无法购物，从而对零售商造成重大经济损失；</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">云服务提供商：亚马逊网络服务（AWS）、微软 Azure 和谷歌云平台等云服务提供商是 DDoS 攻击的热门目标。由于这些服务托管着其他企业的数据和应用程序，黑客只需一次攻击就能造成大范围的中断。2020 年，AWS 遭到了大规模 DDoS 攻击，最高峰时，恶意流量达到每秒 2.3 太比特。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">金融机构：DDoS 攻击可导致银行服务脱机，使客户无法访问其账户。2012 年，美国六家主要银行遭到了协同的 DDoS 攻击，这可能是出于政治动机的行为。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">软件即服务（SaaS）提供商。与云服务提供商一样，Salesforce、GitHub 和甲骨文等 SaaS 提供商也是极具吸引力的目标，黑客基于提供商可以同时破坏多个组织。2018 年，GitHub 遭受了当时有记录以来最大的 DDoS 攻击。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;"><span style="font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">游戏公司</span>：DDoS 攻击会使网络游戏服务器流量激增，从而中断游戏。这些攻击通常是由心怀不满的玩家以个人恩怨为由发起的，最初针对 Minecraft 服务器构建的 Mirai 僵尸网络就是这种情况。<br></span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">第 2 阶段：创建（或租用或购买）僵尸网络</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">DDoS 攻击通常需要一个僵尸网络（一个由连接互联网设备组成的网络），这些设备感染了恶意软件，黑客可以远程控制这些设备。僵尸网络中的设备可包括笔记本电脑/台式电脑、手机、物联网设备以及其他消费或商业终端。这些被入侵设备的所有者通常并不知道它们已被感染或正被用于 DDoS 攻击。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">一些网络犯罪分子从零开始建立僵尸网络，另一些则购买或租用预先建立的僵尸网络，这种模式被称为 &quot;拒绝服务即服务（denial-of-service as a service）&quot;。</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">注：并非所有 DDoS 攻击都使用僵尸网络，有些攻击利用未感染设备的正常运行达到恶意目的，见下文 &quot;Smurf 攻击&quot;。<br></span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">第 3 阶段：发起攻击</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">黑客命令僵尸网络中的设备向目标服务器、设备或服务的 IP 地址发送连接请求或其他数据包。大多数 DDoS 攻击依靠暴力手段，发送大量请求以耗尽目标系统的所有带宽；有些 DDoS 攻击则发送数量较少但更复杂的请求，要求目标系统花费大量资源进行响应。无论哪种情况，结果都是一样的：通过攻击流量压倒目标系统，造成拒绝服务，阻止合法流量访问网站、网络应用程序、API 或网络.</span>&nbsp;&nbsp;</span>&nbsp;<br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">黑客经常通过 IP 欺骗来掩盖攻击来源，网络犯罪分子通过这种技术为从僵尸网络发送的数据包伪造源 IP 地址。在一种名为 &quot;反射（reflection） &quot;的 IP 欺骗中，黑客会让恶意流量看起来像是从受害者自己的 IP 地址发送的。</span>&nbsp;&nbsp;</span>&nbsp;</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><br style="box-sizing: border-box;"><img src="static/picture/1-25021H1594H36.png" alt="444FCFD56496Skkk" loading="lazy" style="box-sizing: border-box; vertical-align: baseline; border: 0px; margin: 0px; padding: 0px; max-width: 100%; transition: 0.3s;"><br style="box-sizing: border-box;"><span style="font-size: 20px;">&nbsp;</span></p><h3 class="page_speed_773530922" style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 44px; font-size: 32px; border: 0px; padding: 0px; vertical-align: baseline; color: var(--primary-color); font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;">什么是DDoS高防服务？</span></h3><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">DDoS高防服务是指专门设计用来预防、检测和应对分布式拒绝服务（DDoS）攻击的安全解决方案。DDoS攻击通过大量的虚假流量或请求来淹没目标系统，从而使其无法正常响应合法用户的请求。DDoS高防服务旨在确保网络和应用的可用性，保护企业的在线服务不受这些攻击的影响。</span>&nbsp;</span><br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">主要服务如下：</span>&nbsp;</span></span></p><figure class="table" style="box-sizing: border-box; margin: 0.9em auto; border-width: 0px; border-style: initial; border-color: var(--bs-table-border-color); border-image: initial; padding: 0px; vertical-align: top; display: table; --bs-table-color: var(--bs-body-color); --bs-table-bg: transparent; --bs-table-border-color: var(--bs-border-color); --bs-table-accent-bg: transparent; --bs-table-striped-color: var(--bs-body-color); --bs-table-striped-bg: rgba(0, 0, 0, 0.05); --bs-table-active-color: var(--bs-body-color); --bs-table-active-bg: rgba(0, 0, 0, 0.1); --bs-table-hover-color: var(--bs-body-color); --bs-table-hover-bg: rgba(0, 0, 0, 0.075); width: 900px; color: var(--bs-table-color); font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><table width="900" height="300"><tbody style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);" class="firstRow"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">AI智能检测</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">基于流量行为，AI实时监控分析，智能识别，同时最大限度减少误报。</span>&nbsp;</span></td></tr><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">加密保护</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">自动实时签名，随攻击动态适应特征，无需加密秘钥。&nbsp;</span>&nbsp;</span></td></tr><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">零日攻击防护</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">CDN5可以在20秒内检测出异常攻击特征，分析生成最佳形态，准确防御零日攻击和未知攻击。</span>&nbsp;</span></td></tr><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">灵活部署</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">提供</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">DDOS云防护</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">，硬件防护，及混合防护，支持SDK，API，DNS等多种部署方式，匹配APP，网站等客户用例。&nbsp;</span>&nbsp;</span></td></tr><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">全面托管</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">CDN5技术支持专家，全流程复杂接入和指导部署，提供全天候技术支持，确保沟通和业务流畅。&nbsp;</span>&nbsp;</span></td></tr><tr style="box-sizing: border-box; border-color: initial; border-style: initial; border-width: 0px 0px 1px; border-image: initial; margin: 0px; padding: 0.5rem; vertical-align: baseline; background-color: var(--bs-table-bg); box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);"><th style="box-sizing: border-box; text-align: -webkit-match-parent; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; background: rgba(0, 0, 0, 0.05);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-weight: 400;">多层防护</span>&nbsp;</span></th><td style="box-sizing: border-box; border-style: solid; border-color: gainsboro; margin: 0px; padding: 0.4em; vertical-align: baseline; overflow-wrap: break-word; position: relative; min-width: 2em; border-width: 1px;"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0); font-size: 20px;"><span class="page_speed_1247220369" style="color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">预设多层（网络层、传输层、会话层、应用层）防护，根据不同特征智能介入干预，确保服务保持运行及技术介入调整弹性。</span>&nbsp;</span></td></tr></tbody></table></figure><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><br style="box-sizing: border-box;"><span style="box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px;">DDoS高防服务的应用场景</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: bolder; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(230, 77, 77); font-size: 20px;">金融</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">金融行业因为涉及重要资产，常常是黑客攻击的首要目标，攻击可能导致客户无法访问或者交易，需要接入</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">高防CDN</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">确保交易可用及流程且保护用户数据和资产安全。&nbsp;</span></span></p><p class="page_speed_857580010" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; text-align: center; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(77, 77, 230);"><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">查看飞盾CDN</span><span class="page_speed_1247220369" style="transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; font-size: 20px; box-sizing: border-box; font-weight: bolder; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">解决方案</span></span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: bolder; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(77, 230, 77); font-size: 20px;">游戏</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(0, 0, 0);"><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">无论是娱乐游戏还是有资产交易的在线游戏，黑客的攻击会导致玩家无法正常游戏，导致用户流失，需要接入飞盾CDN</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">游戏盾</span><span class="page_speed_1247220369" style="font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;">来确保服务器的稳定，玩家体验顺畅。</span></span></p><p class="page_speed_857580010" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; text-align: center; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: bolder; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; color: rgb(77, 230, 77); font-size: 20px;">查看飞盾CDN游戏盾解决方案</span></p><h4 class="page_speed_1051396054" style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 34px; font-size: 12px; border: 0px; padding: 0px; vertical-align: baseline; color: var(--primary-color); font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica; transition: 0.3s; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-size: 20px;">你应该选择DDOS高防服务的4点理由</span></h4><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; border: 0px; padding: 0px; vertical-align: baseline; line-height: 24px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-size: 20px;"><span class="page_speed_1300971468" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;"><span style="font-size: 20px; padding: 0px; vertical-align: baseline;">1.保障服务稳定运行</span>：DDOS攻击会导致你的服务中断，用户流失，给企业造成无法弥补的损失，飞盾CDN的DDOS高防服务可以让你保持业务稳定运行，无惧DDOS和CC攻击。<br></span><br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;"><span style="font-size: 20px; padding: 0px; vertical-align: baseline;">2.提供品牌影响力</span>：如果你的服务经常中断，用户会质疑你企业的防护能力，从来导致客户不信任，通过接入DDOS高防服务可以让业务安全增加，加载速度提升，网络通信延迟降低，有助于增强用户信任。<br></span><br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;"><span style="font-size: 20px; padding: 0px; vertical-align: baseline;">3. 降低经济损失</span>：DDOS攻击会导致业务中断，直接或者间接导致经济损失，如提前部署防护，则可以完全避免这些损失，且省去被攻击后再接入的繁琐流程。<br>&nbsp;</span><br style="box-sizing: border-box;"><span class="page_speed_1300971468" style="box-sizing: border-box; border: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 20px; padding: 0px; vertical-align: baseline; transition: 0.3s; font-family: &quot;sans serif&quot;, tahoma, verdana, helvetica;"><span style="font-size: 20px; padding: 0px; vertical-align: baseline;">4. 支持业务增长</span>：随着用户的增加，在线流量也会增加，CDN不仅增强安全还能加速内容分发，降低企业宽带成本，促进业务持续增长。&nbsp;</span></span></p><section class="section pt-40 pb-40" style="box-sizing: border-box; border: 0px; margin: 0px; padding-right: 0px; padding-left: 0px; vertical-align: baseline; display: inline-block; width: 900px; font-family: Manrope, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); padding-top: 40px !important; padding-bottom: 40px !important;"><div class="container" style="box-sizing: border-box; border: 0px; margin: 0px auto; padding-top: 0px; padding-right: calc(var(--bs-gutter-x) * .5); padding-bottom: 0px; padding-left: calc(var(--bs-gutter-x) * .5); vertical-align: baseline; --bs-gutter-x: 1.5rem; --bs-gutter-y: 0; width: 900px; max-width: 1410px;"><div class="row align-items-center" style="box-sizing: border-box; border: 0px; margin-top: calc(-1 * var(--bs-gutter-y)); margin-right: calc(-.5 * var(--bs-gutter-x)); margin-bottom: 0px; margin-left: calc(-.5 * var(--bs-gutter-x)); padding: 0px; vertical-align: baseline; --bs-gutter-x: 1.5rem; --bs-gutter-y: 0; display: flex; flex-wrap: wrap; align-items: center !important;"><div class="col-lg-12 text-center" style="box-sizing: border-box; border: 0px; margin-top: var(--bs-gutter-y); margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: calc(var(--bs-gutter-x) * .5); padding-bottom: 0px; padding-left: calc(var(--bs-gutter-x) * .5); vertical-align: baseline; flex: 0 0 auto; width: 900px; max-width: 100%; text-align: center !important;"></div></div></div></section></div><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p><strong>DDoS（Distributed Denial of Service）</strong>指攻击者控制大量主机在同一时段向目标发送异常流量或请求，耗尽带宽、连接表、CPU 或应用资源，使正常用户无法访问。其危害不仅在于「网站打不开」，还包括<strong>掩盖入侵、勒索、竞品干扰</strong>等次生风险。</p><p class="art-h"><strong>一、常见攻击形态</strong></p><ul><li><strong>流量型（Volumetric）</strong>：以 UDP Flood、ICMP Flood、反射放大（如 NTP、Memcached）等为主，冲击运营商链路与入口带宽。</li><li><strong>协议型（Protocol）</strong>：利用 TCP/SSL 状态机缺陷制造半连接、异常重传或资源耗尽（如 SYN Flood）。</li><li><strong>应用层（L7）</strong>：HTTP/S 高频合法形态请求、慢速攻击、恶意 API 调用等，绕过单纯带宽扩容，需行为分析与频控。</li></ul><p class="art-h"><strong>二、企业侧防护思路</strong></p><ol><li><strong>分层部署</strong>：在运营商/清洗中心承接超大流量，在 CDN 边缘做 L7 频控与缓存卸载，在源站前保留最小暴露面。</li><li><strong>弹性与黑洞策略</strong>：与上游确认牵引、黑洞（Blackhole）触发条件，避免「打满才响应」。</li><li><strong>基线与演练</strong>：沉淀正常 QPS、连接数、错误码分布；定期开展红蓝对抗与应急预案演练。</li><li><strong>与高防 CDN 协同</strong>：将 Web 业务流量先经过具备清洗与 WAF 能力的边缘，隐藏源站 IP，缩短攻击路径。</li></ol><p class="art-h"><strong>三、误区澄清</strong></p><p>仅靠「加大带宽」无法应对反射放大与 L7 CC；仅靠「规则黑名单」难以覆盖僵尸网络与拟人化流量。需要<strong>容量、算法、情报与流程</strong>组合治理。具体防护规格与线路以飞盾高防/清洗产品为准。</p></div>
                 </div>
             </div>
         </div>
@@ -390,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -454,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -491,10 +513,15 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
+
+
 <script src="static/js/footer_common.js"></script>
 <script type="text/javascript">var root_dir="";var ey_u_switch=1;var ey_aid=167;</script>
 <script language="javascript" type="text/javascript" src="static/js/ey_footer.js"></script>
@@ -506,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -552,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -680,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

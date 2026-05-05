@@ -1,8 +1,15 @@
-﻿.section{padding: 30px 0;overflow: visible;}
+.section{padding: 30px 0;overflow: visible;}
 .search-box{ display: flex; }
 .section-header h1{ color: #1c1d1f; font-size: 20px; }
 .section-header p{ font-size: 14px; color: #626266;line-height: 1; margin: 17px 0 30px; }
 .search-box h1{ white-space:nowrap; margin-right: 40px; font-size: 28px; color: #1c1d1f; line-height: 50px; }
+.search-box .help-title{
+    white-space: nowrap;
+    margin-right: 40px;
+    font-size: 28px;
+    color: #1c1d1f;
+    line-height: 50px;
+}
 .banner-info{max-width: none;}
 .search-input{ width: 100%; max-width: 790px; min-width: 600px; }
 .search-item{ max-width: none; margin-bottom: 0; }
@@ -24,15 +31,16 @@
 .skip-item ul li:hover a{color: #2981ff;}
 /* .menu-tab li a::after{ content: ""; position: absolute; width: 20px; height: 20px; left: 0; bottom: 12px; background: rgba(146, 16, 18, .2); } */
 .menu-tab li a::before{ content: ""; position: absolute; left: 0; top: 8px; width: 20px; height: 20px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center center;
 }
 .zz a::before{ background-image: url(../image/zz-m.png); }
 .zz.on a::before,.zz:hover a::before{ background-image: url(../image/zz-x.png); }
-.bz a::before{ background-image: url(../image/bz-m.png); }
-.bz.on a::before,.bz:hover a::before{ background-image: url(../image/bz-x.png); }
-.wt a::before{ background-image: url(../image/wt-m.png); }
-.wt.on a::before,.wt:hover a::before{ background-image: url(../image/wt-x.png); }
+.bz a::before{ background-image: url(../image/bz-m.svg); }
+.bz.on a::before,.bz:hover a::before{ background-image: url(../image/bz-x.svg); }
+.wt a::before{ background-image: url(../image/wt-m.svg); }
+.wt.on a::before,.wt:hover a::before{ background-image: url(../image/wt-x.svg); }
 .cz a::before{ background-image: url(../image/cz-m.png); }
 .cz.on a::before,.cz:hover a::before{ background-image: url(../image/cz-x.png); }
 /* 自助服务 */
@@ -54,29 +62,30 @@
     background-position: bottom right;
     background-size: cover;
 }
+/* 渐变打底 + 可选 PNG：线上有图时叠加显示，包内缺图时仍有装饰 */
 .section-items .section-item:nth-child(1) .section-self::before{
-    background-image: url(../image/service-bg-1.png);
+    background-image: linear-gradient(145deg, rgba(41,129,255,0.15) 0%, transparent 55%), url(../image/service-bg-1.png);
 }
 .section-items .section-item:nth-child(2) .section-self::before{
-    background-image: url(../image/service-bg-2.png);
+    background-image: linear-gradient(155deg, rgba(90,140,210,0.14) 0%, transparent 52%), url(../image/service-bg-2.png);
 }
 .section-items .section-item:nth-child(3) .section-self::before{
-    background-image: url(../image/service-bg-3.png);
+    background-image: linear-gradient(165deg, rgba(70,120,190,0.13) 0%, transparent 50%), url(../image/service-bg-3.png);
 }
 .helper-items .helper-doc .block-item-box:nth-child(1) .block-item::before{
-    background-image: url(../image/manual-bg-1.png);
+    background-image: linear-gradient(210deg, rgba(41,129,255,0.16) 0%, transparent 52%), url(../image/manual-bg-1.png);
 }
 .helper-items .helper-doc .block-item-box:nth-child(2) .block-item::before{
-    background-image: url(../image/manual-bg-2.png);
+    background-image: linear-gradient(200deg, rgba(100,130,175,0.15) 0%, transparent 50%), url(../image/manual-bg-2.png);
 }
 .helper-items .helper-doc .block-item-box:nth-child(3) .block-item::before{
-    background-image: url(../image/manual-bg-3.png);
+    background-image: linear-gradient(190deg, rgba(80,110,160,0.14) 0%, transparent 48%), url(../image/manual-bg-3.png);
 }
 .helper-items .helper-doc .block-item-box:nth-child(4) .block-item::before{
-    background-image: url(../image/manual-bg-4.png);
+    background-image: linear-gradient(205deg, rgba(60,100,150,0.15) 0%, transparent 52%), url(../image/manual-bg-4.png);
 }
 .helper-items .helper-doc .block-item-box:nth-child(5) .block-item::before{
-    background-image: url(../image/manual-bg-5.png);
+    background-image: linear-gradient(215deg, rgba(120,145,185,0.14) 0%, transparent 50%), url(../image/manual-bg-5.png);
 }
 
 .section-self:hover,.block-item-box .block-item:hover{top: -6px; box-shadow: 0px 3px 10px 0px rgba(199, 200, 201, 0.33); }
@@ -164,6 +173,43 @@
 .detail-box .content-item-title h1{ font-size: 24px; color: #1c1d1f;margin-bottom: 14px; }
 .detail-box .content-item-title .data-time{ font-size: 14px; color: #acacac; }
 .detail-box .content-item-detail{ line-height: 30px; }
+.detail-box .content-item-detail p.art-h{
+    margin-bottom: 0.4em;
+}
+.detail-box .content-item-detail p.art-h:not(:first-child){
+    margin-top: 1.35em;
+}
+.detail-box .content-item-detail ul,
+.detail-box .content-item-detail ol{
+    margin-top: 0.35em;
+    margin-bottom: 1em;
+    padding-left: 1.35em;
+}
+.detail-box .content-item-detail p.art-h + ul,
+.detail-box .content-item-detail p.art-h + ol{
+    margin-top: 0.15em;
+}
+.detail-box .content-item-detail code{
+    background: #f4f6f9;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    font-size: 0.92em;
+}
+.detail-box .content-item-detail p.art-more{
+    margin-top: 1.5em;
+    padding-top: 1.1em;
+    border-top: 1px solid #ebedf0;
+    color: #626266;
+    font-size: 14px;
+    line-height: 1.65;
+}
+.detail-box .content-item-detail p.art-more a{
+    color: #2981ff;
+    word-break: break-all;
+}
+.detail-box .content-item-detail p.art-more a:hover{
+    text-decoration: underline;
+}
 .detail-container .skip-box ul{ padding-bottom: 35px; }
 .detail-container .skip-box ul li{ margin: 1px 0 10px; }
 
@@ -797,9 +843,105 @@
     .detail-container  .search-input {
         min-width: auto;
     }
-    /* .help-box{
+
+    /* 帮助中心首页 help.html（无 .detail-box）：侧栏与正文纵向堆叠，避免窄屏双列挤压、标题与副文重叠 */
+    .help-box:not(.detail-box) {
         flex-direction: column;
-    } */
+        align-items: stretch;
+    }
+    .help-box:not(.detail-box) .skip-box {
+        width: 100%;
+        flex-shrink: 0;
+        height: auto;
+        min-height: 45px;
+    }
+    .help-box:not(.detail-box) .section-box-r {
+        width: 100%;
+        max-width: 100%;
+        border-left: none;
+        padding: 16px 15px 48px;
+        box-sizing: border-box;
+    }
+    .help-box:not(.detail-box) .section-header h2 {
+        font-size: 18px;
+        color: #1c1d1f;
+        font-weight: bold;
+        line-height: 1.35;
+        text-align: left;
+        margin: 0;
+    }
+    .help-box:not(.detail-box) .section-header p {
+        line-height: 1.55;
+        margin: 10px 0 22px;
+        text-align: left;
+        white-space: normal;
+    }
+    .help-box:not(.detail-box) .block-content ul > li {
+        width: 100%;
+    }
+    .help-box:not(.detail-box) .block-content ul > li .p-1 {
+        margin-right: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    /* Tab 两项均分宽度，避免 33% 裁字；图标垂直居中、SVG 用 contain（压过 mobile.css） */
+    .help-box .skip-item ul.sm-around.menu-tab > li {
+        width: auto !important;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    .help-box .skip-item .menu-tab li a {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        padding-left: 30px;
+        padding-right: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .help-box .skip-item .menu-tab li a::before {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    /* 帮助中心列表/文章页（.detail-box）：同样纵向堆叠，避免 Tab 与正文并排 */
+    .help-box.detail-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .help-box.detail-box .skip-box {
+        width: 100%;
+        flex-shrink: 0;
+        height: auto;
+        min-height: 45px;
+    }
+    .help-box.detail-box .right-content,
+    .help-box.detail-box .section-box-r {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .help-box.detail-box .section-box-r {
+        border-left: none;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .help-box.detail-box .right-content .content-item .list-top {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 6px 12px;
+    }
+    .help-box.detail-box .right-content .list-title {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
 
     .skip-item {
         height: 45px;

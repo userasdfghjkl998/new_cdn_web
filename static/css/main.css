@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.3.6,
 * Autoprefixer: v10.3.1
@@ -150,7 +150,13 @@ html {-webkit-tap-highlight-color: transparent;}
 /* .section-body ul li .icon-box {position: relative;width: 80px; height: 80px;padding: 0;margin: 0 auto; margin-bottom: 6px;-webkit-box-sizing: border-box;box-sizing: border-box;} */
 /* .section-body ul li .icon-box object {position: absolute;bottom: 0;transform: translate(-50%);left: 50%;} */
 /* .section-a1 li img {width: initial;height: initial;max-width: 100%;} */
-.mobile-data,.show-more {display: none;}
+/* 仅桌面隐藏；全局 display:none 会在引入 index.css 等之后压过 mobile1，导致手机端产品优势等整块不显示 */
+@media screen and (min-width: 1024px) {
+  .mobile-data,
+  .show-more {
+    display: none;
+  }
+}
 .banner-info{max-width: 714px;font-size: 0;}
 
 .privacy-item p,.feature-title p,.service-item-data p{font-weight: 500;}

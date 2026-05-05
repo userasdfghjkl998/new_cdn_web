@@ -1,4 +1,4 @@
-﻿
+
 @import "iconfont1.css";
 
 *{margin:0;padding:0;-webkit-font-smoothing: antialiased;}
@@ -954,6 +954,12 @@ li:hover .slide-icon::before {background-position-y: -24px;}
     .nav>ul>li.active .sub dl.opened dt::after {transform: rotate(-180deg);}
     .sub p {padding-bottom: 0;}
     .records-mobile{display: block !important;}
+    /* 移动端抽屉菜单：占满宽，避免继承 .nav 的 margin-left 导致内容挤偏或像「少了几项」 */
+    #menu-item {
+        margin-left: 0 !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
     #menu-btn{
         display: flex;
         flex-direction: column;

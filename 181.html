@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>飞盾：CDN服务器连接异常怎么办_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="随着互联网的日益发展，CDN服务器已经成为了现代网站建设中不可或缺的一部分。CDN服务器通过分布在全球各地的节点，可以大大提高网站的访问速度和稳定性，受到了越来">
+	<title>CDN服务器连接异常怎么处理_飞盾CDN</title>
+	<meta name="keywords" content="CDN异常,连接失败,回源,排障,飞盾CDN">
+	<meta name="description" content="按 DNS、TLS、HTTP 分层排查 CDN 连接异常的原因与协作清单。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="CDN服务器连接异常怎么处理_飞盾CDN">
+	<meta property="og:description" content="按 DNS、TLS、HTTP 分层排查 CDN 连接异常的原因与协作清单。">
+	<meta property="og:url" content="https://feiduncdn.com/181.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="CDN服务器连接异常怎么处理_飞盾CDN">
+	<meta name="twitter:description" content="按 DNS、TLS、HTTP 分层排查 CDN 连接异常的原因与协作清单。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"CDN服务器连接异常怎么处理","description":"按 DNS、TLS、HTTP 分层排查 CDN 连接异常的原因与协作清单。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/181.html"},"url":"https://feiduncdn.com/181.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/181.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                     <div class="m">
                         <ul class="sm-around menu-tab">
 							                            <li class="bz on" data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdkarticle.html">
-                        <span>CDN加速接入文档  &gt;</span>
-                    </a>
-                    <span class="tag-title">飞盾：CDN服务器连接异常怎么办</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">CDN服务器连接异常怎么处理</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>飞盾：CDN服务器连接异常怎么办</h1>
-                        <span class="data-time">本内容发表于：2025-02-26 01:23:14</span>
+                        <h1>CDN服务器连接异常怎么处理</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">随着互联网的日益发展，CDN服务器已经成为了现代网站建设中不可或缺的一部分。CDN服务器通过分布在全球各地的节点，可以大大提高网站的访问速度和稳定性，受到了越来越多网站管理员的青睐。然而，在使用CDN服务器的过程中，我们也可能会遇到连接异常的情况，这时候应该怎么办呢?</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><img src="static/picture/1-250226012042923.png" title="" alt="image.png"></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　首先，我们需要了解一下连接异常的种类及其原因。CDN服务器常见的连接异常包括：无法连接、连接超时、连接中断等。这些异常的原因可能是节点故障、网络拥堵、域名解析错误等。出现这些问题时，我们可以通过以下几个途径来进行排查和解决：</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　1. 检查并重新配置DNS解析</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　在使用飞盾CDN服务器的时候，我们通常需要将自己的域名指向CDN节点的IP地址，这个过程就是DNS解析。如果出现连接异常的情况，首先需要检查自己的域名是否正确地解析到了CDN节点的IP地址。如果没有正确解析，要及时修正。在这里友情推荐友站：https://www.99dns.com</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　2. 检查网络环境</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　网络状况是影响连接质量的一个重要因素。如果出现连接异常，需要检查自己的网络环境是否正常，是否存在网络拥堵等问题。可以通过ping命令或tracert命令来检查网络连通性。</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　3. 更新飞盾CDN节点列表</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　如果出连接异常的情况，也有可能是由于CDN节点故障导致的。这时候需要及时更新CD节点列表，找到可用的节点进行切换。同时，也要及时向CDN服务商反馈问题，以便及修复故障节点，保证服务质量。</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　4. 优化飞盾CDN缓存策略</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　CDN服务器是通过缓存技术来提高网站访问速度和稳定性的。在使用CD服务器的时候，需要根据自己网站的特点和业务需求来优化CDN缓存策略。如果出现连接异常的情况，可以检查一下自己的CDN缓存策略是否合理，是否存在需要调整的地方。</span></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><img src="static/picture/1-25022601210a33.png" title="" alt="image.png"></p><p style="margin-top: 0px; margin-bottom: 0px; font-size: medium; text-wrap-mode: wrap; overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><span style="font-size: 20px;">　　总之，飞盾CDN服务器连接异常可能会对网站访问速度和稳定性产生不影响，需要及时采取措施予以解决。在使用飞盾CDN服务器过程中，合理配置和优化存策略、及时更新DNS解析、检查网络环境、及时反馈问题等做法都有助于提高CDN服务器的稳定性和可靠性。</span></p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p>「连接异常」在 CDN 场景下可能出现在<strong>客户端—边缘、边缘—源站、DNS—调度</strong>任一段。建议按分层证据排查，避免仅凭体感下结论。</p><p class="art-h"><strong>一、快速分层</strong></p><ol><li><strong>DNS</strong>：解析是否指向预期 CNAME/调度结果；TTL 变更是否已生效。</li><li><strong>TCP/TLS</strong>：curl/openssl 测试边缘与源站握手，记录证书链与 SNI。</li><li><strong>HTTP</strong>：状态码是边缘返回还是源站返回；是否经多次重定向。</li></ol><p class="art-h"><strong>二、常见原因</strong></p><ul><li>源站<strong>回源 Host、证书与 SNI</strong>不一致导致 TLS 失败。</li><li>安全组/防火墙未放行<strong>回源 IP 段</strong>。</li><li>控制台<strong>回源协议、端口、超时</strong>配置错误。</li><li>节点局部故障或运营商路由抖动——需对比多地域拨测。</li></ul><p class="art-h"><strong>三、协作清单</strong></p><p>保留<strong>时间线、Request-ID、边缘节点 IP、curl 复现命令</strong>，便于厂商与研发并行分析。涉及业务逻辑的错误应与 CDN 5xx/超时区分统计。</p><p class="art-more"><strong>延伸阅读</strong>：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status" rel="nofollow noopener noreferrer" target="_blank">MDN：HTTP 响应状态码</a>。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,11 +513,13 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
-
 
 
 <script src="static/js/footer_common.js"></script>
@@ -510,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -556,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -684,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

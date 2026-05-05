@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>飞盾：CDN常用术语总结_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="cdn的三大能力：静态加速、动态加速、安全防护CNAME：CNAME就是记录一个域名的别名，比如我们给blog.example.com记录一条CNAME为blo">
- 
-    <link rel="stylesheet" href="static/css/animate.css">
+	<title>CDN常用术语总结_飞盾CDN</title>
+	<meta name="keywords" content="CDN术语,CNAME,缓存命中率,回源,飞盾CDN">
+	<meta name="description" content="按接入、缓存、回源、安全与排障场景梳理 CDN 常用术语：CNAME、源站、TTL、命中率、预热、刷新、WAF 等。">
+  
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="CDN常用术语总结_飞盾CDN">
+	<meta property="og:description" content="按接入、缓存、回源、安全与排障场景梳理 CDN 常用术语：CNAME、源站、TTL、命中率、预热、刷新、WAF 等。">
+	<meta property="og:url" content="https://feiduncdn.com/195.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="CDN常用术语总结_飞盾CDN">
+	<meta name="twitter:description" content="按接入、缓存、回源、安全与排障场景梳理 CDN 常用术语：CNAME、源站、TTL、命中率、预热、刷新、WAF 等。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"CDN常用术语总结","description":"按接入、缓存、回源与安全场景梳理 CDN 常用术语。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/195.html"},"url":"https://feiduncdn.com/195.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/195.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                     <div class="m">
                         <ul class="sm-around menu-tab">
 							                            <li class="bz on" data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdkarticle.html">
-                        <span>CDN加速接入文档  &gt;</span>
-                    </a>
-                    <span class="tag-title">飞盾：CDN常用术语总结</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">CDN常用术语总结</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>飞盾：CDN常用术语总结</h1>
-                        <span class="data-time">本内容发表于：2025-04-02 11:50:19</span>
+                        <h1>CDN常用术语总结</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<ul style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-bottom: 16px; padding: 0px; -webkit-tap-highlight-color: transparent; list-style-position: initial; list-style-image: initial; padding-inline-start: 20px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);" class=" list-paddingleft-2"><li>cdn的三大能力：静态加速、动态加速、安全防护</li><li>CNAME：CNAME就是记录一个域名的别名，比如我们给xxx.aaa.com记录一条CNAME为aaa.com，当我们对<span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">xxx.aaa.com</span>进行dns解析时，它实际上会去寻找<span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">aaa.com</span>的A记录的ip地址。一个CNAME当然可以指向另一个CNAME，但是这样解析起来很低效。</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li>为什么CDN通常会用到CNAME？CDN通常会给加速域名记录一条CNAME，用于解析到自家服务器的ip，这样对源站的所有请求都会来到cdn节点。解析到自家的cdn节点的第一阶段，一般都是cdn厂家的dns服务器，他们会根据你请求的位置，返回一个理论上访问速度最快的ip地址，通常不一定是物理距离上最近的，还要考虑拥塞等情况</li></ul><li>静态资源：简单来说，静态资源就是文件，上幂等的，每次用户请求返还的内容都一样，图片、压缩文件、html、css等。cdn会把加速域名的静态文件都缓存到cdn节点上</li><li>动态资源：最简单的例子就是api请求，可能根据用户的不同，相同的请求会有不同的结果，这样的内容上不能缓存的。所以cdn的路由系统会进行动态选路，他们会用各个cdn节点当作中间桥梁，为用户选择出一条网络状况良好的链路。</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li>动态内容用到的cdn产品一般是全站加速</li></ul><li>DNS/域名解析：就是把域名解析成ip地址</li><li>SSL/TLS：建立在tcp协议之上的安全传输协议</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li>建立会话</li><li>加密数据</li><li>校验网站证书</li></ul><li>回源：cdn节点未缓存用户请求的资源货缓存到期，cdn节点会向源站获取资源并返还给用户</li><li>回源HOST：回源时实际请求的域名或ip，如果源站有多个域名或ip，可以指定回源时请求的域名或ip</li><li>回源协议：cdn节点访问源站的时候的协议，比如可以设置回源协议为http或https</li><li>Range回源</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li>Range上http协议的一个请求头，可以指定需要请求资源的byte范围&nbsp;<strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">Range: bytes=start-end</strong></li><li>源站在收到CDN节点的回源请求时，根据HTTP请求头中的Range信息返回指定范围的内容数据给CDN节点，例如只返回某个文件的0-100Byte范围内的数据。</li></ul><li>Referer防盗链：Referer防盗链，是基于HTTP请求头中Referer字段（例如，Referer黑白名单）来设置访问控制规则，实现对访客的身份识别和过滤，防止网站资源被非法盗用。配置Referer黑白名单后，CDN会根据名单识别请求身份，允许或拒绝访问请求。</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li>Referer是http请求头的一部分，携带了http请求的来源地址信息（协议+域名+请求参数），可用于识别请求来源</li><li>The&nbsp;<strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;"><code class="notranslate" style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0.1rem 0.2rem; -webkit-tap-highlight-color: transparent; background-color: rgb(232, 232, 232); border-radius: 3px;">Referer</code></strong>&nbsp;header is sent with every HTTP request that the client makes, and its value is the URL of the page that the client was on before requesting the current resource. For example, if a user clicks on a link to a resource on a web page, the&nbsp;<strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;"><code class="notranslate" style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0.1rem 0.2rem; -webkit-tap-highlight-color: transparent; background-color: rgb(232, 232, 232); border-radius: 3px;">Referer</code></strong><br style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">header in the request for that resource will contain the URL of the web page that the link was on.</li></ul><li>缓存过期时间：cdn节点上资源过期的时间，过期后cdn节点就会删除该缓存</li><li>QUIC：基于UDP的传输层协议，能保障网络安全性，同时有更低的连接和传输耗时</li><li>SNI（Server Name Indication）是为了解决一个服务器使用多个域名和证书的TLS扩展，主要解决一台服务器只能使用一个证书的缺点。开启SNI后，允许客户端在发起SSL握手请求时就提交请求的域名信息，负载均衡收到SSL请求后，会根据域名去查找证书，如果找到域名对应的证书，则返回该证书；如果没有找到域名对应的证书，则返回缺省证书。负载均衡在配置HTTPS监听器支持此功能，即支持绑定多个证书。</li><li>刷新：删除cdn节点上过期的缓存文件</li><ul style="list-style-type: square;" class=" list-paddingleft-2"><li><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; margin-block-end: 1em !important;">目录刷新：会将节点上的文件资源过期，会同源站对比Last-Modified时间，比如节点上的目录文件的Last-Modified为：Mon, 26 Dec 2018 11:11:00 GMT ，源站文件的Last-Modified为Mon, 28 Dec 2018 11:11:00 GMT.则此时源站会告诉节点：你的文件比我的文件老，我已经更新文件了，快来取最新的资源吧，此时会将源站新的资源更新到节点上，否则，源站返回304，告诉节点，你节点上的资源已经和我源站上的资源是一致，为最新的了，无需更新。</p></li><li><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; margin-block-end: 1em !important;"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">url刷新：直接将节点上缓存的资源删除</span><br></p></li></ul></ul><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p>下列术语按「接入—缓存—回源—安全—观测」链路组织，便于产品、研发与运维在排障、容量与变更评审时<strong>对齐语义</strong>。具体字段名以所使用 CDN 控制台与文档为准。</p><p class="art-h"><strong>接入与调度</strong></p><ul><li><strong>CNAME</strong>：将业务域名指向 CDN 提供的调度域名，由调度系统解析到边缘节点。</li><li><strong>源站（Origin）</strong>：CDN 回源拉取内容的上游，可为 OSS、负载均衡或自建机房。</li><li><strong>调度 / DNS 智能解析</strong>：按地域、运营商、健康状态等返回边缘 IP 的策略集合。</li><li><strong>Anycast / 多活入口</strong>：部分架构下用户访问统一 IP，由路由牵引至就近清洗或边缘集群（与厂商实现相关）。</li></ul><p class="art-h"><strong>缓存与内容生命周期</strong></p><ul><li><strong>命中（Hit）/ 未命中（Miss）</strong>：边缘是否本地已有可返回的副本；Miss 将触发回源。</li><li><strong>缓存命中率</strong>：命中请求占比，过高/过低都需结合业务形态解读。</li><li><strong>TTL（Time To Live）</strong>：对象在边缘可被视为新鲜的最长时间，受响应头与控制台策略共同约束。</li><li><strong>缓存键（Cache Key）</strong>：决定「哪些请求共用一份缓存」的维度组合（Host、Path、Query 等）。</li><li><strong>预热（Prefetch）</strong>：主动将资源推送到边缘，缩短冷启动时间。</li><li><strong>刷新（Purge）/ 失效</strong>：使边缘缓存立即或按规则失效，常用于发版与纠错。</li></ul><p class="art-h"><strong>回源与传输</strong></p><ul><li><strong>回源带宽 / QPS</strong>：边缘到源站的流量与请求并发，是容量评估核心指标。</li><li><strong>回源 Host / SNI</strong>：HTTPS 回源时证书校验与虚拟主机路由相关配置。</li><li><strong>分片回源 / Range</strong>：大文件断点续传与分段缓存场景常见。</li></ul><p class="art-h"><strong>安全与风控</strong></p><ul><li><strong>WAF</strong>：在边缘对 HTTP/S 请求做规则与语义检测，拦截常见 Web 攻击面。</li><li><strong>CC 攻击</strong>：高频合法形态请求耗尽应用层资源，多与频控、人机识别结合处置。</li><li><strong>清洗中心</strong>：大流量攻击时在专网完成流量牵引与过滤后再回注业务。</li></ul><p class="art-h"><strong>观测与排障</strong></p><ul><li><strong>TTFB / 下载耗时</strong>：衡量首包与整体传输体验；宜按地域、协议、路径拆分。</li><li><strong>5xx / 回源失败</strong>：区分边缘故障、源站拒绝、超时与证书错误等子类。</li></ul><p>建议在团队 Wiki 中维护「<strong>术语—定义—责任方—相关监控</strong>」四列表，并在变更评审单中强制引用关键术语，减少沟通损耗。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -509,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -555,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -683,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

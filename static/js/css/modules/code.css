@@ -1,0 +1,9 @@
+/* Minimal fallback to prevent 404 for layui code module */
+.layui-code-view {
+  display: block;
+  padding: 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-left: 4px solid #5fb878;
+  overflow-x: auto;
+}

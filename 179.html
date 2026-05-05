@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,27 @@
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>什么是WebRTC——基本概念入门_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="什么是WebRTCWebRTC为Google、Mozilla、Opera等发起的开源项目，名称源自网页即时通信（Web Real-Time Communicat">
+	<meta name="keywords" content="WebRTC,实时通信,音视频,网络,飞盾CDN">
+	<meta name="description" content="介绍 WebRTC 的 ICE/STUN/TURN、网络 QoS 与安全注意点。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="什么是WebRTC——基本概念入门_飞盾CDN">
+	<meta property="og:description" content="介绍 WebRTC 的 ICE/STUN/TURN、网络 QoS 与安全注意点。">
+	<meta property="og:url" content="https://feiduncdn.com/179.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="什么是WebRTC——基本概念入门_飞盾CDN">
+	<meta name="twitter:description" content="介绍 WebRTC 的 ICE/STUN/TURN、网络 QoS 与安全注意点。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"什么是WebRTC——基本概念入门","description":"介绍 WebRTC 的 ICE/STUN/TURN、网络 QoS 与安全注意点。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/179.html"},"url":"https://feiduncdn.com/179.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/179.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                     <div class="m">
                         <ul class="sm-around menu-tab">
 							                            <li class="bz on" data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdkarticle.html">
-                        <span>CDN加速接入文档  &gt;</span>
-                    </a>
-                    <span class="tag-title">什么是WebRTC——基本概念入门</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">什么是WebRTC——基本概念入门</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
                         <h1>什么是WebRTC——基本概念入门</h1>
-                        <span class="data-time">本内容发表于：2025-02-26 01:11:29</span>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">什么是</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">WebRTC</strong></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">WebRTC为Google、Mozilla、Opera等发起的开源项目，名称源自网页即时通信（Web Real-Time Communication）的缩写。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">对于开发者而言，WebRTC是一套支持网页浏览器进行实时音视频对话的W3C Javascript API，包括音视频的采集、编解码、网络传输、显示等功能。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">WebRTC的出现大大降低了音视频开发的门槛，开发者只需要调用WebRTC API即可快速构建出音视频应用。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">WebRTC标准化历程：</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><img src="static/picture/1-250226011254416.jpg" alt="" width="436" height="2375" style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; border: none; max-width: 100%;"></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">WebRTC API和CTRTC WebSDK的关系</strong></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">CTRTC WebSDK是基于WebRTC封装的API集合，极致简单，对开发者更加友好，能十行之内完成一个简单的demo并上线。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">【大而全专业介绍详见Markdown】</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">WebRTC</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">的价值</strong></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">5G的到来，疫情的催化促使了各类互动场景的爆发，在线会议、在线教育、在线面试、在线社交、在线医疗、金融证券在线开户、智能家居等等。这些互动场景在很大程度上改变了我们原本的生活方式。将常见的线下场景转至线上，人们足不出户便能体验上述场景。这些实时音视频通信应用的火热程度也足以证明这一领域风头正劲。在这些实时通信技术背后，就不得不提到WebRTC。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">WebRTC</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">市场调研：</strong></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">全球WebRTC 2024年市场规模28亿美元，预计2025 - 2030复合年增长率为43.4%。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">&nbsp;</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;"><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">RTC</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">难点&nbsp;</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">=&gt; WebRTC</strong><strong style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent;">解决方案</strong></p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">RTC通信的难点主要有以下几点，WebRTC完美解决了：</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">1、互联网网络复杂：不同的NAT，防火墙，对媒体P2P建立带来很大的挑战，WebRTC里面有P2P 打洞的开源项目 libjingle ,支持STUN，TURN等协议。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">2、延时敏感：TCP由于自身机制的缺陷，只能使用UDP传输，那就需要等问题。WEBRTC提供了NACK，FEC技术。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">3、流畅性：互联网网络不稳定，特别一些小运营商，在流量使用高峰期往往无法保证足够的带宽。需要一套自适应的算法来应对网络拥塞、平滑发送等问题。WebRTC提供了TCC + SVC + PACER + JitterBuffer技术。</p><p style="overflow-wrap: break-word; word-break: break-all; outline: none; box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; margin-block-start: 1em; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); margin-block-end: 1em !important;">4、语音清晰：由于终端设备和环境复杂，会有噪声回声的干扰，WebRTC提供了3A算法 + NetEQ。</p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p><strong>WebRTC（Web Real-Time Communication）</strong>是一组支持浏览器与原生端进行实时音视频与数据通信的开放标准，典型用于视频会议、在线教育、连麦直播等。其与 CDN 的关系多为：<strong>信令与页面静态走 CDN</strong>，媒体流由 SFU/MCU 或 P2P 路径承载。</p><p class="art-h"><strong>一、核心概念</strong></p><ul><li><strong>ICE</strong>：收集候选地址并探测可达路径。</li><li><strong>STUN</strong>：辅助 NAT 穿透，获取公网映射地址。</li><li><strong>TURN</strong>：在无法直连时中继媒体，需关注带宽与地域部署。</li></ul><p class="art-h"><strong>二、网络与 QoS</strong></p><p>弱网下优先保障<strong>音频与关键帧策略</strong>，配合<strong>自适应码率</strong>；对跨国链路需评估 TURN 部署位置与运营商穿透成功率。</p><p class="art-h"><strong>三、安全</strong></p><p>信令通道必须使用 <strong>HTTPS/WSS</strong>；媒体层使用 <strong>DTLS-SRTP</strong>。服务端应校验会话身份与房间权限，防止未授权订阅。</p><p class="art-more"><strong>延伸阅读</strong>：<a href="https://webrtc.org/" rel="nofollow noopener noreferrer" target="_blank">WebRTC 官方网站</a>。</p></div>
                 </div>
             </div>
         </div>
@@ -400,7 +411,7 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
                   <i class="slide-icon-sale"></i>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
               </div>
             </div>
@@ -430,7 +441,7 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
                   <p><i class="slide-icon-chat"></i>在线聊天</p>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
 							</div>
 						</div>
@@ -457,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -494,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -511,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -557,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -685,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

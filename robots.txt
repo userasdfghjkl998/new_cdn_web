@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login1.html
+
+Sitemap: https://feiduncdn.com/sitemap.xml
+Sitemap: https://feiduncdn.com/sitemap-index.xml

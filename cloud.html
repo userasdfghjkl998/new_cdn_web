@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,8 +10,21 @@
 	<meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>飞盾CDN 云账号</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="云账号,云服务器账号,海外云资源,飞盾CDN">
+    <meta name="description" content="飞盾CDN提供云账号与云资源服务，支持企业按需开通，助力全球业务部署与稳定运行。">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://feiduncdn.com/cloud.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="飞盾CDN">
+    <meta property="og:title" content="飞盾CDN 云账号">
+    <meta property="og:description" content="飞盾CDN云账号服务，帮助企业快速获取云资源并高效部署业务。">
+    <meta property="og:url" content="https://feiduncdn.com/cloud.html">
+    <meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="飞盾CDN 云账号">
+    <meta name="twitter:description" content="飞盾CDN云账号服务，支持业务快速部署与稳定运行。">
+    <meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
  
 	<link rel="stylesheet" href="static/css/animate.css">
 	<link rel="stylesheet" href="static/css/swiper.min.css">
@@ -22,17 +35,17 @@
 	<link rel="stylesheet" href="static/css/pad.css" media="screen and (max-width:1024px)">
 	<link rel="stylesheet" href="static/css/mobile.css" media="screen and (max-width:1023px)">
 	<script src="static/js/jquery.min.js"></script>
-	<script src="static/js/wow.min.js"></script>
-	<script src="static/js/swiper.min.js"></script>
-	<script src="static/js/browser.js"></script>
-	<script src="static/js/html.util.js"></script>
-	<script src="static/js/public.js"></script>
+	<script src="static/js/wow.min.js" defer></script>
+	<script src="static/js/swiper.min.js" defer></script>
+	<script src="static/js/browser.js" defer></script>
+	<script src="static/js/html.util.js" defer></script>
+	<script src="static/js/public.js" defer></script>
 	<script src="static/js/flexible-0.3.2.js"></script>
-	<script src="static/js/viewer.js"></script>
-	<script src="static/js/jquery.cookie.js"></script>
-	<script src="static/js/layui.js"></script>
+	<script src="static/js/viewer.js" defer></script>
+	<script src="static/js/jquery.cookie.js" defer></script>
+	<script src="static/js/layui.js" defer></script>
 	<!-- 数据归因 -->
-	<script src="static/js/tracker.min.js"></script>
+	<script src="static/js/tracker.min.js" defer></script>
 	<!-- <script src="/js/flexible/adaptive-0.1.2.js"></script> -->
 
 	<script>
@@ -40,9 +53,25 @@
 		var url_guarantee_price = '/'
 	</script>
 <script type="text/javascript" src="static/js/ey_global.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "飞盾CDN 云账号",
+  "url": "https://feiduncdn.com/cloud.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "飞盾CDN",
+    "url": "https://feiduncdn.com/"
+  }
+}
+</script>
+  <!-- 站点统计 -->
+  <script defer src="https://webs.feiduncdn.com/script.js" data-website-id="ef89fff4-1ca5-4cf3-9ebc-927cbfb9191e"></script>
 </head>
 
 <body class="sm-bgGray">
+	<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">飞盾CDN云账号服务</h1>
 	
 <div class="header">
     <div class="version-tips">
@@ -91,17 +120,18 @@
 		})()
 
 		$(document).ready(function () {
-			// 判断banner PC/移动版
-			$('#banner .swiper-slide video.pc-date').each(function () {
-				if (window.innerWidth < 1024) {
-					$(this).attr('src', '');
-				}
-			})
-			$('#banner .swiper-slide video.pc-data').each(function () {
-				if (window.innerWidth < 1024) {
-					$(this).attr('src', '');
-				}
-			})
+			var el = document.querySelector('#banner.page-hero-banner .page-hero-video');
+			if (!el) return;
+			el.muted = true;
+			el.setAttribute('muted', '');
+			function tryPlay() {
+				var p = el.play();
+				if (p && typeof p.catch === 'function') p.catch(function () { });
+			}
+			tryPlay();
+			document.addEventListener('visibilitychange', function () {
+				if (!document.hidden) tryPlay();
+			});
 		})
 
 		if (window.innerWidth < 1024) {
@@ -116,23 +146,24 @@
 		}
 	</script>
 	<link rel="stylesheet" href="static/css/main.css">
-	<!-- <link rel="stylesheet" media="screen and  (min-width: 1024px)" href="/css/sdkPc.css"/> -->
-	<!-- <link rel="stylesheet" media="screen and (max-width: 1023px)"  href="/css/sdkPhone.css"/> -->
+	<!-- <link rel="stylesheet" media="screen and  (min-width: 1024px)" href="/css/secPc.css"/> -->
+	<!-- <link rel="stylesheet" media="screen and (max-width: 1023px)"  href="/css/secPhone.css"/> -->
 	<link rel="stylesheet" href="static/css/pad1.css" media="screen and (max-width:1024px)">
 	<link rel="stylesheet" href="static/css/mobile1.css" media="screen and (max-width:1023px)">
-	<link rel="stylesheet" href="static/css/game_shield_sdk.css">
-	<div id="banner" class="banner h434 swiper-container banner-single">
+	<link rel="stylesheet" href="static/css/security_access.css">
+	<link rel="stylesheet" href="static/css/page-hero-banner.css">
+	<div id="banner" class="banner h434 swiper-container banner-single page-hero-banner">
 		<ul class="swiper-wrapper">
 			<li class="swiper-slide">
-				<video class="pc-data" src="/static/video/banner.mp4" autoplay="" muted="" playsinline="" loop=""></video>
+				<video class="page-hero-video" src="static/video/server.mp4" autoplay muted playsinline loop preload="metadata"></video>
 				<div class="banner-ani clear">
 					<div class="banner-info fl">
 						<div class="banner-header">
 							<h2>云端厂商总代理</h2>
 						</div>
 						<p>
-							为你提供一站式云端服务,为你提供一站式云端服务,我们的代理品牌如下:
-                            阿里云、腾讯云、华为云、谷歌云、微软云、亚马逊云。
+						为你提供一站式云端服务 <br />
+						我们的代理品牌如下: 阿里云、腾讯云、华为云、谷歌云、微软云、亚马逊云。
 						</p>
 						<div class="price-banner-box">
 							<a target="_blank" href="https://t.me/nodem_bot?start=start" class="n-btn-default active zixun_btn">在线咨询</a>
@@ -146,7 +177,7 @@
 	
 
 	<main>
-        <section class="section section-sdk2" id="section-sdk1">
+        <section class="section section-sec2" id="section-sec1">
 			<div class="m w1400">
 				<div class="section-header">
 					<h3>代理品牌</h3>
@@ -155,37 +186,39 @@
 					<ul>
 						<li>
 							<img class="pc-show" src="static/picture/lambocloud_website-png-01.png" alt="">
-							<img class="m-show" src="static/picture/gamedunsdk-s2-01.png" alt="">
+							<img class="m-show" src="static/picture/lambocloud_website-png-01.png" alt="">
 							<p>01.亚马逊云</p>
 						</li>
 						<li>
 							<img class="pc-show" src="static/picture/lambocloud_website-png-02.png" alt="">
-							<img class="m-show" src="static/picture/gamedunsdk-s2-02.png" alt="">
+							<img class="m-show" src="static/picture/lambocloud_website-png-02.png" alt="">
 							<p>02.谷歌云</p>
 						</li>
 						<li>
 							<img class="pc-show" src="static/picture/lambocloud_website-png-03.png" alt="">
-							<img class="m-show" src="static/picture/gamedunsdk-s2-03.png" alt="">
+							<img class="m-show" src="static/picture/lambocloud_website-png-03.png" alt="">
 							<p>03.华为云</p>
 						</li>
 						<li>
 							<img class="pc-show" src="static/picture/lambocloud_website-png-04.png" alt="">
-							<img class="m-show" src="static/picture/gamedunsdk-s2-04.png" alt="">
+							<img class="m-show" src="static/picture/lambocloud_website-png-04.png" alt="">
 							<p>04.阿里云</p>
 						</li>
 						<li>
-							<img class="pc-show" src="static/picture/lambocloud_website-png-05.png" alt="">
+							<img class="pc-show" src="static/picture/lambocloud_website-png-05.png" alt="腾讯云">
+							<img class="m-show" src="static/picture/lambocloud_website-png-05.png" alt="腾讯云">
 							<p>05.腾讯云</p>
 						</li>
                         <li>
-							<img class="pc-show" src="static/picture/lambocloud_website-png-06.png" alt="">
+							<img class="pc-show" src="static/picture/lambocloud_website-png-06.png" alt="微软云">
+							<img class="m-show" src="static/picture/lambocloud_website-png-06.png" alt="微软云">
 							<p>06.微软云</p>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-		<section class="section section-sdk1" id="section-sdk2">
+		<section class="section section-sec1" id="section-sec2">
 			<div class="m w1400">
 				<div class="section-header">
 					<h3>产品优势</h3>
@@ -194,7 +227,7 @@
 					<ul class="section-colflex-3 is-row">
 						<li class="">
 							<div class="icon-box">
-								<img src="static/picture/gamedunsdk-s1-01.png" alt="">
+								<img src="static/picture/shieldaccess-s1-01.png" alt="">
 							</div>
 							<div class="icon-box-div">
 								<p>无需信用卡</p>
@@ -203,7 +236,7 @@
 						</li>
 						<li class="">
 							<div class="icon-box">
-								<img src="static/picture/gamedunsdk-s1-02.png" alt="">
+								<img src="static/picture/shieldaccess-s1-02.png" alt="">
 							</div>
 							<div class="icon-box-div">
 								<p>无需实名认证</p>
@@ -212,7 +245,7 @@
 						</li>
 						<li class="">
 							<div class="icon-box">
-								<img src="static/picture/gamedunsdk-s1-03.png" alt="">
+								<img src="static/picture/shieldaccess-s1-03.png" alt="">
 							</div>
 							<div class="icon-box-div">
 								<p>支付方式方便</p>
@@ -253,17 +286,17 @@
 
 		$(function () {
 
-			// 点击立即购买滑动到sdk版本说明位置
+			// 点击立即购买滑动到sec版本说明位置
 			$(document).on('click', '#goScroll', function () {
 				$('html,body').animate({
-					scrollTop: $('#section-sdk3').offset().top - 20
+					scrollTop: $('#section-sec3').offset().top - 20
 				}, 1000)
 			})
 			// 用户刷新回到顶部
 			// $('html,body').animate({
 			//     scrollTop: 0
 			// }, 1000)
-			// SDK介入步骤定时显示
+			// 安全接入介入步骤定时显示
 			var imgArr = [
 				'/images/new_website/youxidun/default.png',
 				'/images/new_website/youxidun/intransit.png',
@@ -540,13 +573,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -577,8 +618,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 <script src="static/js/footer_common.js"></script>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <base href="../../../">
+  <link type="image/x-icon" href="favicon.ico" rel="icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>谷歌云GCP大陆加速服务_飞盾CDN</title>
+  <meta name="keywords" content="GCP加速,谷歌云CDN,海外加速,跨境加速,高防CDN,飞盾CDN">
+  <meta name="description" content="谷歌云 GCP 面向大陆访问场景的加速与接入参考：网络能力、适用业务、回源与防护协同及落地注意点。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="飞盾CDN">
+  <meta property="og:title" content="谷歌云GCP大陆加速服务_飞盾CDN">
+  <meta property="og:description" content="面向跨境业务的 GCP 加速方案与安全防护能力参考。">
+  <meta property="og:url" content="https://feiduncdn.com/pages/services/gcp/">
+  <meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+  <link rel="canonical" href="https://feiduncdn.com/pages/services/gcp/">
+  <link rel="stylesheet" href="static/css/animate.css">
+  <link rel="stylesheet" href="static/css/swiper.min.css">
+  <link rel="stylesheet" href="static/css/public.css">
+  <link rel="stylesheet" href="static/css/pubmain.css">
+  <link rel="stylesheet" href="static/css/viewer.css">
+  <link rel="stylesheet" href="static/css/layui.css">
+  <link rel="stylesheet" href="static/css/pad.css" media="screen and (max-width:1024px)">
+  <link rel="stylesheet" href="static/css/mobile.css" media="screen and (max-width:1023px)">
+  <link rel="stylesheet" href="static/css/help_center.css">
+  <link rel="stylesheet" href="static/css/help_center1.css" media="screen and (max-width:1023px)">
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/public.js"></script>
+</head>
+<body class="sm-bgGray">
+  <div class="header">
+    <div class="version-tips">
+      <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
+      <span class="browser"><i class="icon-ie"></i>IE 9.0+以上版本</span>
+      <span class="browser"><i class="icon-chrome"></i>Chrome 31+谷歌浏览器</span>
+      <span class="browser"><i class="icon-firefox"></i>Firefox 30+ 火狐浏览器</span>
+      <input type="hidden" id="is_close_browser_tips" value="">
+      <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="top clear"></div>
+    <div class="nav" id="menu-item"></div>
+  </div>
+  <div id="page_top"></div>
+
+  <div class="page detail-container">
+    <div id="banner" class="banner h200 swiper-container banner-single">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide" style="background-image: url(static/image/banner.jpg)">
+          <div class="banner-ani">
+            <div class="banner-info help-info">
+              <div class="search-box">
+                <div class="help-title">帮助中心与文档</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="help-box detail-box w1400">
+        <div class="skip-box" id="skip-box">
+          <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
+            <div class="m">
+              <ul class="sm-around menu-tab">
+                <li class="bz on" data-nav="a1"><a href="sdkarticle.html">CDN文档</a></li>
+                <li class="bz" data-nav="a1"><a href="news.html">CDN行业新闻</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-box-r">
+          <div class="right-top">
+            <a href="sdkarticle.html"><span>CDN文档 &gt;</span></a>
+            <span class="tag-title">谷歌云GCP大陆加速服务</span>
+          </div>
+          <div class="content-item">
+            <div class="content-item-title">
+              <h1>谷歌云GCP大陆加速服务</h1>
+              <span class="data-time">本内容发表于 2026-04-14</span>
+            </div>
+            <div class="content-item-detail" deep="5">
+              <p>GCP 加速方案适合面向海外与跨境用户的业务，可借助全球骨干网络提升访问质量，并通过边缘缓存与智能路由降低回源压力。</p>
+              <p class="art-h"><strong>一、核心能力</strong></p>
+              <ol>
+                <li>全球边缘节点覆盖，改善跨区域访问时延与稳定性。</li>
+                <li>结合缓存策略和压缩优化，降低源站带宽成本。</li>
+                <li>支持 HTTPS 全链路与证书托管，提升安全性。</li>
+              </ol>
+              <p class="art-h"><strong>二、适用场景</strong></p>
+              <ul>
+                <li>跨境电商、SaaS 平台、国际游戏发行。</li>
+                <li>需要多区域容灾与弹性扩展的业务系统。</li>
+                <li>对海外访问一致性要求较高的内容分发场景。</li>
+              </ul>
+              <p class="art-h"><strong>三、接入建议</strong></p>
+              <p>建议先进行分区域压测和灰度流量切换，结合业务峰值制定缓存与回源策略，并同步接入 DDoS/CC 防护，保障在攻击场景下的可用性。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+  <script src="static/js/footer_common.js"></script>
+  <script src="static/js/ey_footer.js"></script>
+  <script src="static/js/header.js"></script>
+</body>
+</html>

@@ -1,4 +1,9 @@
-﻿body {padding-top: 0;}
+/* 勿全局 padding-top:0，否则会覆盖 public.css 手机端 body 顶距，顶栏 position:absolute 会挡住横幅/视频上沿 */
+@media screen and (min-width: 1024px) {
+  body {
+    padding-top: 0;
+  }
+}
 .header {background-color: transparent;backdrop-filter: blur(16.2px);}
 /* 首页轮播图 */
 .banner .swiper-pagination{ bottom: 56px; }
@@ -16,7 +21,12 @@
     }
 }
 .banner .swiper-pagination-bullet.swiper-pagination-bullet-active:after { animation: process 5s linear;transform: scaleX(1)}
-.mobile-data{display: none;}
+/* 仅桌面隐藏移动端专用块；勿全局隐藏，否则 CDN 等页引入本文件后会把 .mobile-data 整块干掉 */
+@media screen and (min-width: 1024px) {
+  .mobile-data {
+    display: none;
+  }
+}
 .section01 .tab-btn>span {
   display: inline-block;
   width: 160px;
@@ -87,12 +97,24 @@
   .section .section-title h2{ margin-bottom: 15px; }
   .section08 .section-title h2 { margin: 0; }
   .section .section-title p{ line-height: 1; }
-  .tab-menu { text-align: center; line-height: 60px; display: flex; flex-wrap: nowrap; justify-content: space-between; align-content: space-between;overflow-x: auto; overflow-y: hidden; width: 100%; }
-  .tab-menu .tab-menu-item { display: inline-block; cursor: pointer; width: 100%; text-align: center; font-size: 16px; position: relative; }
+  .tab-menu { text-align: center; line-height: 60px; display: flex; flex-wrap: nowrap; justify-content: flex-start; align-content: space-between; overflow-x: auto; overflow-y: hidden; width: 100%; -webkit-overflow-scrolling: touch; gap: 0 8px; }
+  /* 避免每项 width:100% 导致手机/平板只能看到单个 Tab，其它「CDN加速 / 服务器 / 云账号」像消失 */
+  .tab-menu .tab-menu-item { display: inline-block; cursor: pointer; flex: 0 0 auto; width: auto; min-width: 4.5em; text-align: center; font-size: 16px; position: relative; }
   .tab-menu .tab-menu-item::after {position: absolute;bottom: 0;left: 0;content: '';width: 0;height: 3px;background-color: #2981ff;transition: all .3s;}
   .section01 .tab-menu .active { color: #2981ff; }
   .tab-menu .active::after { content: ''; display: block; width: 100%; height: 3px; background-color: #2981ff; }
 
+@media screen and (min-width: 1024px) {
+  .section01 .tab-menu { justify-content: space-between; gap: 0; }
+  /* PC 端仅保留前三项：精选推荐/CDN加速/服务器 */
+  .section01 .tab-menu .tab-menu-item:nth-child(n + 4) { display: none; }
+  .section01 .tab-menu .tab-menu-item {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    min-width: 0;
+    text-align: center;
+  }
+}
 
     /* 精选推荐 */
     .section01{padding-bottom: 0;}
@@ -286,7 +308,93 @@
     .section03 .tab-content>div { display: none; }
 
     /* 万千客户的共同选择 */
-    .section04{ background: url(../image/user_logo.png) no-repeat; background-position: right calc(50% + 70px); background-size: 52.5%; }
+    .section04{ background: none; }
+.section04 .section-content.w1400{
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 440px;
+        column-gap: 36px;
+        align-items: start;
+        padding-right: 72px;
+        box-sizing: border-box;
+    }
+.section04 .user-item-box{
+        min-height: auto;
+    }
+.section04 .user-item-l{
+        width: 100% !important;
+    }
+.section04 .partner-section{
+        position: static;
+        width: 440px;
+        min-width: 440px;
+        display: block;
+        z-index: 2;
+    }
+.section04 .partner-section .partner-container-box{
+        height: 260px;
+        border: none;
+        background: #fff;
+        overflow: hidden;
+        padding: 6px 0;
+        box-sizing: border-box;
+    }
+.section04 .partner-section .swiper-wrapper{
+        display: block;
+        will-change: transform;
+    }
+.section04 .partner-section .swiper-slide{
+        width: 100%;
+        margin: 0 !important;
+        height: auto !important;
+    }
+.section04 .partner-section .partner-swiper-img{
+        height: 36px;
+        width: calc(100% - 16px);
+        margin: 5px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        border: none;
+        box-shadow: 0 2px 10px rgba(186, 189, 194, .15);
+    }
+
+@media screen and (max-width: 1023px){
+  .section04 .section-content.w1400{
+    display: block;
+    padding-right: 0;
+  }
+  .section04 .partner-section{
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+  /* 横向 Swiper 需要 flex 行布局；display:block 会导致 slide 纵向堆叠、右侧大片留白 */
+  .section04 .partner-section .partner-container-box .swiper-wrapper{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+  .section04 .partner-section .swiper-slide{
+    width: 104px;
+    min-width: initial;
+  }
+  .section04 .partner-section .partner-swiper-img{
+    width: 100%;
+    height: 36px;
+    margin: 4px 0;
+    background-size: contain;
+    box-shadow: 0px 2px 10px 0px rgba(186, 189, 194, .15);
+  }
+  .section04 .partner-section .partner-container-box{
+    height: auto;
+    border: none;
+    padding: 20px 0;
+  }
+}
     .direction-icon{display: flex;flex-wrap: wrap;margin-top: 31px;}
     .direction-icon .left-icon{margin-right: 20px;}
     .direction-icon .iconfont{font-size: 26px; cursor: pointer;user-select: none;position: relative;left: 0;transition: all .3s;}
@@ -437,22 +545,103 @@
     }
 
     .banner .swiper-pagination{width: 100%;}
-    .banner.h600{height: 9.7333rem;}
+    /* 缩短横幅总高度，减少视频底部到文案顶部的空白 */
+    .banner.h600{
+        height: min(calc(100vw / 1.22), calc(42vw + 152px), 64vh);
+    }
+    /* 移动端轮播视频：contain 完整显示；解除 darken */
+    .banner .swiper-slide {
+        background-color: #f4f6fa;
+    }
+    .banner .swiper-slide video {
+        mix-blend-mode: normal !important;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: min(68vw, 56vh);
+        object-fit: contain;
+        object-position: center top;
+        z-index: 1;
+    }
+    .banner .swiper-slide > a {
+        z-index: 2;
+    }
     .section-title h2{
         font-size: 18px;
     }
 
     .section01 .tab-menu .tab-menu-item .menu-item{font-size: 15px;    white-space: nowrap;}
-    .tab-menu .tab-menu-item{width: auto;margin: 0 15px;}
+    .section01 .tab-menu{
+        justify-content: space-between;
+    }
+    .section01 .tab-menu .tab-menu-item{
+        flex: 1 1 0;
+        margin: 0;
+        min-width: 0;
+        text-align: center;
+    }
+    .section01 .tab-menu .tab-menu-item:nth-child(1){
+        text-align: left;
+    }
+    .section01 .tab-menu .tab-menu-item:nth-child(2){
+        text-align: center;
+    }
+    .section01 .tab-menu .tab-menu-item:nth-child(3){
+        text-align: right;
+    }
+    /* 首页移动端仅保留前三个入口：精选推荐/CDN加速/服务器 */
+    .section01 .tab-menu .tab-menu-item:nth-child(n + 4){
+        display: none;
+    }
+    /* 文案贴底并加淡底，减少遮挡视频主体 */
     .banner-ani {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 14px;
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+        margin: 0 auto;
         display: flex;
-        align-items: end;
-        justify-content: center;
-        padding-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 14px 2px;
+        box-sizing: border-box;
+        z-index: 3;
+        pointer-events: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    .banner-ani .banner-info {
+        pointer-events: auto;
+        width: 100%;
+        max-width: 600px;
+        padding: 10px 12px 12px;
+        border-radius: 8px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.72) 55%, rgba(255, 255, 255, 0) 100%);
         box-sizing: border-box;
     }
-    .banner-ani .banner-info>p{text-align: center;}
-    .banner-info>h2{font-size: 22px;}
+    .banner-info>h2{
+        font-size: 22px;
+        line-height: 1.3;
+        margin: 0;
+    }
+    .banner-ani .banner-info>p{
+        text-align: center;
+        margin: 8px 0 10px;
+        line-height: 22px;
+        font-size: 14px;
+    }
+    .banner-ani .banner-info .btn{
+        margin-top: 2px;
+    }
         .swiper {
       width: 100%;
       height: 100%;
@@ -607,6 +796,25 @@
     }
     .section01 .jx-list li:nth-child(n + 4) {
         display: none;
+    }
+    /* 仅有 PC 列表、无 m-product-list 的 Tab：解除 .pc-show 整条隐藏，否则移动端「展开查看更多」无数据 */
+    .section01 .data-bottom:not(:has(.m-product-list)) .product-list.pc-show {
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-right: 0;
+    }
+    .section01 .data-bottom:not(:has(.m-product-list)) .product-list.pc-show > li {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 0 10px 0;
+        box-sizing: border-box;
+    }
+    .section01 .data-bottom:not(:has(.m-product-list)):not(.product-list-expanded) .product-list.pc-show > li:nth-child(n + 4) {
+        display: none !important;
+    }
+    .section01 .data-bottom:not(:has(.m-product-list)).product-list-expanded .product-list.pc-show > li:nth-child(n + 4) {
+        display: block !important;
     }
     .section02 {
         padding-top: 0 !important;
@@ -874,11 +1082,11 @@
     .section04 .w1400{
         width: 100%;
     }
-    .user-swiper .swiper-slide:first-child{
-        margin-left: 15px;
+    .section04 .user-swiper .swiper-slide:first-child{
+        margin-left: 0;
     }
-    .user-swiper .swiper-slide:last-child{
-        margin-right: 15px;
+    .section04 .user-swiper .swiper-slide:last-child{
+        margin-right: 0;
     }
     .user-svg object{
         width: 100%;
@@ -947,33 +1155,49 @@
         margin-bottom: 14px;
     }
     .section04 .partner-container-box .swiper-slide {
-        width: 212px;
+        width: 104px;
+        flex-shrink: 0;
+        height: auto;
     }
     .section04 .partner-container-box .partner-swiper-img {
-        height: 94px;
+        height: 34px;
         width: 100%;
+        max-width: 92px;
+        margin-left: auto;
+        margin-right: auto;
         background-color: #ffffff;
         box-sizing: border-box;
         background-repeat: no-repeat;
-        box-shadow: 0px 2px 10px 0px rgba(186, 189, 194, .15);
+        background-size: contain;
+        box-shadow: 0px 1px 5px 0px rgba(186, 189, 194, .1);
         background-position: 50% 50%;
-        display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         border: 1px solid #eef0f3;
-        margin: 10px 0;
+        margin: 3px 0;
     }
     .section04 .partner-container-box {
         overflow: hidden;
-        padding: 20px 0;
+        padding: 16px 0;
         box-sizing: border-box;
-        margin: 0 0 -20px;
+        margin: 0;
+        width: 100%;
     }
-    .section04 .partner-container-box .swiper-wrapper {
-        zoom: .5;
+    .section04 .partner-section .partner-container-box .swiper-wrapper {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
-    .section04 .section-content {
+    .section04 .section-content.w1400 {
         position: relative;
-        margin: -20px 0 -20px;
-        display: contents;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
     .section04 .section-title{
         margin-bottom: 17px;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>高防服务器防火墙的特性是什么_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="高防服务器防火墙是一种专业的网络安全设备，用于保护服务器免受各种网络攻击的侵害。它具有许多特性，以确保服务器的安全性和可靠性。第一个特性是入侵检测系统（IDS）">
+	<title>高防IP是什么_飞盾CDN</title>
+	<meta name="keywords" content="高防IP,网络防护,DDoS清洗,安全接入,飞盾CDN">
+	<meta name="description" content="介绍高防 IP 的典型用途、选型关注点与应用局限。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="高防IP是什么_飞盾CDN">
+	<meta property="og:description" content="介绍高防 IP 的典型用途、选型关注点与应用局限。">
+	<meta property="og:url" content="https://feiduncdn.com/191.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="高防IP是什么_飞盾CDN">
+	<meta name="twitter:description" content="介绍高防 IP 的典型用途、选型关注点与应用局限。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"高防IP是什么","description":"介绍高防 IP 的典型用途、选型关注点与应用局限。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/191.html"},"url":"https://feiduncdn.com/191.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/191.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -196,10 +213,10 @@
                 <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
                     <div class="m">
                         <ul class="sm-around menu-tab">
-							                            <li class="bz " data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
-                            </li>
 							                            <li class="bz on" data-nav="a1">
+                                <a href="sdkarticle.html">CDN文档</a>
+                            </li>
+							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
                             </li>
 							
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="news.html">
-                        <span>CDN行业新闻 &gt;</span>
-                    </a>
-                    <span class="tag-title">高防服务器防火墙的特性是什么</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">高防IP是什么</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>高防服务器防火墙的特性是什么</h1>
-                        <span class="data-time">本内容发表于：2025-03-06 19:30:33</span>
+                        <h1>高防IP是什么</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p><strong><span style="text-wrap-mode: nowrap;">高防服务器防火墙是一种专业的网络安全设备，用于保护服务器免受各种网络攻击的侵害。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">它具有许多特性，以确保服务器的安全性和可靠性。</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第一个特性是入侵检测系统（IDS）。高防服务器防火墙可以监视服务器上的网络流量，并检测和识别潜在的入侵行为。</span></p><p><span style="text-wrap-mode: nowrap;">它可以检测到诸如端口扫描、恶意软件和漏洞利用等常见的攻击行为，并立即采取措施进行阻止和报警。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第二个特性是防御DDoS攻击。DDoS（分布式拒绝服务）攻击是一种常见的网络攻击方式，目的是通过同时向服务器发送大量的请求来耗尽其资源，</span></p><p><span style="text-wrap-mode: nowrap;">使其无法正常工作。高防服务器防火墙可以识别和过滤掉DDoS攻击流量，确保服务器能够正常运行，并提供稳定的网络服务。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第三个特性是访问控制。高防服务器防火墙可以设置和管理网络访问规则，以限制对服务器的访问。管理员可以根据需要配置白名单和黑名单，</span></p><p><span style="text-wrap-mode: nowrap;">控制哪些IP地址或网络可以访问服务器，并阻止不信任的访问请求。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第四个特性是网络地址转换（NAT）。高防服务器防火墙可以实现NAT功能，将服务器的私有IP地址转换为公共IP地址，</span></p><p><span style="text-wrap-mode: nowrap;">以隐藏服务器的真实位置和拓扑结构。这种转换可以增加服务器的隐蔽性，并提供额外的安全保护。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第五个特性是虚拟专用网络（VPN）。高防服务器防火墙可以支持VPN功能，通过加密和隧道技术，在不可信网络上建立安全的连接。</span></p><p><span style="text-wrap-mode: nowrap;">这样，远程用户可以通过VPN访问服务器，而不必担心他们的数据会被窃取或篡改。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">第六个特性是流量监控和报告。高防服务器防火墙可以实时监控服务器上的网络流量，并生成详细的流量报告。</span></p><p><span style="text-wrap-mode: nowrap;">这些报告可以帮助管理员了解服务器的使用情况和性能状况，并及时识别和解决潜在的安全问题。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">总之，高防服务器防火墙是一种强大的安全设备，可以提供全面的保护和防御措施，确保服务器的安全性和可靠性。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">它的特性包括入侵检测系统、防御DDoS攻击、访问控制、网络地址转换、虚拟专用网络和流量监控和报告等，为服务器提供了完善的安全保护。</span></strong></p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p><strong>高防 IP</strong>通常指具备大带宽清洗能力的固定入口 IP（或 IP 段），用于承接攻击流量并将清洗后的流量<strong>回注</strong>到客户源站或内网。与「高防 CDN」相比，更偏向<strong>四层或通用入口</strong>场景。</p><p class="art-h"><strong>一、典型用途</strong></p><ul><li>非 HTTP 或自建协议服务（特定 TCP/UDP 端口）。</li><li>需要<strong>固定入口</strong>对接防火墙白名单的客户环境。</li><li>与 CDN 组合：静态走 CDN，核心 TCP 业务走高防 IP。</li></ul><p class="art-h"><strong>二、选型关注点</strong></p><ol><li><strong>清洗带宽与弹性</strong>是否覆盖历史峰值与活动余量。</li><li><strong>回注方式</strong>（GRE、专线、公网回源）与延迟。</li><li><strong>协议支持</strong>与健康检查能力。</li></ol><p class="art-h"><strong>三、局限</strong></p><p>高防 IP 本身<strong>不替代应用层安全开发</strong>；L7 逻辑漏洞仍需代码与 WAF 规则治理。具体套餐以飞盾说明为准。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-					<li class="sale-item">
-						<a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-							<i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-							<p>销售客服TG</p>
-						</a>
-						<div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-						</div>
-					</li>
-					<li class="sale-item">
-						<a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-							<i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-							<p>销售客服TG</p>
-						</a>
-						<div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-						</div>
-					</li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -509,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -555,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -683,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

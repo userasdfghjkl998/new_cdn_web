@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,22 @@
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>香港大带宽服务器_飞盾CDN</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
- 
-    <link rel="stylesheet" href="static/css/animate.css">
+    <meta name="keywords" content="香港大带宽服务器,香港服务器,大带宽,BGP,跨境加速,视频分发,飞盾CDN">
+    <meta name="description" content="飞盾CDN 香港大带宽服务器方案，适合视频、下载、跨境业务等高吞吐场景，提供稳定网络与可扩展带宽。">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="飞盾CDN">
+    <meta property="og:title" content="香港大带宽服务器_飞盾CDN">
+    <meta property="og:description" content="香港大带宽服务器，高吞吐网络，适合视频与跨境业务。">
+    <meta property="og:url" content="https://feiduncdn.com/hk_server2.html">
+    <meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="香港大带宽服务器_飞盾CDN">
+    <meta name="twitter:description" content="飞盾CDN 香港大带宽服务器与高吞吐网络方案。">
+    <meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+    <link rel="canonical" href="https://feiduncdn.com/hk_server2.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
     <link rel="stylesheet" href="static/css/pubmain.css">
@@ -35,6 +47,7 @@
 </head>
 
 <body class="sm-bgGray">
+    <h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">飞盾CDN香港高防服务器</h1>
     
 <div class="header">
     <div class="version-tips">
@@ -83,17 +96,18 @@
         })()
 
         $(document).ready(function () {
-            // 判断banner PC/移动版
-            $('#banner .swiper-slide video.pc-date').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
-            $('#banner .swiper-slide video.pc-data').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
+            var el = document.querySelector('#banner.page-hero-banner .page-hero-video');
+            if (!el) return;
+            el.muted = true;
+            el.setAttribute('muted', '');
+            function tryPlay() {
+                var p = el.play();
+                if (p && typeof p.catch === 'function') p.catch(function () { });
+            }
+            tryPlay();
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden) tryPlay();
+            });
         })
 
         if (window.innerWidth < 1024) {
@@ -112,10 +126,11 @@
     <link rel="stylesheet" href="static/css/mobile1.css" media="screen and (max-width:1023px)">
     <link rel="stylesheet" href="static/css/zuyong.css">
     <link rel="stylesheet" href="static/css/zuyong_new.css">
-    <div id="banner" class="banner h434 banner-single">
+    <link rel="stylesheet" href="static/css/page-hero-banner.css">
+    <div id="banner" class="banner h434 banner-single page-hero-banner">
         <ul class="swiper-wrapper">
             <li class="swiper-slide">
-                <video class="pc-data" src="/static/video/server.mp4" loop muted autoplay x5-video-player-fullscreen='true' x-webkit-airplay='true' webkit-playsinline='true' playsinline='true' x5-playsinline x-webkit-airplay='allow'></video>
+                <video class="page-hero-video" src="static/video/server.mp4" loop muted autoplay x5-video-player-fullscreen='true' x-webkit-airplay='true' webkit-playsinline='true' playsinline='true' x5-playsinline x-webkit-airplay='allow'></video>
                 <div class="banner-ani clear">
                     <div class="banner-info fl">
                         <h2>香港大带宽服务器</h2>
@@ -1135,13 +1150,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -1172,8 +1195,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -1256,6 +1282,13 @@
             }
         }
         return flag;
+    }
+
+    function is_monile() {
+        var flag = IsPC();
+        if (!flag && $(window).width() < 1024) {
+            $('#ajax_qq_item').css("display", "none");
+        }
     }
 
     var page_type = ""

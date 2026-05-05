@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
   this.wave = wavify("#wave01", {
     height: 20,
     bones: 3,
@@ -155,28 +155,108 @@
   });
 
   /* 客户案例 */
-  var partnercontainer = new Swiper(".partner-container-box", {
-    slidesPerView: "auto",
-    speed: 4000, //滚动速度
-    freeMode: true,
-    loop: true,
-    spaceBetween: 10,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false, //就算触摸了也继续滚动
-      loopPreventsSlide: true,
-    },
-    paginationClickable: true,
-    observer:true,
-    observeParents:true,
-  });
+  var partnercontainer = null;
+  function initPartnerCssMarquee() {
+    if ($(window).width() <= 1023) return;
+    var box = document.querySelector(".partner-section .partner-container-box");
+    var wrapper = document.querySelector(".partner-section .partner-container-box .swiper-wrapper");
+    if (!box || !wrapper || wrapper.dataset.cssMarqueeInited === "1") return;
+    if (!wrapper.children || wrapper.children.length < 2) return;
+
+    wrapper.dataset.cssMarqueeInited = "1";
+    wrapper.innerHTML = wrapper.innerHTML + wrapper.innerHTML;
+    var halfHeight = wrapper.scrollHeight / 2;
+    var offset = 0;
+    var speed = 0.45; // 持续慢速（但肉眼可感知）
+    var rafId = null;
+
+    function tick() {
+      offset += speed;
+      if (offset >= halfHeight) offset = 0;
+      wrapper.style.transform = "translate3d(0,-" + offset + "px,0)";
+      rafId = window.requestAnimationFrame(tick);
+    }
+
+    tick();
+  }
+  function initPartnerVerticalMarquee() {
+    if ($(window).width() <= 1023) return;
+    var box = document.querySelector(".partner-section .partner-container-box");
+    var wrapper = document.querySelector(".partner-section .partner-container-box .swiper-wrapper");
+    if (!box || !wrapper || wrapper.dataset.marqueeInited === "1") return;
+
+    var slides = wrapper.children;
+    if (!slides || slides.length < 2) return;
+
+    wrapper.dataset.marqueeInited = "1";
+    wrapper.innerHTML = wrapper.innerHTML + wrapper.innerHTML;
+
+    var halfHeight = wrapper.scrollHeight / 2;
+    var offset = 0;
+    var speed = 0.35;
+    var rafId = null;
+
+    function step() {
+      offset += speed;
+      if (offset >= halfHeight) offset = 0;
+      wrapper.style.transform = "translate3d(0,-" + offset + "px,0)";
+      rafId = window.requestAnimationFrame(step);
+    }
+
+    box.addEventListener("mouseenter", function () {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      rafId = null;
+    });
+    box.addEventListener("mouseleave", function () {
+      if (!rafId) step();
+    });
+
+    step();
+  }
+
+  if ($(window).width() > 1023) {
+    initPartnerCssMarquee();
+  }
+
+  if ($(window).width() <= 1023) {
+    partnercontainer = new Swiper(".partner-container-box", {
+      slidesPerView: "auto",
+      speed: 4000, //滚动速度
+      freeMode: true,
+      loop: true,
+      spaceBetween: 4,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false, //就算触摸了也继续滚动
+        loopPreventsSlide: true,
+      },
+      paginationClickable: true,
+      observer:true,
+      observeParents:true,
+    });
+  }
 
   /* 万千客户的共同选择 */
   if ($(window).width() <= 1023) {
     var userswiper = new Swiper(".user-swiper", {
       slidesPerView: "auto",
       spaceBetween: 15,
+      loop: true,
+      loopedSlides: 4,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      observer: true,
+      observeParents: true,
     });
+    if (userswiper && !userswiper.autoplay) {
+      setInterval(function () {
+        if (userswiper && typeof userswiper.slideNext === "function") {
+          userswiper.slideNext();
+        }
+      }, 5000);
+    }
   } else {
     var userswiper = new Swiper(".user-swiper", {
       noSwiping: true,
@@ -190,6 +270,15 @@
       },
       // allowTouchMove: false,  //鼠标拖动切换
     });
+
+    // 兼容兜底：部分旧版 Swiper 配置差异会导致 autoplay 失效
+    if (userswiper && !userswiper.autoplay) {
+      setInterval(function () {
+        if (userswiper && typeof userswiper.slideNext === "function") {
+          userswiper.slideNext();
+        }
+      }, 5000);
+    }
   }
 
   $(window).resize(function () {

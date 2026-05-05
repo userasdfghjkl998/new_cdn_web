@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>游戏盾SDK给手机端APP带来了什么影响_飞盾CDN</title>
-    <meta name="keywords" content="推广服务,网络优化">
-    <meta name="description" content="提升安全性游戏盾SDK通常集成了多种防护措施，能有效抵御各种攻击，比如外挂、作弊、黑客入侵等。它可以检测并拦截非法行为，如篡改游戏数据、作弊工具的使用等，从而提">
-    <link rel="stylesheet" href="static/css/animate.css">
+	<title>安全接入方案给手机端APP带来的影响_飞盾CDN</title>
+	<meta name="keywords" content="安全接入,APP安全,移动端,接入方案,飞盾CDN">
+	<meta name="description" content="归纳移动 APP 安全接入：TLS/证书锁定、令牌分层、运行环境检测与 CDN 协同要点。">
+  
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="安全接入方案给手机端APP带来的影响_飞盾CDN">
+	<meta property="og:description" content="归纳移动 APP 安全接入：TLS/证书锁定、令牌分层、运行环境检测与 CDN 协同要点。">
+	<meta property="og:url" content="https://feiduncdn.com/165.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="安全接入方案给手机端APP带来的影响_飞盾CDN">
+	<meta name="twitter:description" content="归纳移动 APP 安全接入：TLS/证书锁定、令牌分层、运行环境检测与 CDN 协同要点。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"安全接入方案给手机端APP带来的影响","description":"归纳移动 APP 安全接入：TLS/证书锁定、令牌分层、运行环境检测与 CDN 协同要点。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/165.html"},"url":"https://feiduncdn.com/165.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/165.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
-    <link rel="stylesheet" href="static/css/pubmain.css">
+	<link rel="stylesheet" href="static/css/pubmain.css">
     <link rel="stylesheet" href="static/css/viewer.css">
     <link rel="stylesheet" href="static/css/layui.css">
     <link rel="stylesheet" href="static/css/pad.css" media="screen and (max-width:1024px)">
@@ -32,438 +50,358 @@
     <script src="static/js/tracker.min.js"></script>
     <!-- <script src="/js/flexible/adaptive-0.1.2.js"></script> -->
 
-
-    <script type="text/javascript" src="static/js/ey_global.js"></script>
+   
+<script type="text/javascript" src="static/js/ey_global.js"></script>
 </head>
 
 <body class="sm-bgGray">
-
-    <div class="header">
-        <div class="version-tips">
-            <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
-            <span class="browser">
-                <i class="icon-ie"></i>
-                IE 9.0+以上版本
-            </span>
-            <span class="browser">
-                <i class="icon-chrome"></i>
-                Chrome 31+谷歌浏览器
-            </span>
-            <span class="browser">
-                <i class="icon-firefox"></i>
-                Firefox 30+ 火狐浏览器
-            </span>
-            <input type="hidden" id="is_close_browser_tips" value="">
-            <a href="javascript:;" class="close"></a>
-        </div>
-        <div class="top clear"></div>
-        <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
-        <div class="nav" id="menu-item"></div>
+	
+<div class="header">
+    <div class="version-tips">
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
+        <span class="browser">
+            <i class="icon-ie"></i>
+            IE 9.0+以上版本
+        </span>
+        <span class="browser">
+            <i class="icon-chrome"></i>
+            Chrome 31+谷歌浏览?
+        </span>
+        <span class="browser">
+            <i class="icon-firefox"></i>
+            Firefox 30+ 火狐浏览?
+        </span>
+        <input type="hidden" id="is_close_browser_tips" value="">
+        <a href="javascript:;" class="close"></a>
     </div>
+    <div class="top clear"></div>
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
+        <div class="nav" id="menu-item"></div>
+</div>
     <div id="page_top"></div>
     <script>
-        (async function () {
-            // 实例化 PAG
-            const PAG = await window.libpag.PAGInit();
-            // 获取 PAG 素材数据
-            const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-            // 加载 PAG 素材为 PAGFile 对象
-            const pagFile = await PAG.PAGFile.load(buffer);
-            // 将画布尺寸设置为 PAGFile的尺寸
-            const canvas = document.getElementById('bmp');
-            canvas.width = pagFile.width();
-            canvas.height = pagFile.height();
-            if ($(window).width() < 1024) {
-                canvas.style.display = 'none'
+            (async function () {
+                // 实例?PAG
+                const PAG = await window.libpag.PAGInit();
+                // 获取 PAG 素材数据
+                const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
+                // 加载 PAG 素材?PAGFile 对象
+                const pagFile = await PAG.PAGFile.load(buffer);
+                // 将画布尺寸设置为 PAGFile的尺?
+                const canvas = document.getElementById('bmp');
+                canvas.width = pagFile.width();
+                canvas.height = pagFile.height();
+                if ($(window).width() < 1024) {
+                    canvas.style.display = 'none'
+                }
+                // 实例?PAGView 对象
+                const pagView = await PAG.PAGView.init(pagFile, canvas);
+                // 播放 PAGView
+                pagView.setRepeatCount(0);
+                await pagView.play();
+            })()
+            
+            $(document).ready(function() {
+                // 判断banner PC/移动?
+                $('#banner .swiper-slide video.pc-date').each(function () {
+                    if (window.innerWidth < 1024) {
+                        $(this).attr('src', '');
+                    }
+                })
+                $('#banner .swiper-slide video.pc-data').each(function () {
+                    if (window.innerWidth < 1024) {
+                        $(this).attr('src', '');
+                    }
+                })
+            })
+
+            if (window.innerWidth < 1024) {
+                // 处理导航栏父节点点击不跳?
+                $('#menu-item ul li').each(function () {
+                    if ($(this).data('value') == 'jump_children') {
+                        $(this).find('.jump_children_parent').attr('href', 'javascript:;')
+                    }
+                })
+                // 处理首页搜索?
+                $('.search-icon').addClass('pc-show');
             }
-            // 实例化 PAGView 对象
-            const pagView = await PAG.PAGView.init(pagFile, canvas);
-            // 播放 PAGView
-            pagView.setRepeatCount(0);
-            await pagView.play();
-        })()
-
-        $(document).ready(function () {
-            // 判断banner PC/移动版
-            $('#banner .swiper-slide video.pc-date').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
-            $('#banner .swiper-slide video.pc-data').each(function () {
-                if (window.innerWidth < 1024) {
-                    $(this).attr('src', '');
-                }
-            })
-        })
-
-        if (window.innerWidth < 1024) {
-            // 处理导航栏父节点点击不跳转
-            $('#menu-item ul li').each(function () {
-                if ($(this).data('value') == 'jump_children') {
-                    $(this).find('.jump_children_parent').attr('href', 'javascript:;')
-                }
-            })
-            // 处理首页搜索栏
-            $('.search-icon').addClass('pc-show');
-        }
     </script>
-    <link rel="stylesheet" type="text/css" href="static/css/help_center.css">
-    <link rel="stylesheet" href="static/css/zoom.css">
-    <style>
-        .banner.h440 .swiper-slide {
+<link rel="stylesheet" type="text/css" href="static/css/help_center.css">
+<link rel="stylesheet" href="static/css/zoom.css">
+<style>
+    .banner.h440 .swiper-slide {
+        padding-bottom: 0;
+    }
+    img {
+        height: auto;
+    }
+    .zoom-overlay {
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.75);
+    }
+    .zoom-img-wrap {
+        z-index: 1000;
+    }
+    .mobile-data {display: none !important;}
+    @media screen and (max-width:1023px) {
+        /* .banner {display: none;} */
+        /* .header{background-color: rgb(10, 14, 31) !important;} */
+        .skip-box{display: none;}
+        .section-box-r{
+            width: 100%;
+        }
+        .detail-container .detail-box {
+            padding: 15px 0;
+        }
+        .detail-box .section-box-r {
+            padding: 0;
+        }
+        .detail-box .right-top a span,.detail-box .content-item-title .data-time{
+            font-size: 12px;
+            color: #93939a;
+            padding-right: 6px;
+        }
+        .detail-box .content-item-title h1 {
+            font-size: 18px;
+            color: #1c1d1f;
+            margin-bottom: 7px;
+        }
+        .detail-box  .content-item-detail{
+            font-size: 14px;
+            line-height: 23px;
             padding-bottom: 0;
         }
-
-        img {
-            height: auto;
+        .detail-box  .content-item-title{
+            padding: 0;
+            margin-bottom: 15px;
         }
-
-        .zoom-overlay {
-            z-index: 999;
-            background: rgba(0, 0, 0, 0.75);
+        .detail-box .right-top{
+            margin-bottom: 5px;
+            display: flex;
         }
-
-        .zoom-img-wrap {
-            z-index: 1000;
+        .detail-box .content-item-detail p{
+            color: #626266;
+            word-wrap: break-word;
         }
-
-        .mobile-data {
-            display: none !important;
+        .detail-box .right-top>span{
+            margin-left: 2px;
         }
+    }
+</style>
+<link rel="stylesheet" href="static/css/help_center1.css" media="screen and (max-width:1023px)">
 
-        @media screen and (max-width:1023px) {
-
-            /* .banner {display: none;} */
-            /* .header{background-color: rgb(10, 14, 31) !important;} */
-            .skip-box {
-                display: none;
-            }
-
-            .section-box-r {
-                width: 100%;
-            }
-
-            .detail-container .detail-box {
-                padding: 15px 0;
-            }
-
-            .detail-box .section-box-r {
-                padding: 0;
-            }
-
-            .detail-box .right-top a span,
-            .detail-box .content-item-title .data-time {
-                font-size: 12px;
-                color: #93939a;
-                padding-right: 6px;
-            }
-
-            .detail-box .content-item-title h1 {
-                font-size: 18px;
-                color: #1c1d1f;
-                margin-bottom: 7px;
-            }
-
-            .detail-box .content-item-detail {
-                font-size: 14px;
-                line-height: 23px;
-                padding-bottom: 0;
-            }
-
-            .detail-box .content-item-title {
-                padding: 0;
-                margin-bottom: 15px;
-            }
-
-            .detail-box .right-top {
-                margin-bottom: 5px;
-                display: flex;
-            }
-
-            .detail-box .content-item-detail p {
-                color: #626266;
-                word-wrap: break-word;
-            }
-
-            .detail-box .right-top>span {
-                margin-left: 2px;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="static/css/help_center1.css" media="screen and (max-width:1023px)">
-
-    <div class="page detail-container">
-        <div id="banner" class="banner h200 swiper-container banner-single">
-            <ul class="swiper-wrapper">
-                <li class="swiper-slide" style="background-image: url(static/image/banner.jpg)">
-                    <div class="banner-ani">
-                        <div class="banner-info help-info">
-                            <div class="search-box">
-                                <h1 class="help-title">帮助中心与文档</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="container">
-            <div class="help-box detail-box w1400">
-                <div class="skip-box" id="skip-box">
-                    <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
-                        <div class="m">
-                            <ul class="sm-around menu-tab">
-                                <li class="bz " data-nav="a1">
-                                    <a href="sdkarticle.html">CDN加速接入文档 </a>
-                                </li>
-                                <li class="bz " data-nav="a1">
-                                    <a href="news.html">CDN行业新闻</a>
-                                </li>
-
-
-                            </ul>
-                        </div>
+<div class="page detail-container">
+	<div id="banner" class="banner h200 swiper-container banner-single">
+    <ul class="swiper-wrapper">
+        <li class="swiper-slide" style="background-image: url(static/image/banner.jpg)">
+            <div class="banner-ani">
+                <div class="banner-info help-info">
+                    <div class="search-box">
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
-                <div class="section-box-r">
-                    <div class="right-top">
-                        <a href="sdk.html">
-                            <span>SDK盾接入文档 &gt;</span>
-                        </a>
-                        <span class="tag-title">游戏盾SDK给手机端APP带来了什么影响</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+    <div class="container">
+        <div class="help-box detail-box w1400">
+			<div class="skip-box" id="skip-box">
+                <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
+                    <div class="m">
+                        <ul class="sm-around menu-tab">
+							                            <li class="bz on" data-nav="a1">
+                                <a href="sdkarticle.html">CDN文档</a>
+                            </li>
+							                            <li class="bz " data-nav="a1">
+                                <a href="news.html">CDN行业新闻</a>
+                            </li>
+							
+                         
+                        </ul>
                     </div>
-                    <div class="content-item">
-                        <div class="content-item-title">
-                            <h1>游戏盾SDK给手机端APP带来了什么影响</h1>
-                            <span class="data-time">本内容发表于：2025-02-17 21:39:00</span>
-                        </div>
-                        <div class="content-item-detail" deep="5">
-                            <ol data-start="30" data-end="562" class=" list-paddingleft-2">
-                                <li>
-                                    <p data-start="33" data-end="135"><span style="font-size: 20px;"><strong
-                                                data-start="33" data-end="42">提升安全性</strong><br data-start="42"
-                                                data-end="45">游戏盾SDK通常集成了多种防护措施，能有效抵御各种攻击，比如外挂、作弊、黑客入侵等。它可以检测并拦截非法行为，如篡改游戏数据、作弊工具的使用等，从而提升游戏的公平性和安全性。</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p data-start="140" data-end="215"><span style="font-size: 20px;"><strong
-                                                data-start="140" data-end="152">防止游戏数据篡改</strong><br data-start="152"
-                                                data-end="155">通过加密技术和数据验证，游戏盾SDK能够保护游戏的数据不被篡改。这有助于防止玩家通过修改数据获取不正当的游戏优势。</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p data-start="220" data-end="335"><span style="font-size: 20px;"><strong
-                                                data-start="220" data-end="230">提高用户体验</strong><br data-start="230"
-                                                data-end="233">游戏盾SDK还可以实时监测和检测异常行为，并在检测到不正常操作时及时做出反应，减少作弊带来的负面影响。对大部分正常玩家而言，他们并不会感受到明显的安全防护措施，而只会享受到更加公平、顺畅的游戏体验。</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p data-start="340" data-end="390"><span style="font-size: 20px;"><strong
-                                                data-start="340" data-end="350">防止帐号盗用</strong><br data-start="350"
-                                                data-end="353">SDK中的防盗号机制能检测并防止帐号被盗用或滥用，增加账号的安全性。</span></p>
-                                </li>
-                                <li>
-                                    <p data-start="395" data-end="477"><span style="font-size: 20px;"><strong
-                                                data-start="395" data-end="403">性能优化</strong><br data-start="403"
-                                                data-end="406">虽然集成了安全防护，游戏盾SDK通常经过优化，确保对游戏性能的影响最小化。在一些情况下，SDK会在后台运行，不会显著拖慢游戏的响应速度。</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p data-start="482" data-end="562"><span style="font-size: 20px;"><strong
-                                                data-start="482" data-end="492">合规性和监管</strong><br data-start="492"
-                                                data-end="495">对于一些特定地区的法律法规（例如中国的游戏行业法规），游戏盾SDK能够帮助开发者确保游戏合规，防止违反相关的反作弊或反外挂政策。</span>
-                                    </p>
-                                </li>
-                            </ol>
-                            <p data-start="564" data-end="638" data-is-last-node=""><span
-                                    style="font-size: 20px;">总之，游戏盾SDK的引入使得手机端APP，特别是游戏类APP，在安全性、用户体验和合规性等方面有了显著提升，但也可能带来一些集成和技术实现上的挑战。</span>
-                            </p>
-                            <p data-start="564" data-end="638" data-is-last-node=""><span style="font-size: 20px;"><img
-                                        src="static/picture/1-25021H14IG03.png" title="" alt="image.png"></span></p>
-                            <p><br></p>
-                        </div>
+                </div>
+            </div>
+            <div class="section-box-r">
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">安全接入方案给手机端APP带来的影响</span></div>
+                <div class="content-item">
+                    <div class="content-item-title">
+                        <h1>安全接入方案给手机端APP带来的影响</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
+                    <div class="content-item-detail" deep="5"><p>移动 APP 接入高防或安全加速能力时，目标不仅是「能连上」，还要在<strong>传输、身份与运行环境</strong>三个层面降低被窃听、篡改与重放的风险。以下从工程视角归纳常见方案与取舍。</p><p class="art-h"><strong>一、传输层与证书</strong></p><ul><li>全链路 <strong>HTTPS/TLS</strong>，禁用弱套件与过期协议；对关键接口可缩短证书有效期并配合自动化轮换。</li><li>在可控场景下使用<strong>证书锁定（Pinning）</strong>防范中间人证书替换；需预留应急升级通道，避免服务端证书轮换导致大规模不可用。</li></ul><p class="art-h"><strong>二、身份与令牌</strong></p><ul><li>鉴权令牌分层：<strong>短期 Access Token + 可轮换 Refresh</strong>，减少长期凭证泄露面。</li><li>关键操作引入设备指纹、风控评分与二次验证，避免单一 Cookie/Header 被重放。</li></ul><p class="art-h"><strong>三、客户端运行环境</strong></p><p>对 Root/越狱、调试器注入、Hook 框架等做<strong>分级处置</strong>（提示、限权、拒绝服务），并与业务风险对齐，避免误杀正常用户。敏感运算尽量放服务端或 TEE，本地仅存最小必要数据。</p><p class="art-h"><strong>四、与 CDN / 高防协同</strong></p><p>将静态资源与可缓存接口下沉至 CDN，降低源站暴露；动态与登录链路透传<strong>真实客户端 IP 与协议指纹</strong>供风控使用。具体能力与控制台配置以飞盾产品为准。</p><p class="art-more"><strong>延伸阅读</strong>：<a href="https://owasp.org/www-project-mobile-top-10/" rel="nofollow noopener noreferrer" target="_blank">OWASP Mobile Top 10</a>（移动安全常见风险清单）。</p></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <script>
-        function display1() {
-            document.getElementById("consultBtnId").style.visibility = "visible";
-        }
+	<script>
+		function display1() {
+			document.getElementById("consultBtnId").style.visibility = "visible";
+		}
 
-        function contentTopId() {
-            document.getElementById("consultContentId").style.height = "85px";
-            document.getElementById("consultContentId").style.width = "200px";
-            document.querySelector(".consult-trigle").style.visibility = "hidden";
-            document.querySelector(".consult-trigle-bottom").style.visibility = "visible";
-            document.querySelector(".consult-name").style.visibility = "hidden";
-            document.querySelector(".consult-qq").style.visibility = "hidden";
-            document.getElementById("consultBtnId").style.visibility = "hidden";
-        }
+		function contentTopId() {
+			document.getElementById("consultContentId").style.height = "85px";
+			document.getElementById("consultContentId").style.width = "200px";
+			document.querySelector(".consult-trigle").style.visibility = "hidden";
+			document.querySelector(".consult-trigle-bottom").style.visibility = "visible";
+			document.querySelector(".consult-name").style.visibility = "hidden";
+			document.querySelector(".consult-qq").style.visibility = "hidden";
+			document.getElementById("consultBtnId").style.visibility = "hidden";
+		}
 
-        function showAll() {
-            document.getElementById("consultContentId").style.height = "210px";
-            document.getElementById("consultContentId").style.width = "200px";
-            document.querySelector(".consult-trigle").style.visibility = "visible";
-            document.querySelector(".consult-trigle-bottom").style.visibility = "hidden";
-            document.querySelector(".consult-name").style.visibility = "visible";
-            document.querySelector(".consult-qq").style.visibility = "visible";
-        }
+		function showAll() {
+			document.getElementById("consultContentId").style.height = "210px";
+			document.getElementById("consultContentId").style.width = "200px";
+			document.querySelector(".consult-trigle").style.visibility = "visible";
+			document.querySelector(".consult-trigle-bottom").style.visibility = "hidden";
+			document.querySelector(".consult-name").style.visibility = "visible";
+			document.querySelector(".consult-qq").style.visibility = "visible";
+		}
 
-        function contentBottomId() {
-            document.getElementById("consultContentId").style.display = "none";
-            document.getElementById("consultBtnId").style.visibility = "hidden";
-        }
-    </script>
-    <style>
-        /* 咨询 */
-        .consult-content {
-            z-index: 100;
-            width: 200px;
-            height: 210px;
-            position: fixed;
-            right: 120px;
-            bottom: 40px;
-            text-align: center;
-            background-color: #ffffff;
-        }
+		function contentBottomId() {
+			document.getElementById("consultContentId").style.display = "none";
+			document.getElementById("consultBtnId").style.visibility = "hidden";
+		}
+	</script>
+	<style>
+		/* 咨询 */
+		.consult-content {
+			z-index: 100;
+			width: 200px;
+			height: 210px;
+			position: fixed;
+			right: 120px;
+			bottom: 40px;
+			text-align: center;
+			background-color: #ffffff;
+		}
 
-        .consult-qq {
-            position: absolute;
-            left: 50%;
-            top: 45px;
-            transform: translateX(-50%);
-        }
+		.consult-qq {
+			position: absolute;
+			left: 50%;
+			top: 45px;
+			transform: translateX(-50%);
+		}
 
-        .consult-button {
-            position: absolute;
-            left: 50%;
-            bottom: 15px;
-            cursor: pointer;
-            transform: translateX(-50%);
-        }
+		.consult-button {
+			position: absolute;
+			left: 50%;
+			bottom: 15px;
+			cursor: pointer;
+			transform: translateX(-50%);
+		}
 
-        .consult-close-content {
-            visibility: hidden;
-            width: 90px;
-            height: 55px;
-            position: absolute;
-            right: 0;
-            top: 30px;
-            text-align: center;
-            right: 12px;
-            font-size: 14px;
-            border-radius: 2px;
-            background-color: #ffffff;
-        }
+		.consult-close-content {
+			visibility: hidden;
+			width: 90px;
+			height: 55px;
+			position: absolute;
+			right: 0;
+			top: 30px;
+			text-align: center;
+			right: 12px;
+			font-size: 14px;
+			border-radius: 2px;
+			background-color: #ffffff;
+		}
 
-        .consult-close-content-top {
-            height: 50%;
-            color: #ffffff;
-            line-height: 27.5px;
-            background-color: #0096ff;
-        }
+		.consult-close-content-top {
+			height: 50%;
+			color: #ffffff;
+			line-height: 27.5px;
+			background-color: #0096ff;
+		}
 
-        .consult-close-content-bottom {
-            height: 50%;
-            color: #666666;
-            line-height: 27.5px;
-            background-color: #ffffff;
-        }
+		.consult-close-content-bottom {
+			height: 50%;
+			color: #666666;
+			line-height: 27.5px;
+			background-color: #ffffff;
+		}
 
-        .consult-trigle {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            cursor: pointer;
-        }
+		.consult-trigle {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			cursor: pointer;
+		}
 
-        .consult-content p {
-            position: absolute;
-            left: 50%;
-            bottom: 60px;
-            font-size: 14px;
-            color: #666666;
-            transform: translateX(-50%);
-        }
+		.consult-content p {
+			position: absolute;
+			left: 50%;
+			bottom: 60px;
+			font-size: 14px;
+			color: #666666;
+			transform: translateX(-50%);
+		}
 
-        .loading {
-            background-image: url(static/image/loadding.gif);
-            height: 100px;
-            width: 100px;
-            background-color: white;
-            box-shadow: 0 0 8px #cacaca;
-            border-radius: 10px;
-            position: fixed;
-            left: 50%;
-            top: 45%;
-            background-size: cover;
-            z-index: 999999;
-            display: none;
-        }
+		.loading {
+			background-image: url(static/image/loadding.gif);
+			height: 100px;
+			width: 100px;
+			background-color: white;
+			box-shadow: 0 0 8px #cacaca;
+			border-radius: 10px;
+			position: fixed;
+			left: 50%;
+			top: 45%;
+			background-size: cover;
+			z-index: 999999;
+			display: none;
+		}
 
-        .loading-mask {
-            background-color: rgba(0, 0, 0, 0);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 999;
-            display: none;
-        }
+		.loading-mask {
+			background-color: rgba(0, 0, 0, 0);
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			display: none;
+		}
 
-        .consult-trigle-bottom {
-            position: absolute;
-            bottom: 65px;
-            visibility: hidden;
-            cursor: pointer;
-            transform: translateX(-50%);
-        }
+		.consult-trigle-bottom {
+			position: absolute;
+			bottom: 65px;
+			visibility: hidden;
+			cursor: pointer;
+			transform: translateX(-50%);
+		}
 
-        .consult-content {
-            box-shadow: 0 1px 15px rgba(64, 66, 77, .1);
-        }
-    </style>
-    <style type="text/css">
-        #_QD_INVITE_IFRAME_ID_PREFIX_2885708798 {
-            display: none;
-        }
+		.consult-content {
+			box-shadow: 0 1px 15px rgba(64, 66, 77, .1);
+		}
+	</style>
+	<style type="text/css">
+		#_QD_INVITE_IFRAME_ID_PREFIX_2885708798 {
+			display: none;
+		}
 
-        #_QD_INSTALL_QQ_IFRAME_ID_PREFIX_2885708798 {
-            display: none;
-        }
-    </style>
-    <div class="loading kk_loading"></div>
-    <div class="loading-mask kk_loading"></div>
-    <div class="mask hide"></div>
-    <div class="footer"></div>
-    <style>
-        .slide-icon-chat::before {
-            content: '';
-            display: inline-block;
-            position: relative;
-            top: 4px;
-            width: 24px;
-            height: 24px;
-            background-image: url(static/image/icon_chat.png);
-            background-position: 0 0;
-            background-size: 100%;
-        }
-    </style>
-    <div class="fix-right">
-
-        <div class="fix-qq">
-            <div class="fix-wrap">
-                <ul>
-
+		#_QD_INSTALL_QQ_IFRAME_ID_PREFIX_2885708798 {
+			display: none;
+		}
+	</style>
+	<div class="loading kk_loading"></div>
+	<div class="loading-mask kk_loading"></div>
+	<div class="mask hide"></div>
+	<div class="footer"></div>
+	<style>
+	    .slide-icon-chat::before {content: '';display: inline-block;position: relative;top: 4px;width: 24px;height: 24px;background-image: url(static/image/icon_chat.png);background-position: 0 0;background-size: 100%;}
+	</style>
+	<div class="fix-right">
+    
+		<div class="fix-qq">
+			<div class="fix-wrap">
+				<ul>
+					
           <li class="sale-item">
             <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
               <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
@@ -473,7 +411,7 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
                   <i class="slide-icon-sale"></i>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
               </div>
             </div>
@@ -503,79 +441,91 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
                   <p><i class="slide-icon-chat"></i>在线聊天</p>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="toTop" id="toTop" style="">
-            <a href="javascript:;">
-                <i class="slide-icon-totop"></i>
-                <p>置顶</p>
-            </a>
-        </div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="toTop" id="toTop" style="">
+			<a href="javascript:;">
+				<i class="slide-icon-totop"></i>
+				<p>置顶</p>
+			</a>
+		</div>
+		
+			
+	</div>
+
+	<script src="static/js/layer.js"></script>
+	<script src="static/js/sliding.js"></script>
+	<script src="static/js/distpicker.data.js"></script>
+	<script src="static/js/distpicker.js"></script>
+	<script src="static/js/product-calc-dengbao.js"></script>
+ 
+
+	<script type="text/javascript">
+	 $(".zixun_btn").on("click",function(){
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
+		(function () {
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
+			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
+			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
+			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
+			open.onclick = function () {
+				trace.style.display = 'block';
+				this.style.display = 'none';
+				close.parentNode.style.display = 'block';
+				history[0] = 1;
+				document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+			}
+			close.onclick = function () {
+				trace.style.display = 'none';
+				this.parentNode.style.display = 'none';
+				open.style.display = 'block';
+				history[0] = 0;
+				document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+			}
+			for (var i = 0; i < tab_tit.length; i++) {
+				tab_tit[i].onclick = (function (i) {
+					return function () {
+						for (var j = 0; j < tab_cont.length; j++) {
+							tab_cont[j].style.display = 'none';
+							tab_tit[j].style.color = '#999';
+						}
+						tab_cont[i].style.display = 'block';
+						tab_tit[i].style.color = '#000';
+						history[1] = i;
+						document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+					}
+				})(i)
+			}
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
+		})();
+	</script>
 
 
-    </div>
-
-    <script src="static/js/layer.js"></script>
-    <script src="static/js/sliding.js"></script>
-    <script src="static/js/distpicker.data.js"></script>
-    <script src="static/js/distpicker.js"></script>
-    <script src="static/js/product-calc-dengbao.js"></script>
-
-
-    <script type="text/javascript">
-        $(".zixun_btn").on("click", function () {
-            LiveChatWidget.call('maximize');
-        });
-        (function () {
-            var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-            var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-            var open = document.getElementById('think_page_trace_open');
-            var close = document.getElementById('think_page_trace_close').children[0];
-            var trace = document.getElementById('think_page_trace_tab');
-            var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
-            var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
-            open.onclick = function () {
-                trace.style.display = 'block';
-                this.style.display = 'none';
-                close.parentNode.style.display = 'block';
-                history[0] = 1;
-                document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
-            }
-            close.onclick = function () {
-                trace.style.display = 'none';
-                this.parentNode.style.display = 'none';
-                open.style.display = 'block';
-                history[0] = 0;
-                document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
-            }
-            for (var i = 0; i < tab_tit.length; i++) {
-                tab_tit[i].onclick = (function (i) {
-                    return function () {
-                        for (var j = 0; j < tab_cont.length; j++) {
-                            tab_cont[j].style.display = 'none';
-                            tab_tit[j].style.color = '#999';
-                        }
-                        tab_cont[i].style.display = 'block';
-                        tab_tit[i].style.color = '#000';
-                        history[1] = i;
-                        document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
-                    }
-                })(i)
-            }
-            parseInt(history[0]) && open.click();
-            tab_tit[history[1]].click();
-        })();
-    </script>
-    <script src="static/js/footer_common.js"></script>
-    <script type="text/javascript">var root_dir = ""; var ey_u_switch = 1; var ey_aid = 165;</script>
-    <script language="javascript" type="text/javascript" src="static/js/ey_footer.js"></script>
-    <script src="static/js/header.js"></script>
+<script src="static/js/footer_common.js"></script>
+<script type="text/javascript">var root_dir="";var ey_u_switch=1;var ey_aid=165;</script>
+<script language="javascript" type="text/javascript" src="static/js/ey_footer.js"></script>
+<script src="static/js/header.js"></script>
 </body>
 <script src="static/js/TweenMax.js"></script>
 <script src="static/js/wavify.js"></script>
@@ -583,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -615,7 +565,7 @@
     }
 
     var flag = IsPC(); //true为PC端，false为手机端
-
+ 
     $(window).scroll(function () {
         if ($(document).scrollTop() < 600) {
             $('#toTop').fadeOut()
@@ -629,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -663,7 +613,7 @@
         }
         return flag;
     }
-
+ 
 
     $(function () {
         var strCookie = document.cookie.replace(/(?:(?:^|.*;\s*)cloud_first_click_url\s*\=\s*([^;]*).*$)|^.*$/, '$1');
@@ -680,13 +630,13 @@
             $('.header').css('background-color', 'transparent')
         }
     })
-
-    if ($(window).width() >= 1024) {
-        $(".monthly-evaluate").hover(function () {
+  
+    if($(window).width() >= 1024){
+        $(".monthly-evaluate").hover(function(){
             $(".float-config-star").show()
         })
     }
-    if ('' !== '') {
+    if('' !== ''){
         $(".login-btn-box").hide()
         $('.star-box').show()
         $('.m-evaluate-submit').show()
@@ -757,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

@@ -1,4 +1,28 @@
-﻿$(function () {
+$(function () {
+  function bindMobileMenuToggle() {
+    if (window.__fdMenuBoundByPublic) return;
+    window.__fdMenuBoundByPublic = true;
+    $(document).on("click", "#menu-btn", function () {
+      if ($(this).hasClass("menu-btn-close")) {
+        $(this).removeClass("menu-btn-close");
+        $("#menu-item").fadeOut();
+        $(".header").css("height", "55px");
+        $("body").css("overflow", "auto");
+      } else {
+        $(this).addClass("menu-btn-close");
+        $("#menu-item").fadeIn();
+        $(".header").css({
+          height: "100%",
+          backgroundColor: "#fff",
+        });
+        $("body").css("overflow", "hidden");
+      }
+    });
+  }
+
+  // 优先绑定三条杠，避免后续页面逻辑报错时菜单失效。
+  bindMobileMenuToggle();
+
   var is_close_browser_tips = $("#is_close_browser_tips").val();
   /*控制显示兼容提示*/
   if (Browser.client.isIE && Browser.client.version < 9) {
@@ -17,8 +41,8 @@
     $.get("/index/setBrowserCache.html");
   });
 
-  // 导航描述
-  var event = $(window) <= 1023 ? "touchstart" : "mouseenter";
+  // 导航描述（须用视口宽度判断；$(window) 与数字比较恒为 false，会导致移动端仍绑定 mouseenter，触屏无法展示描述）
+  var event = window.innerWidth <= 1023 ? "touchstart" : "mouseenter";
 
   $(".sub dd").on(event, function () {
     var id = $(this).data("id");
@@ -46,6 +70,10 @@
   function setNavScroll() {
     var $ul = $('.nav>ul');
     var $nav = $('.nav');
+    if (!$ul.length || !$ul[0]) {
+      $nav.removeClass('scroll-left').removeClass('scroll-right');
+      return;
+    }
     if ($ul.width() + 5 < $ul[0].scrollWidth) {
       if ($ul[0].scrollLeft) {
         $nav.addClass('scroll-left');
@@ -60,6 +88,9 @@
   $('.scroll-left-arrow, .scroll-right-arrow').on('click', function() {
     var $nav = $('.nav');
     var $ul = $('.nav>ul');
+    if (!$ul.length || !$ul[0]) {
+      return;
+    }
     $nav.removeClass('scroll-left').removeClass('scroll-right');
     $ul[0].scrollLeft ? $nav.addClass('scroll-right') : $nav.addClass('scroll-left');
 
@@ -205,11 +236,17 @@
     $(".animate-skip li").click(function () {
       if ($("#skip-nav").data("type") == "0") {
         var block_name = $(this).parents("#skip-nav").attr("data-block-name");
+        var navKey = $(this).data("nav");
+        if (typeof navKey === "undefined" || navKey === null || navKey === "") {
+          // 帮助中心 tab 使用锚点 href，不走 data-nav 滚动逻辑。
+          return true;
+        }
+        var $target = $("." + block_name + "-" + navKey);
+        if (!$target.length) {
+          return true;
+        }
         $("html, body").animate({
-          scrollTop:
-            $("." + block_name + "-" + $(this).data("nav")).offset().top -
-            skip_nav_height +
-            1,
+          scrollTop: $target.offset().top - skip_nav_height + 1,
         });
       }
     });
@@ -229,17 +266,20 @@
 
     document.body.addEventListener("touchstart", function () {});
   }
-  new Swiper(".swiper-category", {
-    slidesPerView: slidesPerView,
-    initialSlide:
-      $(".skip-item .on").index() >= 0
-        ? $(".skip-item .on").index()
-        : $(".tab-nav01 .on").index(),
-    navigation: {
-      nextEl: ".skip-next",
-      prevEl: ".skip-prev",
-    },
-  });
+  // 仅在页面存在分类滑条时初始化，避免某些页面报错后中断后续脚本（会影响三条杠点击）。
+  if ($(".swiper-category").length && typeof Swiper !== "undefined") {
+    new Swiper(".swiper-category", {
+      slidesPerView: slidesPerView,
+      initialSlide:
+        $(".skip-item .on").index() >= 0
+          ? $(".skip-item .on").index()
+          : $(".tab-nav01 .on").index(),
+      navigation: {
+        nextEl: ".skip-next",
+        prevEl: ".skip-prev",
+      },
+    });
+  }
 
   // $(window).resize(function () {
   //     setNav();
@@ -282,22 +322,26 @@
     }
   }
 
-  $("#menu-btn").click(function () {
-    if ($(this).hasClass("menu-btn-close")) {
-      $(this).removeClass("menu-btn-close");
-      $("#menu-item").fadeOut();
-      $(".header").css("height", "55px");
-      $("body").css("overflow", "auto");
-    } else {
-      $(this).addClass("menu-btn-close");
-      $("#menu-item").fadeIn();
-      $(".header").css({
-        height: "100%",
-        backgroundColor: "#fff",
-      });
-      $("body").css("overflow", "hidden");
-    }
-  });
+  // 本地包可能不含 static/picture 资源；失败时回源到线上同路径。
+  document.addEventListener(
+    "error",
+    function (event) {
+      var target = event.target;
+      if (!target || target.tagName !== "IMG") return;
+
+      var src = target.getAttribute("src") || "";
+      if (!src) return;
+      if (/^https?:\/\//i.test(src)) return;
+      if (target.dataset && target.dataset.fdFallbackTried === "1") return;
+
+      var normalized = src.replace(/^\.?\//, "");
+      if (!/^static\/(picture|image)\//i.test(normalized)) return;
+
+      target.dataset.fdFallbackTried = "1";
+      target.src = "https://feiduncdn.com/" + normalized;
+    },
+    true
+  );
 
   if (
     $("[data-show] li").length > parseInt($("[data-show]").data("num")) &&

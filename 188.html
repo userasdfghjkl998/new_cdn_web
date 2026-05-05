@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>高防cdn用到什么技术_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="高防CDN（Content Delivery Network）是一种用于提供高速、高安全性、高可靠性的内容分发服务的技术。它是基于云计算和分布式存储的原理，通过">
+	<title>高防CDN有什么用_飞盾CDN</title>
+	<meta name="keywords" content="高防CDN,抗DDoS,业务安全,防护策略,飞盾CDN">
+	<meta name="description" content="说明高防 CDN 在连续性、源站安全与成本体验上的价值。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="高防CDN有什么用_飞盾CDN">
+	<meta property="og:description" content="说明高防 CDN 在连续性、源站安全与成本体验上的价值。">
+	<meta property="og:url" content="https://feiduncdn.com/188.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="高防CDN有什么用_飞盾CDN">
+	<meta name="twitter:description" content="说明高防 CDN 在连续性、源站安全与成本体验上的价值。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"高防CDN有什么用","description":"说明高防 CDN 在连续性、源站安全与成本体验上的价值。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/188.html"},"url":"https://feiduncdn.com/188.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/188.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -196,10 +213,10 @@
                 <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
                     <div class="m">
                         <ul class="sm-around menu-tab">
-							                            <li class="bz " data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
-                            </li>
 							                            <li class="bz on" data-nav="a1">
+                                <a href="sdkarticle.html">CDN文档</a>
+                            </li>
+							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
                             </li>
 							
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="news.html">
-                        <span>CDN行业新闻 &gt;</span>
-                    </a>
-                    <span class="tag-title">高防cdn用到什么技术</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">高防CDN有什么用</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>高防cdn用到什么技术</h1>
-                        <span class="data-time">本内容发表于：2025-03-02 22:12:17</span>
+                        <h1>高防CDN有什么用</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p><strong><span style="text-wrap-mode: nowrap;">高防CDN（Content Delivery Network）是一种用于提供高速、高安全性、高可靠性的内容分发服务的技术。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">它是基于云计算和分布式存储的原理，通过在全球部署的服务器网络和智能路由技术，将用户请求的内容缓存到离用户最近的服务器上，</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">并通过多级缓存和负载均衡技术来实现快速、可靠的内容传输。高防CDN不仅可以减轻源服务器的负载压力，还可以有效防止DDoS攻击和网络威胁。</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">高防CDN采用了多种技术来实现其功能和特性，下面是其中一些常用的技术：</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.缓存技术：CDN利用缓存技术将用户所请求的内容缓存到离用户最近的服务器上。当用户再次请求相同的内容时，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; CDN可以直接从缓存中返回内容，减少了对源服务器的访问压力，提高了响应速度。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">2.负载均衡技术：CDN利用负载均衡技术将用户请求分发到不同的服务器上，以均衡服务器的负载。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; 负载均衡可以根据服务器的负载情况、网络状况等因素来选择最优的服务器，从而提高用户访问的响应速度和可用性。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">3.动态加速技术：CDN可以通过动态加速技术来加速动态内容的传输。动态加速技术包括对动态资源的缓存、</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; 压缩和优化等处理，以减少带宽的占用和加快内容传输的速度。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">4.边缘计算技术：CDN利用边缘计算技术将内容分发到离用户最近的边缘节点上。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; 边缘计算技术可以将内容缓存到离用户更近的位置，减少了内容传输的延迟，提高了用户体验。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">5.安全防护技术：高防CDN具有强大的安全防护能力，可以抵御各种网络攻击，包括DDoS攻击、</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; SQL注入、跨站脚本攻击等。它可以通过流量清洗、黑白名单、HTTP/HTTPS加密等技术来保护用户的网络安全。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">6.智能路由技术：CDN利用智能路由技术来选择最佳的传输路径。智能路由可以根据网络状况、</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; 带宽情况等因素来选择最优的路径，从而提高传输的速度和稳定性。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">综上所述，高防CDN利用缓存技术、负载均衡技术、动态加速技术、边缘计算技术、安全防护技术和智能路由技术等多种技术来提供高速、</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">高安全性、高可靠性的内容分发服务。这些技术的应用可以有效地减轻源服务器的负载压力，提高用户的访问响应速度，同时保护用户的网络安全。</span></strong></p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p>高防 CDN 在「加速」之上提供<strong>抗 DDoS/CC、源站隐藏与规则防护</strong>，适合攻击面大、可用性敏感的业务。</p><p class="art-h"><strong>一、业务连续性</strong></p><p>在流量型攻击下，通过<strong>清洗与带宽冗余</strong>避免入口拥塞；在应用层攻击下，通过<strong>频控、挑战与 WAF</strong>降低 CPU 与连接耗尽风险。</p><p class="art-h"><strong>二、源站与数据安全</strong></p><p>用户只看到 CDN 边缘 IP，降低源站被直接扫描与打穿概率；结合<strong>回源隧道与证书校验</strong>提升链路安全。</p><p class="art-h"><strong>三、体验与成本平衡</strong></p><p>缓存命中仍可显著节省<strong>回源带宽费用</strong>；防护规则过严可能提升摩擦，需用数据迭代<strong>误杀率</strong>。具体能力以飞盾产品为准。</p></div>
                 </div>
             </div>
         </div>
@@ -400,7 +411,7 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
                   <i class="slide-icon-sale"></i>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
               </div>
             </div>
@@ -430,7 +441,7 @@
               <div class="bubble">
                 <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
                   <p><i class="slide-icon-chat"></i>在线聊天</p>
-                  <div>24小时在线，快速解决客户问题</div>
+                  <div>24小时在线，快速解决客户问</div>
                 </a>
 							</div>
 						</div>
@@ -457,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -494,10 +513,14 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
+
 
 <script src="static/js/footer_common.js"></script>
 <script type="text/javascript">var root_dir="";var ey_u_switch=1;var ey_aid=188;</script>
@@ -510,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -556,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -684,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

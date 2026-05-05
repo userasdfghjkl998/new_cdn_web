@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>CDN防护拦截是什么?_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="在当今的网络环境中，网站和应用程序面临着各种安全威胁，其中 DDoS（分布式拒绝服务）攻击是最为常见和严重的一种。为了应对这些威胁，许多企业和网站管理员选择使用">
+	<title>CDN防护拦截是什么_飞盾CDN</title>
+	<meta name="keywords" content="CDN防护,流量拦截,安全策略,CC防护,飞盾CDN">
+	<meta name="description" content="解释 CDN 防护拦截的识别维度、处置动作及与 WAF 的关系。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="CDN防护拦截是什么_飞盾CDN">
+	<meta property="og:description" content="解释 CDN 防护拦截的识别维度、处置动作及与 WAF 的关系。">
+	<meta property="og:url" content="https://feiduncdn.com/189.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="CDN防护拦截是什么_飞盾CDN">
+	<meta name="twitter:description" content="解释 CDN 防护拦截的识别维度、处置动作及与 WAF 的关系。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"CDN防护拦截是什么","description":"解释 CDN 防护拦截的识别维度、处置动作及与 WAF 的关系。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/189.html"},"url":"https://feiduncdn.com/189.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/189.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -196,10 +213,10 @@
                 <div id="skip-nav" class="skip-item animate-skip" data-block-name="section" data-type="0">
                     <div class="m">
                         <ul class="sm-around menu-tab">
-							                            <li class="bz " data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
-                            </li>
 							                            <li class="bz on" data-nav="a1">
+                                <a href="sdkarticle.html">CDN文档</a>
+                            </li>
+							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
                             </li>
 							
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="news.html">
-                        <span>CDN行业新闻 &gt;</span>
-                    </a>
-                    <span class="tag-title">CDN防护拦截是什么?</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">CDN防护拦截是什么</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
-                        <h1>CDN防护拦截是什么?</h1>
-                        <span class="data-time">本内容发表于：2025-03-03 14:48:27</span>
+                        <h1>CDN防护拦截是什么</h1>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">在当今的网络环境中，网站和应用程序面临着各种安全威胁，其中 DDoS（分布式拒绝服务）攻击是最为常见和严重的一种。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">为了应对这些威胁，许多企业和网站管理员选择使用 CDN（Content Delivery Network，内容分发网络）来提供防护和拦截服务。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">那么，CDN 防护拦截到底是什么呢？</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">一、CDN 防护拦截的定义</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">CDN 防护拦截是指通过使用内容分发网络（CDN）来保护网站和应用程序免受各种网络攻击，如 DDoS 攻击、SQL 注入攻击、</span></p><p><span style="text-wrap-mode: nowrap;">跨站脚本攻击等。CDN 防护拦截通常包括以下几个方面的功能：</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">1.流量清洗</span></strong></p><p><span style="text-wrap-mode: nowrap;">&nbsp;&nbsp;</span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统会对进入 CDN 网络的流量进行实时监测和分析，识别出恶意流量和攻击流量，并将其进行清洗和过滤。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;清洗后的合法流量将被转发到目标服务器，确保网站和应用程序能够正常运行。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，当一个网站受到 DDoS 攻击时，CDN 防护拦截系统会自动识别出攻击流量，并将其进行清洗和过滤，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;确保合法用户的请求能够得到及时处理。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">2.智能路由</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统会根据网络状况和用户请求的来源，自动选择最优的路由路径将用户请求转发到目标服务器。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;这样可以确保用户能够快速地访问网站和应用程序，同时也可以减少网络延迟和拥塞。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，当一个用户从不同的地区访问一个网站时，CDN 防护拦截系统会自动选择离用户最近的 CDN 节点，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;并将用户请求转发到该节点，然后再由该节点将请求转发到目标服务器，从而提高用户的访问速度和体验。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">3.安全防护</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统还会提供各种安全防护功能，如 Web 应用防火墙（WAF）、入侵检测系统（IDS）、</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;入侵防御系统（IPS）等。这些安全防护功能可以有效地防止各种网络攻击，保护网站和应用程序的安全。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，WAF 可以对 HTTP/HTTPS 流量进行深度检测和过滤，防止 SQL 注入攻击、跨站脚本攻击等常见的 Web</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;攻击；IDS/IPS 可以对网络流量进行实时监测和分析，识别出恶意流量和攻击流量，并及时采取相应的防御措施。</span></p><p><strong><span style="text-wrap-mode: nowrap;"><br></span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">二、CDN 防护拦截的优势</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">1.高效性</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统通常采用分布式架构，可以将攻击流量分散到多个节点上进行处理，从而提高处理效率和防护能力。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;同时，CDN 防护拦截系统还可以根据攻击流量的大小和类型自动调整防护策略，确保防护效果的最大化。</span></p><p><span style="text-wrap-mode: nowrap;">1.例如，当一个网站受到大规模的 DDoS 攻击时，CDN 防护拦截系统可以将攻击流量分散到全球各地的 CDN 节点上进行处理，&nbsp;</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;从而有效地减轻目标服务器的压力，确保网站能够正常运行。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">2.灵活性</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统可以根据用户的需求进行定制化配置，满足不同用户的防护需求。用户可以根据自己的业务特点和安全需求，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;选择不同的防护套餐和功能模块，从而实现个性化的防护方案。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，一些企业可能需要更高的防护能力，可以选择高端的防护套餐，享受更强大的流量清洗和安全防护功能，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;而一些小型企业可能只需要基本的防护能力，可以选择价格较为实惠的防护套餐。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">3.可靠性</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统通常由专业的网络服务提供商运营，具有较高的可靠性和稳定性。CDN 服务提供商通常会采用多重备份和冗余机制，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;确保 CDN 网络的稳定运行。即使某个节点出现故障，CDN 也可以自动将用户请求导向其他正常的节点，确保服务的连续性。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，一些大型的 CDN 服务提供商通常会在全球各地部署多个数据中心，每个数据中心都采用多重备份和冗余机制，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;确保 CDN 网络的高可靠性和稳定性。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">三、CDN 防护拦截的应用场景</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">1.网站和应用程序防护</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统可以为各种类型的网站和应用程序提供防护服务，如电商网站、金融网站、游戏网站、企业官网等。</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;通过使用 CDN 防护拦截系统，网站和应用程序可以有效地抵御各种网络攻击，保护用户数据的安全和隐私。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，一个电商网站在促销活动期间可能会受到大量的 DDoS 攻击，通过使用 CDN 防护拦截系统，可以有效地保护网站的正常运行，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;确保用户能够顺利地进行购物。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">2.视频直播和点播防护</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统可以为视频直播和点播平台提供防护服务，确保视频内容的流畅播放和用户体验。通过使用 CDN 防护拦截系统，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;视频直播和点播平台可以有效地抵御各种网络攻击，保护视频内容的版权和用户数据的安全。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，一个视频直播平台在直播过程中可能会受到恶意攻击，导致直播中断或卡顿，通过使用 CDN 防护拦截系统，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;可以有效地保护直播的正常进行，确保用户能够顺利地观看直播。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">3.移动应用防护</span></strong></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><span style="text-wrap-mode: nowrap;">1.CDN 防护拦截系统可以为移动应用提供防护服务，确保移动应用的安全和稳定运行。通过使用 CDN 防护拦截系统，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;移动应用可以有效地抵御各种网络攻击，保护用户数据的安全和隐私。</span></p><p><span style="text-wrap-mode: nowrap;">2.例如，一个移动支付应用在使用过程中可能会受到恶意攻击，导致用户资金损失，通过使用 CDN 防护拦截系统，</span></p><p><span style="text-wrap-mode: nowrap;">&nbsp; &nbsp;可以有效地保护移动支付应用的安全，确保用户资金的安全。</span></p><p><span style="text-wrap-mode: nowrap;"><br></span></p><p><strong><span style="text-wrap-mode: nowrap;">总之，CDN 防护拦截是一种有效的网络安全防护手段，可以为网站和应用程序提供高效、灵活、可靠的防护服务。</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">在选择 CDN 防护拦截服务时，用户需要根据自己的实际需求和预算进行选择，并选择专业的 CDN 服务提供商，</span></strong></p><p><strong><span style="text-wrap-mode: nowrap;">确保防护效果的最大化。</span></strong></p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p><strong>CDN 防护拦截</strong>指在边缘节点依据策略对请求进行识别与处置（丢弃、限速、挑战、重定向等），在请求到达源站前降低恶意流量占比。</p><p class="art-h"><strong>一、识别维度</strong></p><ul><li>网络与传输特征：频率、并发、地理分布、ASN。</li><li>应用层特征：URL、参数、Header、Cookie、JA3 等指纹。</li><li>业务语义：登录失败次数、优惠券核销频率等（需对接日志或 API）。</li></ul><p class="art-h"><strong>二、处置动作</strong></p><p>从<strong>观察模式 → 限速 → 拦截 → 挑战</strong>逐级升高；对关键路径优先使用「仅记录」验证命中率后再拦截。</p><p class="art-h"><strong>三、与 WAF、高防的关系</strong></p><p>防护拦截常与 <strong>WAF 规则、CC 防护、Bot 管理</strong>同属边缘安全栈，应统一监控与审计，避免规则冲突。具体模块名以飞盾控制台为准。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -509,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -555,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -683,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {

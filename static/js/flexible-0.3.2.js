@@ -1,4 +1,4 @@
-﻿/*
+/*
 ** 移动端自适应方案  FROM 手淘
 ** Update【2016年01月13日】
 */
@@ -126,8 +126,13 @@ if(window.innerWidth <= 1023){
             // t.body ? t.body.style.fontSize = 7 * o + "px" : t.addEventListener("DOMContentLoaded", n)
         }
         function d() {
-            var e = i.clientWidth / 10;
-            i.style.fontSize = e + "px"
+            // 与手淘方案一致：根字号按宽度换算，但限制最大逻辑宽度，避免 768~1023px 平板 rem 过大导致 index.css 等处 9.7333rem 等样式高度爆炸
+            var w = i.clientWidth;
+            if (w > 540) {
+                w = 540;
+            }
+            var e = w / 10;
+            i.style.fontSize = e + "px";
         }
         var i = t.documentElement, o = e.devicePixelRatio || 1;
         if (n(),d(),e.addEventListener("resize", d),

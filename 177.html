@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,27 @@
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>高防CDN是如何做好防御的_飞盾CDN</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="随着近年来来网络技术的不断进步，防御cdn已经不只简单的用做网站加速，还能够更好的保护网站不被攻击。Cdn在相关节点中成功的建立动态加速机制以及智能沉于等机制，">
+	<meta name="keywords" content="高防CDN,清洗,CC,DDoS,飞盾CDN">
+	<meta name="description" content="从高防 CDN 的流量识别、边缘处置、清洗协同到回源保护，说明多层防御如何降低 DDoS/CC 对业务的影响。">
   
-    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="飞盾CDN">
+	<meta property="og:title" content="高防CDN是如何做好防御的_飞盾CDN">
+	<meta property="og:description" content="从高防 CDN 的流量识别、边缘处置、清洗协同到回源保护，说明多层防御如何降低 DDoS/CC 对业务的影响。">
+	<meta property="og:url" content="https://feiduncdn.com/177.html">
+	<meta property="og:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="高防CDN是如何做好防御的_飞盾CDN">
+	<meta name="twitter:description" content="从高防 CDN 的流量识别、边缘处置、清洗协同到回源保护，说明多层防御如何降低 DDoS/CC 对业务的影响。">
+	<meta name="twitter:image" content="https://feiduncdn.com/static/picture/feidun_logo.png">
+	<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"高防CDN是如何做好防御的","description":"说明高防 CDN 流量识别、清洗与回源保护的多层防御思路。","mainEntityOfPage":{"@type":"WebPage","@id":"https://feiduncdn.com/177.html"},"url":"https://feiduncdn.com/177.html","image":["https://feiduncdn.com/static/picture/feidun_logo.png"],"publisher":{"@type":"Organization","name":"飞盾CDN","logo":{"@type":"ImageObject","url":"https://feiduncdn.com/static/picture/feidun_logo.png"}},"datePublished":"2018-05-17"}
+	</script>
+    <link rel="canonical" href="https://feiduncdn.com/177.html">
+<link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/swiper.min.css">
     <link rel="stylesheet" href="static/css/public.css">
 	<link rel="stylesheet" href="static/css/pubmain.css">
@@ -41,44 +58,44 @@
 	
 <div class="header">
     <div class="version-tips">
-        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验。</span>
+        <span><i class="icon-warn"></i>建议使用以下浏览器，以获得最佳体验</span>
         <span class="browser">
             <i class="icon-ie"></i>
             IE 9.0+以上版本
         </span>
         <span class="browser">
             <i class="icon-chrome"></i>
-            Chrome 31+谷歌浏览器
+            Chrome 31+谷歌浏览?
         </span>
         <span class="browser">
             <i class="icon-firefox"></i>
-            Firefox 30+ 火狐浏览器
+            Firefox 30+ 火狐浏览?
         </span>
         <input type="hidden" id="is_close_browser_tips" value="">
         <a href="javascript:;" class="close"></a>
     </div>
     <div class="top clear"></div>
-    <!-- 导航链接和展开项 - 新 -->
-        <!-- 导航链接和展开项 - 新 -->
+    <!-- 导航链接和展开?- ?-->
+        <!-- 导航链接和展开?- ?-->
         <div class="nav" id="menu-item"></div>
 </div>
     <div id="page_top"></div>
     <script>
             (async function () {
-                // 实例化 PAG
+                // 实例?PAG
                 const PAG = await window.libpag.PAGInit();
                 // 获取 PAG 素材数据
                 const buffer = await fetch('/images/animate/bmp.pag').then((response) => response.arrayBuffer());
-                // 加载 PAG 素材为 PAGFile 对象
+                // 加载 PAG 素材?PAGFile 对象
                 const pagFile = await PAG.PAGFile.load(buffer);
-                // 将画布尺寸设置为 PAGFile的尺寸
+                // 将画布尺寸设置为 PAGFile的尺?
                 const canvas = document.getElementById('bmp');
                 canvas.width = pagFile.width();
                 canvas.height = pagFile.height();
                 if ($(window).width() < 1024) {
                     canvas.style.display = 'none'
                 }
-                // 实例化 PAGView 对象
+                // 实例?PAGView 对象
                 const pagView = await PAG.PAGView.init(pagFile, canvas);
                 // 播放 PAGView
                 pagView.setRepeatCount(0);
@@ -86,7 +103,7 @@
             })()
             
             $(document).ready(function() {
-                // 判断banner PC/移动版
+                // 判断banner PC/移动?
                 $('#banner .swiper-slide video.pc-date').each(function () {
                     if (window.innerWidth < 1024) {
                         $(this).attr('src', '');
@@ -100,13 +117,13 @@
             })
 
             if (window.innerWidth < 1024) {
-                // 处理导航栏父节点点击不跳转
+                // 处理导航栏父节点点击不跳?
                 $('#menu-item ul li').each(function () {
                     if ($(this).data('value') == 'jump_children') {
                         $(this).find('.jump_children_parent').attr('href', 'javascript:;')
                     }
                 })
-                // 处理首页搜索栏
+                // 处理首页搜索?
                 $('.search-icon').addClass('pc-show');
             }
     </script>
@@ -181,7 +198,7 @@
             <div class="banner-ani">
                 <div class="banner-info help-info">
                     <div class="search-box">
-                        <h1 class="help-title">帮助中心与文档</h1>
+                        <div class="help-title">帮助中心与文档</div>
                     </div>
                 </div>
             </div>
@@ -197,7 +214,7 @@
                     <div class="m">
                         <ul class="sm-around menu-tab">
 							                            <li class="bz on" data-nav="a1">
-                                <a href="sdkarticle.html">CDN加速接入文档 </a>
+                                <a href="sdkarticle.html">CDN文档</a>
                             </li>
 							                            <li class="bz " data-nav="a1">
                                 <a href="news.html">CDN行业新闻</a>
@@ -209,19 +226,13 @@
                 </div>
             </div>
             <div class="section-box-r">
-                <div class="right-top">
-                    <a href="sdkarticle.html">
-                        <span>CDN加速接入文档  &gt;</span>
-                    </a>
-                    <span class="tag-title">高防CDN是如何做好防御的</span>
-                </div>
+                <div class="right-top"><a href="sdkarticle.html"><span>CDN文档 &gt;</span></a><span class="tag-title">高防CDN是如何做好防御的</span></div>
                 <div class="content-item">
                     <div class="content-item-title">
                         <h1>高防CDN是如何做好防御的</h1>
-                        <span class="data-time">本内容发表于：2025-02-19 00:12:40</span>
+                        <span class="data-time">本内容发表于 2018-05-17</span>
                     </div>
-                    <div class="content-item-detail" deep="5">
-						<p data-pid="NF65iiYy" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">随着近年来来网络技术<svg width="10px" height="10px" viewbox="0 0 16 16" class="ZDI ZDI--FourPointedStar16 css-1dvsrp" fill="currentColor"><path d="m5.068 9.267-3.08-.77a.512.512 0 0 1 0-.994l3.08-.77a2.289 2.289 0 0 0 1.665-1.665l.77-3.08a.512.512 0 0 1 .994 0l.77 3.08c.205.82.845 1.46 1.665 1.665l3.08.77a.512.512 0 0 1 0 .994l-3.08.77a2.29 2.29 0 0 0-1.665 1.665l-.77 3.08a.512.512 0 0 1-.994 0l-.77-3.08a2.289 2.289 0 0 0-1.665-1.665Z"></path></svg>的不断进步，<span style="font-weight: 600;">防御cdn</span>已经不只简单的用做网站加速，还能够更好的保护网站不被攻击。Cdn在相关节点中成功的建立动态加速机制以及智能沉于等机制，这种机制能够帮助网站流量访问分配到每一个节点中，智能的进行流量分配机制，如果cdn存在被ddos攻击的情况。Cdn整个系统就能够将被攻击的流量分散开，节省了站点服务器的压力以及节点压力。同时还能够增强网站被攻击的难度。真正帮助服务管理人员提供更多应该被攻击的时间，cdn能有效的防止ddos攻击，降低对网站带来的危害。</p><p data-pid="NF65iiYy" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><img src="static/picture/1-25021Z013315H.png" title="" alt="image.png"></p><p data-pid="hiY3g_qA" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">但是防御CDN防ddos主要通过流量分散，增加攻击难度，如果是有针对性的攻击，就会面临被各个击破的危险，从另一种层面上来说，cdn只是缓解了DDoS攻击的时效而已，若想有效阻止攻击，还可以采用ddos防火墙等安全防御方法。</p><p data-pid="CfSd38bI" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: 600;">DDoS防御方法</span></p><p data-pid="CfSd38bI" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: 600;"><img src="static/picture/1-25021Z01352316.png" title="" alt="image.png"></span></p><p data-pid="YFgSFudk" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: 600;">异常流量的清洗过滤：</span></p><p data-pid="x8v6lm7e" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">通过飞盾CDN带来的DDOS防火墙对异常流量的清洗过滤，通过数据包的规则过滤、数据流指纹检测过滤、及数据包内容定制过滤等顶尖技术能准确判断外来访问流量是否正常，进一步将异常流量禁止过滤。单台负载每秒可防御800-927万个syn攻击包。</p><p data-pid="_WgUQ7vw" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: 600;">分布式集群防御：</span></p><p data-pid="tX3itOMU" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">这是目前飞盾CDN网络安全<svg width="10px" height="10px" viewbox="0 0 16 16" class="ZDI ZDI--FourPointedStar16 css-1dvsrp" fill="currentColor"><path d="m5.068 9.267-3.08-.77a.512.512 0 0 1 0-.994l3.08-.77a2.289 2.289 0 0 0 1.665-1.665l.77-3.08a.512.512 0 0 1 .994 0l.77 3.08c.205.82.845 1.46 1.665 1.665l3.08.77a.512.512 0 0 1 0 .994l-3.08.77a2.29 2.29 0 0 0-1.665 1.665l-.77 3.08a.512.512 0 0 1-.994 0l-.77-3.08a2.289 2.289 0 0 0-1.665-1.665Z"></path></svg>界防御大规模DDOS攻击的最有效办法。cdn防御中分布式集群防御的特点是，在每个节点服务器<svg width="10px" height="10px" viewbox="0 0 16 16" class="ZDI ZDI--FourPointedStar16 css-1dvsrp" fill="currentColor"><path d="m5.068 9.267-3.08-.77a.512.512 0 0 1 0-.994l3.08-.77a2.289 2.289 0 0 0 1.665-1.665l.77-3.08a.512.512 0 0 1 .994 0l.77 3.08c.205.82.845 1.46 1.665 1.665l3.08.77a.512.512 0 0 1 0 .994l-3.08.77a2.29 2.29 0 0 0-1.665 1.665l-.77 3.08a.512.512 0 0 1-.994 0l-.77-3.08a2.289 2.289 0 0 0-1.665-1.665Z"></path></svg>配置多个IP地址，并且每个节点能承受不低于10G的DDOS攻击，如一个节点受攻击无法提供服务，系统将会根据优先级设置自动切换另一个节点，并将攻击者的数据包全部返回发送点，使攻击源成为瘫痪状态，从更为深度的安全防护角度去影响企业的安全执行决策。</p><p data-pid="3jBhWml6" style="margin-top: 1.4em; margin-bottom: 1.4em; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);"><span style="font-weight: 600;">高防智能DNS解析：</span></p><p data-pid="9-Bf3fcz" style="margin-top: 1.4em; margin-bottom: 0px; color: rgb(25, 27, 31); font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: medium; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);">防御飞盾CDN通过高智能DNS解析系统与DDOS防御系统的完美结合，为企业提供对抗新兴安全威胁的超级检测功能。它颠覆了传统一个域名<svg width="10px" height="10px" viewbox="0 0 16 16" class="ZDI ZDI--FourPointedStar16 css-1dvsrp" fill="currentColor"><path d="m5.068 9.267-3.08-.77a.512.512 0 0 1 0-.994l3.08-.77a2.289 2.289 0 0 0 1.665-1.665l.77-3.08a.512.512 0 0 1 .994 0l.77 3.08c.205.82.845 1.46 1.665 1.665l3.08.77a.512.512 0 0 1 0 .994l-3.08.77a2.29 2.29 0 0 0-1.665 1.665l-.77 3.08a.512.512 0 0 1-.994 0l-.77-3.08a2.289 2.289 0 0 0-1.665-1.665Z"></path></svg>对应一个镜像的做法，智能根据用户的上网路线将DNS解析请求解析到用户所属网络的服务器。同时智能DNS解析系统还有宕机检测功能，随时可将瘫痪的服务器IP智能更换成正常服务器IP，为企业的网络保持一个永不宕机的服务状态。</p><p><br></p>					</div>
+                    <div class="content-item-detail" deep="5"><p>高防 CDN 的目标不是「挡住所有包」，而是在<strong>保证合法用户体验</strong>的前提下，将恶意流量在<strong>尽量靠近攻击入口的一侧</strong>消耗掉，并对源站隐藏真实拓扑。典型链条包括：<strong>识别 → 限速/丢弃 → 清洗 → 回注 → 回源保护</strong>。</p><p class="art-h"><strong>一、流量识别与分层</strong></p><ul><li><strong>网络层特征</strong>：异常包速率、畸形报文、反射源分布等，用于快速丢弃明显垃圾流量。</li><li><strong>会话层行为</strong>：半连接、重传异常、TLS 滥用等，针对协议型攻击。</li><li><strong>应用层语义</strong>：URL、Header、Cookie、JA3 指纹、业务参数组合，用于 CC、爬虫与 API 滥用。</li></ul><p class="art-h"><strong>二、边缘处置与清洗协同</strong></p><p>边缘节点具备<strong>海量分散算力</strong>，适合先做低成本过滤与缓存卸载；超大流量或复杂攻击可<strong>牵引至清洗中心</strong>做深度检测，再将干净流量回注业务。规则引擎（ACL、频控、地域封禁、挑战页）应与<strong>情报与基线</strong>联动，减少误伤。</p><p class="art-h"><strong>三、回源与会话保护</strong></p><ol><li>仅暴露 CDN 出口，源站<strong>白名单回源 IP</strong>，关闭公网直连管理口。</li><li>限制回源并发与超时，防止「绕过 CDN 直打源」或慢速耗尽。</li><li>HTTPS 全链路一致性与证书管理，避免降级攻击。</li></ol><p class="art-h"><strong>四、运营闭环</strong></p><p>持续监控<strong>拦截率、挑战通过率、业务错误率</strong>三类曲线；重大活动前做容量评估与演练。具体清洗带宽、规则模板与联动方式以飞盾高防 CDN 产品为准。</p></div>
                 </div>
             </div>
         </div>
@@ -391,45 +402,47 @@
 			<div class="fix-wrap">
 				<ul>
 					
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                            <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
-                            <p>销售客服TG</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
-                                    <i class="slide-icon-sale"></i>
-                                    <div>在线时间 9:00-02:00</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sale-item">
-                        <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                            <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
-                            <p>在线聊天</p>
-                        </a>
-                        <div class="bubble-wrap">
-                            <div class="bubble">
-                                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
-                                    <p><i class="slide-icon-chat"></i>在线聊天</p>
-                                    <div>24小时在线，快速解决客户问题</div>
-                                </a>
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+              <i class="slide-icon slide-icon-sale" data-value="销售客服TG"></i>
+              <p>销售客服TG</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/feiduncdn" rel="nofollow" target="_blank">
+                  <i class="slide-icon-sale"></i>
+                  <div>在线时间 9:00-02:00</div>
+                </a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="sale-item">
+            <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+              <i class="slide-icon slide-icon-chat" data-value="在线聊天"></i>
+              <p>在线聊天</p>
+            </a>
+            <div class="bubble-wrap">
+              <div class="bubble">
+                <a href="https://t.me/nodem_bot?start=start" rel="nofollow" target="_blank" class="zixun_btn">
+                  <p><i class="slide-icon-chat"></i>在线聊天</p>
+                  <div>24小时在线，快速解决客户问</div>
+                </a>
 							</div>
 						</div>
 					</li>
@@ -455,13 +468,21 @@
 
 	<script type="text/javascript">
 	 $(".zixun_btn").on("click",function(){
-	LiveChatWidget.call('maximize');});
+	if (typeof LiveChatWidget !== 'undefined' && LiveChatWidget.call) {
+		LiveChatWidget.call('maximize');
+	}
+	});
 		(function () {
-			var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
-			var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
-			var open = document.getElementById('think_page_trace_open');
-			var close = document.getElementById('think_page_trace_close').children[0];
+			var titEl = document.getElementById('think_page_trace_tab_tit');
+			var contEl = document.getElementById('think_page_trace_tab_cont');
+			var openEl = document.getElementById('think_page_trace_open');
+			var closeWrap = document.getElementById('think_page_trace_close');
 			var trace = document.getElementById('think_page_trace_tab');
+			if (!titEl || !contEl || !openEl || !closeWrap || !trace || !closeWrap.children.length) return;
+			var tab_tit = titEl.getElementsByTagName('span');
+			var tab_cont = contEl.getElementsByTagName('div');
+			var open = openEl;
+			var close = closeWrap.children[0];
 			var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
 			var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
 			open.onclick = function () {
@@ -492,8 +513,11 @@
 					}
 				})(i)
 			}
-			parseInt(history[0]) && open.click();
-			tab_tit[history[1]].click();
+			if (tab_tit.length) {
+				parseInt(history[0]) && open.click();
+				var hi = parseInt(history[1], 10) || 0;
+				if (hi >= 0 && hi < tab_tit.length) tab_tit[hi].click();
+			}
 		})();
 	</script>
 
@@ -509,7 +533,7 @@
 <script src="static/js/snap.svg-min.js"></script>
 <script src="static/js/index.js"></script>
 <script>
-    // 除了首页显示友情链接 其它页面不显示
+    // 除了首页显示友情链接 其它页面不显?
     location.pathname == '/' || location.pathname == '/index/index.html' ? $('.friends-box').show() : $('.friends-box').hide()
     // 图片预览
     $('body').on('click', '.qrcode[data-pop-qrcode]', function () {
@@ -555,7 +579,7 @@
             scrollTop: 0
         })
     })
-    // 企业宣传片效果
+    // 企业宣传片效?
     function XuanChuanSvgAnimate() {
         var animateIndex = 1;
         setInterval(function () {
@@ -683,7 +707,7 @@
         }
         return isMobile
     }
-    // 以下代码注释（原因：请求链接不存在 - 会报错地址错误）
+    // 以下代码注释（原因：请求链接不存?- 会报错地址错误?
     // if (____is_mobile !== isMobile()) {
     //     $(function () {
     //         $.get("/get_ad.html", function (response) {
