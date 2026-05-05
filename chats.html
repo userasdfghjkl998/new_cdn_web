@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="static/css/pad1.css" media="screen and (max-width:1024px)">
     <link rel="stylesheet" href="static/css/mobile1.css" media="screen and (max-width:1023px)">
     <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/swiper.min.js" defer></script>
     <script src="static/js/wow.min.js" defer></script>
     <script src="static/js/public.js" defer></script>
     <script src="static/js/header.js" defer></script>
@@ -25,38 +26,55 @@
     <style>
         .im-page { background: #f5f7fb; }
         .im-banner {
-            background: linear-gradient(120deg, #0b1f44 0%, #143b8e 50%, #1f63ff 100%);
             color: #fff;
-            padding: 200px 0;
-            background-image: url(static/chat/banner.png);
+            position: relative;
+            overflow: hidden;
+        }
+        .im-banner-swiper {
+            width: 100%;
+            height: 460px;
+        }
+        .im-banner-slide {
+            position: relative;
+            
             background-size: 100% 100%;
         }
-        .im-banner .inner { 
-            
-            position: relative; width: 1200px; max-width: calc(100% - 40px); margin: 0 auto; }
-        .im-banner .inner .im-banner-img { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1;
-         }
+        .im-banner .inner {
+            right: 100px;
+            bottom: 45px;
+            position: absolute;
+            z-index: 100;
+        }
         .im-banner h1 { font-size: 40px; line-height: 1.3; margin-bottom: 16px; color: #fff;z-index: 5; }
         .im-banner p { font-size: 16px; line-height: 1.9; opacity: .95; max-width: 860px; z-index: 5;}
-        .im-btns { margin-top: 28px; z-index: 5;}
+        .im-btns {cursor: pointer; margin-top: 28px; z-index: 5;}
         .im-btn {
             display: inline-block;
-            z-index: 5;
-            min-width: 148px;
+            min-width: 98px;
             text-align: center;
             padding: 12px 20px;
             border-radius: 4px;
             margin-right: 12px;
             font-size: 15px;
-            background-color: #1f63ff;
+            background-color: rgba(0, 0 ,0 ,0.8);
+            cursor: pointer;
+            color: #fff;
         }
-        .im-btn.primary { background: #1f63ff; color: #fff; }
-        .im-btn.ghost { border: 1px solid rgba(255,255,255,.7); color: #fff; }
+        .im-btn:hover {
+            color: #1f63ff;
+        }
+        .im-banner .swiper-pagination {
+            bottom: 28px;
+        }
+        .im-banner .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.45);
+            opacity: 1;
+        }
+        .im-banner .swiper-pagination-bullet-active {
+            background: #ffffff;
+        }
         .im-section { padding: 55px 0; }
         .im-wrap { width: 1200px; max-width: calc(100% - 40px); margin: 0 auto; }
         .im-title { font-size: 32px; color: #1f2d3d; text-align: center; margin-bottom: 14px; }
@@ -136,7 +154,12 @@
         }
         @media (max-width: 768px) {
             .im-grid, .feature-list, .pricing-grid { grid-template-columns: 1fr; }
-            .im-banner { padding: 48px 0; }
+            .im-banner-swiper { height: 300px; }
+            .im-banner .inner {
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 0;
+            }
             .im-banner h1 { font-size: 26px; }
         }
     </style>
@@ -148,16 +171,26 @@
 </div>
 
 <section class="im-banner">
-    <div class="inner">
-        <!-- <h1>IM Client 即时通讯工具<br>跨平台、一体化、可商业化</h1>
-        <p>
-            IM Client 基于 Flutter 开发，支持 iOS、Android、Web、Windows、macOS、Linux 六大平台，
-            提供私聊、群聊、音视频、支付与运营增长能力，帮助团队快速搭建可落地的即时通讯业务。
-        </p> -->
-        <div class="im-btns">
-            <a class="im-btn primary" href="https://web.511cdn.com/" target="_blank">查看演示站</a>
-            <a class="im-btn ghost zixun_btn" href="https://t.me/nodem_bot?start=start" target="_blank">获取报价方案</a>
+    <div class="swiper-container im-banner-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide im-banner-slide" style="background-image: url('static/chat/banner.png');">
+                <div class="inner">
+                    <div class="im-btns">
+                        <a class="im-btn primary" href="https://web.511cdn.com/" target="_blank">查看演示站</a>
+                        <a class="im-btn ghost" href="https://t.me/nodem_bot?start=start" target="_blank">获取报价方案</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide im-banner-slide" style="background-image: url('static/chat/banner1.png');">
+                <div class="inner">
+                    <div class="im-btns">
+                        <a class="im-btn primary" href="https://admin.511cdn.com/" target="_blank">查看演示站</a>
+                        <a class="im-btn ghost" href="https://t.me/nodem_bot?start=start" target="_blank">获取报价方案</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 
@@ -275,6 +308,19 @@
 
 <script>
     $(function () {
+        if (typeof Swiper === "function") {
+            new Swiper(".im-banner-swiper", {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".im-banner .swiper-pagination",
+                    clickable: true
+                }
+            });
+        }
         if (typeof WOW === 'function') {
             new WOW().init();
         }
